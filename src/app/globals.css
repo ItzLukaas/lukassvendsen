@@ -14,8 +14,8 @@
     --secondary-foreground: 240 6% 10%;
     --muted: 240 5% 92%;
     --muted-foreground: 240 4% 46%;
-    --accent: 240 5% 92%;
-    --accent-foreground: 240 6% 10%;
+    --accent: 222 84% 56%;
+    --accent-foreground: 0 0% 98%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
     --ring: 240 6% 10%;
@@ -78,5 +78,30 @@
   .animate-in {
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
+  }
+
+  /* Subtil grid-baggrund til sektioner */
+  .bg-grid-soft {
+    background-image: linear-gradient(
+        to right,
+        hsl(240 5% 84% / 0.4) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(240 5% 84% / 0.4) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Logo-slider animation */
+  @keyframes logo-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-logo-marquee {
+    animation: logo-marquee 18s linear infinite;
   }
 }

@@ -100,11 +100,85 @@ export const galleryImages: GalleryImageMeta[] = [
   },
 ];
 
-export const clients = [
-  { name: 'Virksomhed A', role: 'Branding & portrætter' },
-  { name: 'Event Bureau', role: 'Eventfotografering' },
-  { name: 'Kulturhuset', role: 'Kulturprojekter' },
-  { name: 'Privatkunde', role: 'Familie & portrætter' },
+export type ClientLogo = {
+  name: string;
+  role: string;
+  url: string;
+  /** Logo-fil – læg i /public/logos/ og opdatér stien her. */
+  logoSrc: string;
+};
+
+export const clients: ClientLogo[] = [
+  {
+    name: 'Virksomhed A',
+    role: 'Branding & portrætter',
+    url: 'https://example.com',
+    logoSrc: '/logos/virksomhed-a.svg',
+  },
+  {
+    name: 'Event Bureau',
+    role: 'Eventfotografering',
+    url: 'https://example.com',
+    logoSrc: '/logos/event-bureau.svg',
+  },
+  {
+    name: 'Kulturhuset',
+    role: 'Kulturprojekter',
+    url: 'https://example.com',
+    logoSrc: '/logos/kulturhuset.svg',
+  },
+  {
+    name: 'Privatkunde',
+    role: 'Familie & portrætter',
+    url: 'https://example.com',
+    logoSrc: '/logos/privatkunde.svg',
+  },
+];
+
+export const specialties = [
+  {
+    title: 'Sport',
+    description:
+      'Intense øjeblikke, tempo og energi – fanget midt i bevægelsen, uden at miste detaljerne.',
+  },
+  {
+    title: 'Events',
+    description:
+      'Alt fra intime sammenkomster til store arrangementer – fokus på stemning, mennesker og øjeblikke.',
+  },
+  {
+    title: 'Sociale medier',
+    description:
+      'Indhold der er skabt til at performe på sociale platforme – skarpe, visuelt stærke billeder til dine kanaler.',
+  },
+  {
+    title: 'Arrangementer og alt derimellem',
+    description:
+      'Bryllupper, receptioner, firmaarrangementer og personlige projekter – vi tilpasser stilen til dit behov.',
+  },
+];
+
+export const faqs = [
+  {
+    question: 'Hvordan foregår en typisk fotografering?',
+    answer:
+      'Vi starter med en kort snak om dine ønsker og forventninger. Herefter finder vi de rigtige locations, lys og stemning. Under selve fotograferingen guider jeg dig, så du kan slappe af og være dig selv.',
+  },
+  {
+    question: 'Hvor lang tid går der, før jeg modtager mine billeder?',
+    answer:
+      'Som udgangspunkt leverer jeg de færdigredigerede billeder inden for 7–10 hverdage, afhængigt af opgavens størrelse. Har du en deadline, kan vi aftale en hurtigere levering.',
+  },
+  {
+    question: 'Arbejder du kun i et bestemt område?',
+    answer:
+      'Jeg er baseret i Danmark, men kører gerne ud til opgaver i hele landet – og efter aftale også i udlandet.',
+  },
+  {
+    question: 'Kan vi skræddersy en løsning til mit projekt?',
+    answer:
+      'Ja, meget gerne. Ingen opgaver er ens, og vi finder sammen en løsning, der passer til både budget og behov.',
+  },
 ];
 
 export const contact = {
