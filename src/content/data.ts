@@ -25,44 +25,78 @@ Min stil er gennemtænkt og æstetisk: jeg elsker naturligt lys, rene kompositio
 Jeg arbejder primært i Danmark og er altid åben for nye samarbejder og udfordringer. Lad os skabe noget sammen.`,
 };
 
-// Brug dine egne billeder: læg dem i public/gallery/ og skift src til f.eks. '/gallery/1.jpg'
-// Du kan også bruge eksterne URLs (tilføj hostname i next.config.mjs under images.remotePatterns)
-export const galleryImages = [
+/**
+ * Galleri: Rediger alt tekst og metadata her for SEO.
+ * width/height bruges til layout – tilpas efter billedets proportioner (fx 800x600 = landskab, 600x800 = portræt).
+ * Du kan bruge lokale filer: '/gallery/1.jpg' eller eksterne URLs (tilføj hostname i next.config.mjs).
+ */
+export interface GalleryImageMeta {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  /** Brugt som alt-tekst og til søgemaskiner – beskriv billedet kort. */
+  alt: string;
+  /** Titel vist i galleri og lightbox. */
+  title: string;
+  /** Længere beskrivelse til SEO og evt. lightbox – valgfri. */
+  description?: string;
+}
+
+export const galleryImages: GalleryImageMeta[] = [
   {
     id: '1',
     src: 'https://picsum.photos/seed/portrait1/800/1000',
+    width: 800,
+    height: 1000,
     alt: 'Portrætfoto – naturligt lys og stemning',
     title: 'Portræt',
+    description: 'Portrætfotografering med naturligt lys, Lukas Svendsen.',
   },
   {
     id: '2',
     src: 'https://picsum.photos/seed/event2/800/1000',
+    width: 800,
+    height: 1000,
     alt: 'Eventfotografi – fest og mennesker',
     title: 'Event',
+    description: 'Eventfotografering til fest og arrangementer.',
   },
   {
     id: '3',
-    src: 'https://picsum.photos/seed/landscape3/800/1000',
+    src: 'https://picsum.photos/seed/landscape3/1200/800',
+    width: 1200,
+    height: 800,
     alt: 'Natur og landskab – stemningsbillede',
     title: 'Landskab',
+    description: 'Landskabsfotografi og stemningsbilleder.',
   },
   {
     id: '4',
     src: 'https://picsum.photos/seed/creative4/800/1000',
+    width: 800,
+    height: 1000,
     alt: 'Kreativt portræt – kunstnerisk udtryk',
     title: 'Kreativt',
+    description: 'Kreativt portræt med kunstnerisk udtryk.',
   },
   {
     id: '5',
-    src: 'https://picsum.photos/seed/detail5/800/1000',
+    src: 'https://picsum.photos/seed/detail5/1000/800',
+    width: 1000,
+    height: 800,
     alt: 'Detalje og tekstur – tæt på',
     title: 'Detalje',
+    description: 'Detaljefotografi og tekstur.',
   },
   {
     id: '6',
     src: 'https://picsum.photos/seed/group6/800/1000',
+    width: 800,
+    height: 1000,
     alt: 'Gruppebillede – sammenhold',
     title: 'Gruppe',
+    description: 'Gruppebilleder og sammenhold.',
   },
 ];
 

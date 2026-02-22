@@ -1,61 +1,98 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
+import PhotoAlbum from 'react-photo-album';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 import { galleryImages } from '@/content/data';
-import { cn } from '@/lib/utils';
+import type { GalleryImageMeta } from '@/content/data';
+import type { Photo } from 'react-photo-album';
+
+const BLUR =
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+';
+
+/** Konverter til react-photo-album format (layout tilpasser automatisk forskellige formater). */
+function toPhotoAlbumPhotos(images: GalleryImageMeta[]): Photo[] {
+  return images.map((img) => ({
+    src: img.src,
+    width: img.width,
+    height: img.height,
+    alt: img.alt,
+    title: img.title,
+    key: img.id,
+  }));
+}
+
+const photos = toPhotoAlbumPhotos(galleryImages);
 
 export function GallerySection() {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [index, setIndex] = useState(-1);
+
+  const open = useCallback((i: number) => setIndex(i), []);
+  const close = useCallback(() => setIndex(-1), []);
 
   return (
     <section
       id="galleri"
-      className="scroll-mt-20 bg-muted/30 py-20 sm:py-28"
+      className="scroll-mt-24 bg-gradient-to-b from-background to-muted/20 py-16 sm:py-24 lg:py-28"
       aria-labelledby="galleri-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2
-          id="galleri-heading"
-          className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-center text-foreground"
-        >
-          Galleri
-        </h2>
-        <p className="mt-3 text-center text-muted-foreground max-w-2xl mx-auto">
-          Et udvalg af mine bedste arbejder – portrætter, events og kreative projekter.
-        </p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <header className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <h2
+            id="galleri-heading"
+            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-foreground"
+          >
+            Galleri
+          </h2>
+          <p className="mt-3 text-muted-foreground text-base sm:text-lg">
+            Et udvalg af mine bedste arbejder – portrætter, events og kreative projekter.
+          </p>
+        </header>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {galleryImages.map((image) => (
-            <button
-              key={image.id}
-              type="button"
-              onClick={() => setActiveId(activeId === image.id ? null : image.id)}
-              className={cn(
-                'group relative aspect-[4/5] overflow-hidden rounded-xl bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-                activeId === image.id && 'ring-2 ring-primary ring-offset-2'
-              )}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="absolute bottom-4 left-4 right-4 text-left text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg">
-                {image.title}
-              </span>
-            </button>
-          ))}
-        </div>
+        <PhotoAlbum
+          photos={photos}
+          layout="masonry"
+          columns={(containerWidth) => {
+            if (containerWidth < 480) return 1;
+            if (containerWidth < 768) return 2;
+            if (containerWidth < 1024) return 2;
+            return 3;
+          }}
+          spacing={12}
+          padding={0}
+          onClick={({ index: i }) => open(i)}
+          render={({ photo, imageProps }) => (
+            <div {...imageProps} className={imageProps.className}>
+              <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl hover:ring-black/10 focus-within:ring-2 focus-within:ring-primary/50">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt ?? ''}
+                  title={photo.title ?? undefined}
+                  fill
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                  className="object-cover cursor-pointer"
+                  placeholder="blur"
+                  blurDataURL={BLUR}
+                />
+              </div>
+            </div>
+          )}
+        />
+
+        <Lightbox
+          open={index >= 0}
+          close={close}
+          index={index}
+          slides={photos.map((p, i) => ({
+            src: p.src,
+            width: p.width,
+            height: p.height,
+            alt: p.alt ?? undefined,
+            title: galleryImages[i]?.description ?? p.title ?? undefined,
+          }))}
+        />
       </div>
     </section>
   );

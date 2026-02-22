@@ -40,7 +40,7 @@ Følg promptene (link til projekt, build-kommando osv.). Herefter: `vercel --pro
 ## Tilpasning
 
 - **Tekst og branding:** Rediger `src/content/data.ts` (om mig, kunder, kontakt, SEO-tekst).
-- **Galleri:** Udskift billederne i `galleryImages` i `src/content/data.ts`. Du kan bruge lokale filer i `public/gallery/` (fx `src: '/gallery/1.jpg'`) eller andre tilladte billed-URLs.
+- **Galleri:** Rediger `galleryImages` i `src/content/data.ts`. For hvert billede kan du sætte `src`, `width`, `height` (proportioner), `alt`, `title` og `description` (SEO). Layoutet tilpasser automatisk forskellige formater (masonry). Brug lokale filer (`/gallery/1.jpg`) eller eksterne URLs (tilføj hostname i `next.config.mjs`).
 - **SEO:** Opdater `siteConfig` i `src/content/data.ts` med din rigtige URL og evt. Google Search Console-verifikation i `src/app/layout.tsx`.
 
 ## Teknisk

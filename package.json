@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.0",
     "class-variance-authority": "^0.7.0",
+    "react-photo-album": "^2.0.0",
+    "yet-another-react-lightbox": "^3.21.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.300.0",
     "next": "^16.1.6",

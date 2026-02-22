@@ -19,7 +19,7 @@
     --border: 240 6% 90%;
     --input: 240 6% 90%;
     --ring: 240 6% 10%;
-    --radius: 0.625rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -50,6 +50,27 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  /* Custom scrollbar – moderne og diskret */
+  :root {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(240 4% 46% / 0.6) transparent;
+  }
+  @media (hover: hover) {
+    :root::-webkit-scrollbar {
+      width: 10px;
+    }
+    :root::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    :root::-webkit-scrollbar-thumb {
+      background: hsl(240 4% 46% / 0.4);
+      border-radius: 10px;
+    }
+    :root::-webkit-scrollbar-thumb:hover {
+      background: hsl(240 4% 46% / 0.6);
+    }
   }
 }
 
