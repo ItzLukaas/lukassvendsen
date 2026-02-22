@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { contact } from '@/content/data';
