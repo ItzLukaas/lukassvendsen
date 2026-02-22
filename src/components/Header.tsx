@@ -34,22 +34,22 @@ export function Header() {
       role="banner"
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
         aria-label="Hovednavigation"
       >
         <Link
           href="#"
-          className="font-heading text-xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
+          className="font-heading text-2xl font-semibold tracking-tight text-foreground hover:text-accent transition-colors"
         >
           {siteConfig.name}
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-1 rounded-full border border-border/70 bg-background/80 px-1.5 py-1 shadow-sm">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
-                className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-4 after:right-4 after:bottom-0 after:h-px after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 hover:after:scale-x-100 rounded-md"
+                className="relative px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-4 after:right-4 after:bottom-1 after:h-[2px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100 rounded-full"
               >
                 {label}
               </Link>

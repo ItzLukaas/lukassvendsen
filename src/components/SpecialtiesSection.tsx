@@ -1,6 +1,9 @@
+import { Camera, Trophy, Users, Sparkles } from 'lucide-react';
 import { specialties } from '@/content/data';
 
 export function SpecialtiesSection() {
+  const icons = [Camera, Trophy, Users, Sparkles];
+
   return (
     <section
       id="specialer"
@@ -22,19 +25,26 @@ export function SpecialtiesSection() {
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {specialties.map((item) => (
+          {specialties.map((item, index) => {
+            const Icon = icons[index % icons.length];
+
+            return (
             <article
-              key={item.title}
-              className="rounded-2xl border border-border/80 bg-card/70 shadow-sm hover:shadow-md hover:border-accent/60 transition-all duration-200 p-6 sm:p-7 flex flex-col"
-            >
-              <h3 className="font-heading text-lg font-semibold text-foreground">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </article>
-          ))}
+                key={item.title}
+                className="rounded-2xl border border-border/80 bg-card/80 shadow-sm hover:shadow-lg hover:border-accent/60 transition-all duration-200 p-6 sm:p-7 flex flex-col group"
+              >
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4 group-hover:scale-105 group-hover:bg-accent/15 transition-transform duration-200">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
 
         <p className="mt-10 text-center text-sm sm:text-base text-muted-foreground">

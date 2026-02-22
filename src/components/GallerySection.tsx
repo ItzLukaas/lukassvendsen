@@ -53,13 +53,8 @@ export function GallerySection() {
 
         <PhotoAlbum
           photos={photos}
-          layout="masonry"
-          columns={(containerWidth) => {
-            if (containerWidth < 480) return 1;
-            if (containerWidth < 768) return 2;
-            if (containerWidth < 1024) return 2;
-            return 3;
-          }}
+          layout="rows"
+          targetRowHeight={320}
           spacing={12}
           padding={0}
           onClick={({ index: i }) => open(i)}
