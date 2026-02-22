@@ -63,22 +63,6 @@ export function GallerySection() {
           spacing={12}
           padding={0}
           onClick={({ index: i }) => open(i)}
-          render={({ photo, imageProps }) => (
-            <div {...imageProps} className={imageProps.className}>
-              <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl hover:ring-black/10 focus-within:ring-2 focus-within:ring-primary/50">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt ?? ''}
-                  title={photo.title ?? undefined}
-                  fill
-                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-cover cursor-pointer"
-                  placeholder="blur"
-                  blurDataURL={BLUR}
-                />
-              </div>
-            </div>
-          )}
         />
 
         <Lightbox
