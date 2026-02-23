@@ -14,42 +14,50 @@ export function Hero() {
       className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-24"
       aria-label="Velkommen"
     >
-      <div className="absolute inset-0 z-0 bg-zinc-950">
+      <div className="absolute inset-0 z-0 bg-zinc-800">
         {heroImage ? (
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url("${heroImage}")` }}
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        {/* Blød overgang ned til light mode */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[hsl(var(--background))] to-transparent"
+          aria-hidden
+        />
       </div>
 
-      <div className="relative z-10 max-w-xl mx-auto">
-        <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/70">
+          Fotograf
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
           {headline}
         </h1>
-        <p className="mt-5 text-base text-white/80 sm:text-lg">
+        <p className="mt-6 text-lg text-white/85">
           {subline}
         </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-2.5 text-sm font-medium text-zinc-900 hover:bg-white/90 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors"
           >
-            Se mit arbejde
+            Se portfolio
           </Link>
           <Link
             href="#kontakt"
-            className="inline-flex items-center justify-center rounded-lg border border-white/40 px-6 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center rounded-full border-2 border-white/60 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
           >
-            Kontakt mig
+            Kontakt
           </Link>
         </div>
       </div>
 
       <Link
         href="#om-mig"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 p-1.5 text-white/60 hover:text-white transition-colors rounded-full"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 p-2 text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10"
         aria-label="Scroll ned"
       >
         <ArrowDown className="w-5 h-5 animate-bounce" />

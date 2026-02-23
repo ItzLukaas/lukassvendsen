@@ -1,6 +1,5 @@
 import { Hero } from '@/components/Hero';
 import { AboutSection } from '@/components/AboutSection';
-import { SectionDivider } from '@/components/SectionDivider';
 import { GallerySection } from '@/components/GallerySection';
 import { SpecialtiesSection } from '@/components/SpecialtiesSection';
 import { ClientsSection } from '@/components/ClientsSection';
@@ -41,9 +40,7 @@ export default function HomePage() {
       <JsonLd data={galleryJsonLd} />
       <Hero />
       <AboutSection />
-      <SectionDivider />
       <SpecialtiesSection />
-      <SectionDivider />
       <GallerySection />
       <ClientsSection />
       <FAQSection />

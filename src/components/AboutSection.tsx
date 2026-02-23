@@ -7,44 +7,51 @@ export function AboutSection() {
   return (
     <section
       id="om-mig"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-20 bg-background"
       aria-labelledby="om-mig-heading"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <h2
-          id="om-mig-heading"
-          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
-        >
-          {about.heading}
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          {about.title}
-        </p>
-
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 lg:items-start">
-          <div className="lg:col-span-5">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="lg:col-span-5 lg:order-2">
             {hasImage ? (
-              <div className="relative aspect-[3/4] max-w-sm overflow-hidden rounded-lg">
+              <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-2xl shadow-zinc-200/80">
                 <Image
                   src={about.image}
                   alt="Portræt af Lukas Svendsen"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  priority
                 />
               </div>
             ) : (
-              <div className="aspect-[3/4] max-w-sm rounded-lg bg-muted flex items-center justify-center">
-                <span className="text-4xl font-light text-muted-foreground/50" aria-hidden>
+              <div className="aspect-[4/5] max-w-md rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-100 flex items-center justify-center">
+                <span className="text-5xl font-extralight text-zinc-400" aria-hidden>
                   LS
                 </span>
               </div>
             )}
           </div>
-          <div className="lg:col-span-7 space-y-5 text-muted-foreground text-[15px] leading-relaxed sm:text-base">
-            {about.content.split('\n\n').map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+          <div className="lg:col-span-7 lg:order-1">
+            <span className="text-xs font-semibold tracking-widest text-[hsl(var(--accent))] uppercase">
+              Om mig
+            </span>
+            <h2
+              id="om-mig-heading"
+              className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
+              {about.heading}
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground font-medium">
+              {about.title}
+            </p>
+            <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
+              {about.content.split('\n\n').map((paragraph, i) => (
+                <p key={i} className="text-[15px] sm:text-base">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -7,33 +7,42 @@ export function SpecialtiesSection() {
   return (
     <section
       id="specialer"
-      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 border-t border-border"
+      className="scroll-mt-20 bg-zinc-50/80 py-20 lg:py-28"
       aria-labelledby="specialer-heading"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <h2
-          id="specialer-heading"
-          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
-        >
-          Mine specialområder
-        </h2>
-        <p className="mt-2 text-muted-foreground text-sm sm:text-base max-w-xl">
-          Sport, events, sociale medier og arrangementer – og alt derimellem.
-        </p>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+          <div>
+            <span className="text-xs font-semibold tracking-widest text-[hsl(var(--accent))] uppercase">
+              Services
+            </span>
+            <h2
+              id="specialer-heading"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
+              Mine specialområder
+            </h2>
+          </div>
+          <p className="text-muted-foreground text-sm max-w-md">
+            Fra sport og events til sociale medier og arrangementer – jeg tilpasser stilen til dit projekt.
+          </p>
+        </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {specialties.map((item, index) => {
             const Icon = icons[index % icons.length];
             return (
               <article
                 key={item.title}
-                className="rounded-lg border border-border bg-card/50 py-5 px-5"
+                className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-sm border border-zinc-200/80 hover:border-[hsl(var(--accent))]/30 hover:shadow-md transition-all duration-300"
               >
-                <Icon className="h-5 w-5 text-muted-foreground" aria-hidden />
-                <h3 className="mt-3 text-sm font-semibold text-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))] group-hover:bg-[hsl(var(--accent))]/15 transition-colors">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </article>
@@ -41,8 +50,8 @@ export function SpecialtiesSection() {
           })}
         </div>
 
-        <p className="mt-8 text-sm text-muted-foreground">
-          Tøv ikke med at kontakte mig til dine projekter – store som små.
+        <p className="mt-12 text-center text-sm text-muted-foreground">
+          Tøv ikke med at kontakte mig – store som små projekter.
         </p>
       </div>
     </section>
