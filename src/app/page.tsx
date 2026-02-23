@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero';
 import { AboutSection } from '@/components/AboutSection';
 import { GallerySection } from '@/components/GallerySection';
+import { CompetenciesSection } from '@/components/CompetenciesSection';
 import { ClientsSection } from '@/components/ClientsSection';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
@@ -40,6 +41,7 @@ export default function HomePage() {
       <Hero />
       <AboutSection />
       <GallerySection />
+      <CompetenciesSection />
       <ClientsSection />
       <FAQSection />
       <ContactSection />

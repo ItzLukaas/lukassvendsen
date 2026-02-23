@@ -143,6 +143,45 @@ export const clients: ClientLogo[] = [
   },
 ];
 
+/** Spidskompetencer – vises mellem galleri og kunder-slider */
+export const competencies = {
+  sectionTitle: 'Mine spidskompetencer',
+  sectionIntro:
+    'Jeg kombinerer fotografi og video til et samlet visuelt udtryk – fra koncept til færdigt materiale.',
+  skills: [
+    {
+      title: 'Fotografering',
+      description:
+        'Portrætter, events og kreative projekter med fokus på naturligt lys og ægte øjeblikke. Jeg leverer billeder, der fortæller historier og passer til både privat og erhverv.',
+    },
+    {
+      title: 'Videoproduktion',
+      description:
+        'Korte film, reklamefilm, event-dækning og sociale medier. Fra idé og optagelse til klipning og lyd – så du får et færdigt produkt, der matcher dit behov.',
+    },
+  ],
+  areasTitle: 'Event, sport, privat og erhverv',
+  areasIntro: 'Jeg arbejder på tværs af disse områder – uanset om opgaven er stor eller lille.',
+  areas: [
+    {
+      title: 'Event',
+      description: 'Bryllupper, fester, konferencer og arrangementer. Jeg fanger stemningen og de afgørende øjeblikke.',
+    },
+    {
+      title: 'Sport',
+      description: 'Dynamik, tempo og udfordringer. Både træning, løb og konkurrencer – tæt på handlingen.',
+    },
+    {
+      title: 'Privat',
+      description: 'Familie, portrætter, fødselsdage og personlige projekter. Rolige og ægte billeder af jer.',
+    },
+    {
+      title: 'Erhverv',
+      description: 'Firmaportrætter, branding, reklame og virksomhedsevents. Professionelt udtryk til din virksomhed.',
+    },
+  ],
+};
+
 export const specialties = [
   {
     title: 'Sport',
