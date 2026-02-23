@@ -26,14 +26,14 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8 transition-all duration-300"
       role="banner"
     >
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+        className={`flex items-center justify-between py-4 px-5 sm:px-6 rounded-2xl transition-all duration-300 ${
           scrolled
-            ? 'mt-4 mx-4 sm:mx-6 lg:mx-8 rounded-2xl bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-lg shadow-[hsl(var(--accent))]/10'
-            : 'mt-6 mx-4 sm:mx-6 lg:mx-8 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/10'
+            ? 'mt-4 rounded-2xl bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-lg shadow-[hsl(var(--accent))]/10'
+            : 'mt-6 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/10'
         }`}
       >
         <Link
@@ -74,7 +74,7 @@ export function Header() {
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden mt-2 mx-4 sm:mx-6 lg:mx-8 rounded-2xl border border-zinc-200 bg-white shadow-lg shadow-[hsl(var(--accent))]/10 overflow-hidden">
+        <div className="md:hidden mt-2 w-full max-w-6xl rounded-2xl border border-zinc-200 bg-white shadow-lg shadow-[hsl(var(--accent))]/10 overflow-hidden">
           <ul className="flex flex-col py-2 px-2 gap-0.5">
             {LINKS.map(({ href, label }) => (
               <li key={href}>
