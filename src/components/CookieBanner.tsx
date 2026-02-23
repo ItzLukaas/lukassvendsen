@@ -66,34 +66,32 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookieindstillinger"
-      className="fixed bottom-0 left-0 right-0 z-[100] border-t border-zinc-200 bg-white/98 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm p-4 sm:p-5"
+      className="fixed bottom-4 right-4 z-[100] w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-5 shadow-xl shadow-black/10"
     >
-      <div className="mx-auto max-w-3xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <p className="text-sm text-zinc-600 leading-relaxed">
-          Vi bruger cookies for at sitet fungerer bedst og for at forstå hvordan det bruges. Du kan vælge kun nødvendige cookies eller acceptere alle.{' '}
-          <Link
-            href="/cookies"
-            className="font-medium text-[hsl(var(--extra))] underline underline-offset-2 hover:no-underline"
-          >
-            Læs mere om cookies
-          </Link>
-        </p>
-        <div className="flex flex-wrap items-center gap-2 shrink-0">
-          <button
-            type="button"
-            onClick={necessaryOnly}
-            className="rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-          >
-            Kun nødvendige
-          </button>
-          <button
-            type="button"
-            onClick={acceptAll}
-            className="rounded-lg bg-[hsl(var(--extra))] px-4 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
-          >
-            Accepter alle
-          </button>
-        </div>
+      <p className="text-sm text-zinc-600 leading-relaxed">
+        Vi bruger cookies, så sitet fungerer bedst. Du kan vælge kun nødvendige eller acceptere alle.
+      </p>
+      <Link
+        href="/cookies"
+        className="mt-2 inline-block text-sm font-medium text-[hsl(var(--extra))] hover:underline"
+      >
+        Læs mere om cookies
+      </Link>
+      <div className="mt-4 flex flex-col gap-2">
+        <button
+          type="button"
+          onClick={acceptAll}
+          className="w-full rounded-xl bg-[hsl(var(--extra))] px-4 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        >
+          Accepter alle
+        </button>
+        <button
+          type="button"
+          onClick={necessaryOnly}
+          className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100"
+        >
+          Kun nødvendige
+        </button>
       </div>
     </div>
   );
