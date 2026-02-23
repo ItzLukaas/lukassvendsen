@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
@@ -66,9 +67,10 @@ export function GallerySection() {
         <div className="mx-auto max-w-[1280px] mt-10 px-4 sm:px-6 lg:px-8 flex justify-center">
           <Link
             href="/galleri"
-            className="inline-flex items-center justify-center rounded-xl bg-[hsl(var(--extra))] px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition-opacity"
+            className="group inline-flex items-center gap-2 rounded-full border-2 border-[hsl(var(--extra))] bg-transparent px-6 py-3 text-sm font-medium text-[hsl(var(--extra))] transition-colors hover:bg-[hsl(var(--extra))] hover:text-white"
           >
-            Flere billeder
+            Se alle mine billeder
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
           </Link>
         </div>
       </div>
