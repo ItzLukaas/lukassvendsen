@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 const LINKS = [
   { href: '#', label: 'Home' },
   { href: '#galleri', label: 'Portfolio' },
+  { href: '/case-studies', label: 'Case studies' },
   { href: '#om-mig', label: 'Om mig' },
 ];
 

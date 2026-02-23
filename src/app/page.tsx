@@ -5,6 +5,7 @@ import { CompetenciesSection } from '@/components/CompetenciesSection';
 import { ClientsSection } from '@/components/ClientsSection';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
+import { CaseStudiesSection } from '@/components/CaseStudiesSection';
 import { SectionFade } from '@/components/SectionFade';
 import { JsonLd } from '@/components/JsonLd';
 import { siteConfig, galleryImages } from '@/content/data';
@@ -45,6 +46,9 @@ export default function HomePage() {
       </SectionFade>
       <SectionFade delay={0.05}>
         <GallerySection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <CaseStudiesSection />
       </SectionFade>
       <SectionFade delay={0.05}>
         <CompetenciesSection />
