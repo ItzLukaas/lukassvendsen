@@ -1,16 +1,19 @@
 export const siteConfig = {
+  /** Branding – vises i header, footer og titler */
+  brandName: 'Lukas Photography',
   name: 'Lukas Svendsen',
-  title: 'Lukas Svendsen – Fotograf',
+  title: 'Lukas Photography – Personlig fotograf i Danmark',
   description:
-    'Personlig fotografi af Lukas Svendsen. Professionel fotografering, portrætter, events og kreative projekter. Kontakt mig for et samarbejde.',
+    'Lukas Photography er mig, Lukas – jeg fanger øjeblikke og historier med kameraet. Portrætter, events og kreative projekter. Jeg vil rigtig gerne høre fra dig.',
   url: 'https://lukassvendsen.dk',
   keywords: [
     'fotograf',
+    'Lukas Photography',
     'Lukas Svendsen',
     'portrætfotograf',
     'eventfotograf',
     'Danmark',
-    'professionel fotografering',
+    'personlig fotografering',
   ],
   ogImage: '/og.jpg',
   /** Fullscreen hero – rediger tekster og baggrund her */
@@ -18,7 +21,7 @@ export const siteConfig = {
     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80',
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
-    'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.',
+    'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
 };
 
 export const about = {
@@ -26,11 +29,11 @@ export const about = {
   title: 'Passion for det perfekte øjeblik',
   /** Portrætbillede – læg fx i public/about/portrait.jpg og sæt til '/about/portrait.jpg'. Lad stå tom for placeholder. */
   image: '',
-  content: `Jeg er Lukas, og fotografi er mere end et erhverv for mig – det er en måde at fange livet på. Med kameraet i hånden stræber jeg efter at skabe billeder, der fortæller historier og bevarer følelser og stemninger.
+  content: `Jeg er Lukas, og fotografi er mere end et job for mig – det er den måde jeg ser verden på. Jeg vil rigtig gerne lære dig at kende og fange det, der er vigtigt for dig.
 
-Min stil er gennemtænkt og æstetisk: jeg elsker naturligt lys, rene kompositioner og øjeblikke der taler for sig selv. Uanset om det er portrætter, events eller kreative projekter, er målet altid det samme – at levere billeder, du vil huske.
+Jeg arbejder med naturligt lys, rene billeder og øjeblikke der taler for sig selv. Portrætter, events eller kreative projekter – jeg tager det personligt og giver dig billeder, du kan lide at kigge tilbage på.
 
-Jeg arbejder primært i Danmark og er altid åben for nye samarbejder og udfordringer. Lad os skabe noget sammen.`,
+Jeg er baseret i Danmark og siger sjældent nej til en god historie. Skriv eller ring, så finder vi ud af det sammen.`,
 };
 
 /**
@@ -209,22 +212,22 @@ export const faqs = [
   {
     question: 'Hvordan foregår en typisk fotografering?',
     answer:
-      'Vi starter med en kort snak om dine ønsker og forventninger. Herefter finder vi de rigtige locations, lys og stemning. Under selve fotograferingen guider jeg dig, så du kan slappe af og være dig selv.',
+      'Vi starter med en uforpligtende snak – enten på mail eller telefon – om hvad du drømmer om. Så finder vi location, lys og stemning sammen. Under fotograferingen guider jeg dig, så du kan slappe af og være dig selv. Det er vigtigt for mig, at du har det godt.',
   },
   {
-    question: 'Hvor lang tid går der, før jeg modtager mine billeder?',
+    question: 'Hvor lang tid går der, før jeg får mine billeder?',
     answer:
-      'Som udgangspunkt leverer jeg de færdigredigerede billeder inden for 7–10 hverdage, afhængigt af opgavens størrelse. Har du en deadline, kan vi aftale en hurtigere levering.',
+      'Som udgangspunkt leverer jeg de færdige billeder inden for 7–10 hverdage. Har du brug for dem hurtigere, siger du bare til – så finder vi en løsning.',
   },
   {
     question: 'Arbejder du kun i et bestemt område?',
     answer:
-      'Jeg er baseret i Danmark, men kører gerne ud til opgaver i hele landet – og efter aftale også i udlandet.',
+      'Jeg er baseret i Danmark og kører gerne rundt i hele landet. Skal det være udlandet, kan vi også tale om det.',
   },
   {
-    question: 'Kan vi skræddersy en løsning til mit projekt?',
+    question: 'Kan vi lave noget der passer præcis til mit projekt?',
     answer:
-      'Ja, meget gerne. Ingen opgaver er ens, og vi finder sammen en løsning, der passer til både budget og behov.',
+      'Ja, det er lige det jeg vil. Ingen projekter er ens – så skriv eller ring, og så finder vi ud af hvad der giver mening for dig og din situation.',
   },
 ];
 
@@ -233,4 +236,9 @@ export const contact = {
   phone: '+45 24 46 35 50',
   address: 'Ribersvej 90, Grindsted',
   instagram: 'https://instagram.com/lukassvendsen',
+  /** CTA-tekster til kontaktsektionen */
+  ctaHeading: 'Lad os skabe noget sammen',
+  ctaText:
+    'Har du en idé, et event eller bare lyst til at høre hvad jeg kan tilbyde? Jeg svarer gerne – skriv eller ring, så tager vi den derfra.',
+  ctaButtonEmail: 'Skriv til mig',
 };

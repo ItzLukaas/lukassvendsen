@@ -5,6 +5,7 @@ import { siteConfig } from '@/content/data';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { CookieBanner } from '@/components/CookieBanner';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.brandName ?? siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: siteConfig.name,
+    siteName: siteConfig.brandName ?? siteConfig.name,
   },
   twitter: {
     card: 'summary_large_image',
@@ -78,6 +79,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <ScrollToTop />
+        <CookieBanner />
       </body>
     </html>
   );

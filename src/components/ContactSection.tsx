@@ -16,10 +16,10 @@ export function ContactSection() {
           id="kontakt-heading"
           className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          Klar til at skabe noget sammen?
+          {contact.ctaHeading ?? 'Lad os skabe noget sammen'}
         </h2>
         <p className="mt-4 text-lg text-white/85 sm:text-xl">
-          Uanset om det er et portræt, et event eller et kreativt projekt – så skriv. Jeg vender tilbage hurtigst muligt.
+          {contact.ctaText ?? 'Har du en idé eller et projekt? Jeg vil rigtig gerne høre fra dig – skriv eller ring.'}
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <motion.a
@@ -29,7 +29,7 @@ export function ContactSection() {
             whileTap={{ scale: 0.98 }}
           >
             <Mail className="h-5 w-5" />
-            Kontakt mig
+            {contact.ctaButtonEmail ?? 'Skriv til mig'}
           </motion.a>
           <motion.a
             href={`tel:${contact.phone.replace(/\s/g, '')}`}

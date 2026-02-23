@@ -16,7 +16,7 @@ const LINKS = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const name = siteConfig?.name ?? 'Lukas Svendsen';
+  const brandName = siteConfig?.brandName ?? siteConfig?.name ?? 'Lukas Photography';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -40,7 +40,7 @@ export function Header() {
           href="#"
           className="text-[15px] font-medium tracking-tight text-zinc-800 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
         >
-          {name}
+          {brandName}
         </Link>
 
         {/* Desktop links */}

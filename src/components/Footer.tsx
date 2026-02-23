@@ -72,9 +72,17 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-xs text-zinc-500">
-            © {new Date().getFullYear()} {siteConfig.name}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p className="text-xs text-zinc-500">
+              © {new Date().getFullYear()} {siteConfig.brandName ?? siteConfig.name}
+            </p>
+            <Link
+              href="/cookies"
+              className="text-xs text-zinc-500 hover:text-zinc-700 transition-colors"
+            >
+              Cookiepolitik
+            </Link>
+          </div>
           {contact.instagram && (
             <a
               href={contact.instagram}
