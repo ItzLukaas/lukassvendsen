@@ -7,12 +7,10 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-20 relative py-20 lg:py-28 overflow-hidden"
+      className="scroll-mt-20 relative py-20 lg:py-28 overflow-hidden bg-white"
       aria-labelledby="kontakt-heading"
     >
-      {/* Accent baggrund – tydelig CTA-blok */}
-      <div className="absolute inset-0 bg-[hsl(var(--accent))]/8" aria-hidden />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--accent))]/30 to-transparent" aria-hidden />
+      <div className="absolute inset-0 bg-zinc-50/30" aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
