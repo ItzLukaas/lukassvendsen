@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/content/data';
 
-const MIN_SHOW_MS = 600;
-const FADE_DURATION_MS = 500;
+const MIN_SHOW_MS = 1400;
+const FADE_DURATION_MS = 800;
 
 export function PagePreloader() {
   const [isHidden, setIsHidden] = useState(false);
@@ -40,11 +40,14 @@ export function PagePreloader() {
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-opacity duration-500 ease-out',
+        'fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-opacity',
         isHidden && 'opacity-0 pointer-events-none'
       )}
       aria-hidden
-      style={{ transitionDuration: `${FADE_DURATION_MS}ms` }}
+      style={{
+        transitionDuration: `${FADE_DURATION_MS}ms`,
+        transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)',
+      }}
     >
       <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl mb-8">
         {siteConfig?.brandName ?? 'Lukas Photography'}
