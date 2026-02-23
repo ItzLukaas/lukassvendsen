@@ -40,14 +40,10 @@ export function PagePreloader() {
   return (
     <div
       className={cn(
-        'fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-opacity',
+        'fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-preloader-fade',
         isHidden && 'opacity-0 pointer-events-none'
       )}
       aria-hidden
-      style={{
-        transitionDuration: `${FADE_DURATION_MS}ms`,
-        transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)',
-      }}
     >
       <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl mb-8">
         {siteConfig?.brandName ?? 'Lukas Photography'}

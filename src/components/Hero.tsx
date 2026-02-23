@@ -17,7 +17,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-zinc-800">
         {heroImage ? (
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 hero-bg-image"
             style={{ backgroundImage: `url("${heroImage}")` }}
           />
         ) : null}

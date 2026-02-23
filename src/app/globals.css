@@ -109,6 +109,16 @@
     animation: case-study-spin 0.8s linear infinite;
   }
 
+  /* Preloader/overlay fade – undgår inline styles */
+  .transition-preloader-fade {
+    transition: opacity 700ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .hero-bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .shadow-accent {
     box-shadow: 0 4px 14px 0 hsl(var(--extra) / 0.12),
                 0 1px 3px 0 hsl(var(--extra) / 0.06);

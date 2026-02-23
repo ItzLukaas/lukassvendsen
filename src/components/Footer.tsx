@@ -27,9 +27,10 @@ export function Footer() {
                 <a
                   href={`mailto:${contact.email}`}
                   className="hover:text-zinc-900 transition-colors inline-flex items-center gap-2"
+                  aria-label={`E-mail: ${contact.email}`}
                 >
                   <Mail className="h-3.5 w-3.5 shrink-0 text-zinc-400" />
-                  {contact.email}
+                  {contact.email.replace('@', ' [at] ')}
                 </a>
               </li>
               {contact.address && (

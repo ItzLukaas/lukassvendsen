@@ -7,7 +7,7 @@ import { ContactSection } from '@/components/ContactSection';
 import { CaseStudiesSection } from '@/components/CaseStudiesSection';
 import { SectionFade } from '@/components/SectionFade';
 import { JsonLd } from '@/components/JsonLd';
-import { siteConfig, galleryImages } from '@/content/data';
+import { siteConfig, galleryImages, contact } from '@/content/data';
 
 export default function HomePage() {
   const personJsonLd = {
@@ -19,6 +19,28 @@ export default function HomePage() {
     url: siteConfig.url,
     image: `${siteConfig.url}${siteConfig.ogImage}`,
     knowsAbout: ['Fotografi', 'Portrætfotografering', 'Eventfotografering'],
+  };
+
+  const localBusinessJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${siteConfig.url}#business`,
+    name: siteConfig.brandName ?? siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    telephone: contact.phone,
+    email: contact.email,
+    address: contact.address
+      ? {
+          '@type': 'PostalAddress',
+          streetAddress: contact.address,
+          addressLocality: 'Grindsted',
+          addressCountry: 'DK',
+        }
+      : undefined,
+    priceRange: '$$',
+    areaServed: { '@type': 'Country', name: 'Danmark' },
   };
 
   const galleryJsonLd = {
@@ -38,6 +60,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={personJsonLd} />
+      <JsonLd data={localBusinessJsonLd} />
       <JsonLd data={galleryJsonLd} />
       <Hero />
       <SectionFade>

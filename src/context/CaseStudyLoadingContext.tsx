@@ -48,16 +48,11 @@ export function CaseStudyLoadingProvider({ children }: { children: ReactNode }) 
   const overlay = caseStudyLoading && typeof document !== 'undefined' ? createPortal(
     <div
       className={cn(
-        'fixed inset-0 flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-opacity',
+        'fixed inset-0 z-[2147483647] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-preloader-fade',
         fadingOut && 'opacity-0 pointer-events-none'
       )}
       aria-live="polite"
       aria-label="Indlæser case study"
-      style={{
-        zIndex: 2147483647,
-        transitionDuration: `${FADE_DURATION_MS}ms`,
-        transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)',
-      }}
     >
       <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl mb-8">
         {siteConfig?.brandName ?? 'Lukas Photography'}

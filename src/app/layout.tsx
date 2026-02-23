@@ -59,6 +59,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: { canonical: siteConfig.url },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   verification: {
     // Tilføj din Google Search Console verification når du har den
     // google: 'din-verifikationskode',

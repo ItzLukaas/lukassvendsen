@@ -2,9 +2,9 @@ export const siteConfig = {
   /** Branding – vises i header, footer og titler */
   brandName: 'Lukas Photography',
   name: 'Lukas Svendsen',
-  title: 'Lukas Photography – Personlig fotograf i Danmark',
+  title: 'Lukas Photography – Personlig fotograf i Danmark | Portræt, event & bryllup',
   description:
-    'Lukas Photography er mig, Lukas – jeg fanger øjeblikke og historier med kameraet. Portrætter, events og kreative projekter. Jeg vil rigtig gerne høre fra dig.',
+    'Lukas Photography – personlig fotograf i Danmark. Portrætfotografering, eventfotografering, bryllup og kreative projekter. Lukas Svendsen fanger øjeblikke og historier med kameraet. Kontakt for booking.',
   url: 'https://lukassvendsen.dk',
   keywords: [
     'fotograf',
@@ -12,8 +12,10 @@ export const siteConfig = {
     'Lukas Svendsen',
     'portrætfotograf',
     'eventfotograf',
+    'bryllupsfotograf',
     'Danmark',
     'personlig fotografering',
+    'Grindsted',
   ],
   ogImage: '/og.jpg',
   /** Fullscreen hero – rediger tekster og baggrund her */
