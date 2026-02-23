@@ -6,9 +6,8 @@ import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 
 const LINKS = [
-  { href: '#', label: 'Home' },
   { href: '#galleri', label: 'Portfolio' },
-  { href: '#om-mig', label: 'About' },
+  { href: '#om-mig', label: 'Om mig' },
   { href: '#kontakt', label: 'Kontakt' },
 ];
 
@@ -18,23 +17,23 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-zinc-200/60"
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-zinc-100"
       role="banner"
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-4 py-5 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="#"
-          className="text-sm font-medium tracking-wide text-foreground transition-colors hover:text-zinc-700"
+          className="text-[15px] font-normal text-zinc-800 hover:text-zinc-900 transition-colors"
         >
           {name}
         </Link>
 
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden md:flex items-center gap-8">
           {LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="text-[13px] font-medium tracking-wide uppercase text-zinc-600 hover:text-foreground transition-colors"
+              className="text-sm font-normal text-zinc-600 hover:text-zinc-900 transition-colors"
             >
               {label}
             </Link>
@@ -43,7 +42,7 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden p-2 -mr-2 text-foreground transition-colors"
+          className="md:hidden p-2 -mr-2 text-zinc-600 hover:text-zinc-900 transition-colors"
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
@@ -53,16 +52,13 @@ export function Header() {
       </nav>
 
       {menuOpen && (
-        <div
-          className="md:hidden border-t border-zinc-200/80 bg-white"
-          style={{ boxShadow: '0 12px 40px -8px rgba(0,0,0,0.12)' }}
-        >
-          <ul className="mx-auto max-w-6xl px-4 py-3">
+        <div className="md:hidden border-t border-zinc-100 bg-white">
+          <ul className="px-4 py-4 space-y-1">
             {LINKS.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3.5 text-sm font-medium text-foreground hover:text-themeB transition-colors"
+                  className="block py-2.5 text-sm text-zinc-700 hover:text-zinc-900 transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}
