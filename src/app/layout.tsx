@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="da"
-      className={`${outfit.variable} ${dmSans.variable}`}
+      className={`${outfit.variable} ${dmSans.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased bg-background text-foreground">

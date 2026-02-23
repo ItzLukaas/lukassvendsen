@@ -7,7 +7,7 @@ export function CompetenciesSection() {
   return (
     <section
       id="spidskompetencer"
-      className="scroll-mt-28 bg-white pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20"
+      className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-20"
       aria-labelledby="spidskompetencer-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,8 @@ export function CompetenciesSection() {
             return (
               <article
                 key={skill.title}
-                className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-6 sm:p-8 transition-all duration-200 hover:border-themeB/30 hover:bg-white hover:shadow-md"
+                className="group rounded-2xl border border-zinc-200/80 bg-zinc-50/50 p-6 sm:p-8 transition-all duration-300 ease-out hover:border-themeB/30 hover:bg-white hover:shadow-md hover:-translate-y-1 animate-slide-up-soft"
+                style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-themeB/10 text-themeB mb-5 group-hover:bg-themeB group-hover:text-white transition-colors">
                   <Icon className="h-6 w-6" aria-hidden />

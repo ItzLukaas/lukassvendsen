@@ -39,7 +39,7 @@
   }
   :root {
     scrollbar-width: thin;
-    scrollbar-color: hsl(240 4% 75%) transparent;
+    scrollbar-color: hsl(var(--extra)) transparent;
   }
   @media (hover: hover) {
     :root::-webkit-scrollbar {
@@ -49,11 +49,11 @@
       background: transparent;
     }
     :root::-webkit-scrollbar-thumb {
-      background: hsl(240 4% 75%);
+      background: hsl(var(--extra));
       border-radius: 8px;
     }
     :root::-webkit-scrollbar-thumb:hover {
-      background: hsl(240 4% 65%);
+      background: hsl(var(--extra) / 0.85);
     }
   }
 }
@@ -84,6 +84,21 @@
   .animate-fade-in-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
   .animate-fade-in-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
   .animate-fade-in-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+  @keyframes slide-up-soft {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slide-up-soft {
+    animation: slide-up-soft 0.5s ease-out both;
+  }
 
   .shadow-accent {
     box-shadow: 0 4px 14px 0 hsl(var(--extra) / 0.12),
