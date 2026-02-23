@@ -113,6 +113,29 @@ export const galleryImages: GalleryImageMeta[] = [
   },
 ];
 
+/** Fuld galleri-side: alle billeder (forside-udvalg + flere). Udvid med egne billeder efter behov. */
+export const galleryImagesFull: GalleryImageMeta[] = [
+  ...galleryImages,
+  { id: '7', src: 'https://picsum.photos/seed/g7/800/1000', width: 800, height: 1000, alt: 'Portræt udendørs', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '8', src: 'https://picsum.photos/seed/g8/1000/800', width: 1000, height: 800, alt: 'Event stemning', title: 'Event', description: 'Eventfoto.' },
+  { id: '9', src: 'https://picsum.photos/seed/g9/800/1200', width: 800, height: 1200, alt: 'Portræt vertikalt', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '10', src: 'https://picsum.photos/seed/g10/1200/800', width: 1200, height: 800, alt: 'Landskab bred', title: 'Landskab', description: 'Landskabsfoto.' },
+  { id: '11', src: 'https://picsum.photos/seed/g11/800/1000', width: 800, height: 1000, alt: 'Naturligt lys', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '12', src: 'https://picsum.photos/seed/g12/1000/800', width: 1000, height: 800, alt: 'Arrangement', title: 'Event', description: 'Eventfoto.' },
+  { id: '13', src: 'https://picsum.photos/seed/g13/800/1000', width: 800, height: 1000, alt: 'Kreativt portræt', title: 'Kreativt', description: 'Kreativt portræt.' },
+  { id: '14', src: 'https://picsum.photos/seed/g14/800/800', width: 800, height: 800, alt: 'Kvadratisk format', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '15', src: 'https://picsum.photos/seed/g15/1000/800', width: 1000, height: 800, alt: 'Stemning', title: 'Landskab', description: 'Stemningsbillede.' },
+  { id: '16', src: 'https://picsum.photos/seed/g16/800/1000', width: 800, height: 1000, alt: 'Portræt tæt på', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '17', src: 'https://picsum.photos/seed/g17/1200/800', width: 1200, height: 800, alt: 'Fest og folk', title: 'Event', description: 'Eventfoto.' },
+  { id: '18', src: 'https://picsum.photos/seed/g18/800/1000', width: 800, height: 1000, alt: 'Detalje', title: 'Detalje', description: 'Detaljefoto.' },
+  { id: '19', src: 'https://picsum.photos/seed/g19/800/1200', width: 800, height: 1200, alt: 'Høj format', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '20', src: 'https://picsum.photos/seed/g20/1000/800', width: 1000, height: 800, alt: 'Område', title: 'Landskab', description: 'Landskabsfoto.' },
+  { id: '21', src: 'https://picsum.photos/seed/g21/800/1000', width: 800, height: 1000, alt: 'Gruppe', title: 'Gruppe', description: 'Gruppebillede.' },
+  { id: '22', src: 'https://picsum.photos/seed/g22/800/1000', width: 800, height: 1000, alt: 'Portræt natur', title: 'Portræt', description: 'Portrætfoto.' },
+  { id: '23', src: 'https://picsum.photos/seed/g23/1000/800', width: 1000, height: 800, alt: 'Event bred', title: 'Event', description: 'Eventfoto.' },
+  { id: '24', src: 'https://picsum.photos/seed/g24/800/1000', width: 800, height: 1000, alt: 'Kunstnerisk', title: 'Kreativt', description: 'Kreativt portræt.' },
+];
+
 export type ClientLogo = {
   name: string;
   role: string;

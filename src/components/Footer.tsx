@@ -3,10 +3,11 @@ import { Mail, MapPin, Phone, Instagram } from 'lucide-react';
 import { siteConfig, contact } from '@/content/data';
 
 const NAV_LINKS = [
-  { href: '#galleri', label: 'Portfolio' },
+  { href: '/#galleri', label: 'Portfolio' },
+  { href: '/galleri', label: 'Galleri' },
   { href: '/case-studies', label: 'Case studies' },
-  { href: '#om-mig', label: 'Om mig' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { href: '/#om-mig', label: 'Om mig' },
+  { href: '/#kontakt', label: 'Kontakt' },
 ];
 
 export function Footer() {

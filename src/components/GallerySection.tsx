@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import Link from 'next/link';
 import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
@@ -61,6 +62,14 @@ export function GallerySection() {
             padding={0}
             onClick={({ index: i }) => open(i)}
           />
+        </div>
+        <div className="mx-auto max-w-[1280px] mt-10 px-4 sm:px-6 lg:px-8 flex justify-center">
+          <Link
+            href="/galleri"
+            className="inline-flex items-center justify-center rounded-xl bg-[hsl(var(--extra))] px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition-opacity"
+          >
+            Flere billeder
+          </Link>
         </div>
       </div>
 
