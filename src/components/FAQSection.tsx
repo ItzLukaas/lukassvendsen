@@ -4,7 +4,7 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-28 bg-zinc-50/70 py-20 lg:py-28 animate-fade-in-up animate-fade-in-up-delay-3"
+      className="scroll-mt-28 bg-pattern-dots py-20 lg:py-28 animate-fade-in-up animate-fade-in-up-delay-3"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

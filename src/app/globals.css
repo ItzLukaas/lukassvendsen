@@ -93,4 +93,31 @@
     box-shadow: 0 10px 40px -10px hsl(var(--extra) / 0.2),
                 0 4px 14px -4px hsl(var(--extra) / 0.1);
   }
+
+  /* Baggrundsmønstre – subtile detaljer til sektioner */
+  .bg-pattern-dots {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(hsl(var(--extra) / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .bg-pattern-grid {
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(hsl(var(--extra) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--extra) / 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-pattern-grid-subtle {
+    background-color: #fff;
+    background-image:
+      linear-gradient(hsl(var(--extra) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--extra) / 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bg-gradient-mesh {
+    background-color: #fff;
+    background-image:
+      radial-gradient(at 0% 0%, hsl(var(--extra) / 0.06) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsl(var(--extra) / 0.04) 0px, transparent 50%);
+  }
 }
