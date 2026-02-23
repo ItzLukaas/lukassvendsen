@@ -7,7 +7,7 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-20 relative py-20 lg:py-28 overflow-hidden bg-white"
+      className="scroll-mt-28 relative py-20 lg:py-28 overflow-hidden bg-white"
       aria-labelledby="kontakt-heading"
     >
       <div className="absolute inset-0 bg-zinc-50/30" aria-hidden />
@@ -20,7 +20,7 @@ export function ContactSection() {
             </span>
             <h2
               id="kontakt-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
             >
               Lad os skabe noget sammen
             </h2>
@@ -58,7 +58,7 @@ export function ContactSection() {
 
           <div className="lg:col-span-7">
             <form
-              className="rounded-2xl bg-white p-6 sm:p-8 shadow-lg border border-zinc-200/80"
+              className="rounded-2xl bg-white p-6 sm:p-8 shadow-accent-lg border border-zinc-200/80 transition-shadow duration-300 hover:shadow-[0_20px_50px_-12px_hsl(var(--accent)/0.25)]"
               onSubmit={(e) => {
                 e.preventDefault();
                 const form = e.currentTarget as HTMLFormElement;
@@ -109,7 +109,7 @@ export function ContactSection() {
               </div>
               <button
                 type="submit"
-                className="mt-6 w-full rounded-full bg-[hsl(var(--accent))] py-3.5 text-sm font-semibold text-white hover:opacity-95 transition-opacity"
+                className="mt-6 w-full rounded-full bg-[hsl(var(--accent))] py-3.5 text-sm font-semibold text-white hover:bg-accent-dark shadow-accent hover:shadow-accent-lg active:scale-[0.98] transition-all duration-200"
               >
                 Send besked
               </button>

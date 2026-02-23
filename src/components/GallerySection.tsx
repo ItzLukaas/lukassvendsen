@@ -29,7 +29,7 @@ export function GallerySection() {
   return (
     <section
       id="galleri"
-      className="scroll-mt-20 bg-white py-24 sm:py-32 lg:py-40"
+      className="scroll-mt-28 bg-white py-24 sm:py-32 lg:py-40 animate-fade-in-up animate-fade-in-up-delay-2"
       aria-labelledby="galleri-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-16 lg:mb-20">
@@ -40,7 +40,7 @@ export function GallerySection() {
             </span>
             <h2
               id="galleri-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
             >
               Galleri
             </h2>

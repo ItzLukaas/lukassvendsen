@@ -29,6 +29,7 @@ const config: Config = {
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
+          dark: 'hsl(var(--accent-dark))',
           foreground: 'hsl(var(--accent-foreground))',
         },
       },

@@ -21,12 +21,7 @@ export function Hero() {
             style={{ backgroundImage: `url("${heroImage}")` }}
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
-        {/* Meget blid overgang ned til første sektion */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-64 sm:h-80 bg-gradient-to-t from-white via-white/[0.15] to-transparent"
-          aria-hidden
-        />
+        <div className="absolute inset-0 bg-black/25" aria-hidden />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">
@@ -42,13 +37,13 @@ export function Hero() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-[hsl(var(--accent))] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 hover:bg-accent-dark hover:shadow-xl hover:shadow-black/25 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
           >
             Se portfolio
           </Link>
           <Link
             href="#kontakt"
-            className="inline-flex items-center justify-center rounded-full border-2 border-white/60 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/15 transition-colors"
+            className="inline-flex items-center justify-center rounded-full border-2 border-white/70 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/20 hover:border-white transition-colors duration-200"
           >
             Kontakt
           </Link>

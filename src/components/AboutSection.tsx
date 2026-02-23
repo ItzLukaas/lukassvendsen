@@ -7,14 +7,14 @@ export function AboutSection() {
   return (
     <section
       id="om-mig"
-      className="scroll-mt-20 bg-white"
+      className="scroll-mt-28 bg-white py-20 lg:py-28 animate-fade-in-up"
       aria-labelledby="om-mig-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 lg:order-2">
             {hasImage ? (
-              <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-2xl shadow-zinc-200/80">
+              <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-accent-lg ring-1 ring-[hsl(var(--accent))]/10 transition-transform duration-300 hover:-translate-y-1">
                 <Image
                   src={about.image}
                   alt="Portræt af Lukas Svendsen"
@@ -38,7 +38,7 @@ export function AboutSection() {
             </span>
             <h2
               id="om-mig-heading"
-              className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+              className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
             >
               {about.heading}
             </h2>

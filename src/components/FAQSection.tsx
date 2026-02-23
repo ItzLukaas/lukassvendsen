@@ -4,7 +4,7 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-20 bg-zinc-50/70 py-20 lg:py-28"
+      className="scroll-mt-28 bg-zinc-50/70 py-20 lg:py-28 animate-fade-in-up animate-fade-in-up-delay-3"
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -13,7 +13,7 @@ export function FAQSection() {
         </span>
         <h2
           id="faq-heading"
-          className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+          className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
         >
           Ofte stillede spørgsmål
         </h2>

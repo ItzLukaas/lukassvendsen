@@ -7,12 +7,12 @@ export function ClientsSection() {
   return (
     <section
       id="kunder"
-      className="scroll-mt-20 bg-zinc-900 py-16 lg:py-20"
+      className="scroll-mt-28 bg-accent-dark py-16 lg:py-20"
       aria-labelledby="kunder-heading"
     >
       <p
         id="kunder-heading"
-        className="text-center text-xs font-semibold tracking-widest text-zinc-500 uppercase mb-10"
+        className="text-center text-xs font-semibold tracking-widest text-white/70 uppercase mb-10"
       >
         Samarbejdspartnere
       </p>

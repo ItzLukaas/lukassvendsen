@@ -26,14 +26,16 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-zinc-200/80 shadow-sm'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       role="banner"
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+          scrolled
+            ? 'mt-4 mx-4 sm:mx-6 lg:mx-8 rounded-2xl bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-lg shadow-[hsl(var(--accent))]/10'
+            : 'mt-6 mx-4 sm:mx-6 lg:mx-8 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/10'
+        }`}
+      >
         <Link
           href="#"
           className={`text-base font-semibold tracking-tight transition-colors ${
@@ -50,7 +52,7 @@ export function Header() {
               href={href}
               className={`text-sm font-medium transition-colors ${
                 scrolled
-                  ? 'text-muted-foreground hover:text-foreground'
+                  ? 'text-muted-foreground hover:text-[hsl(var(--accent))]'
                   : 'text-white/90 hover:text-white'
               }`}
             >
@@ -72,13 +74,13 @@ export function Header() {
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-zinc-200 bg-white">
-          <ul className="flex flex-col py-4 px-4 gap-1">
+        <div className="md:hidden mt-2 mx-4 sm:mx-6 lg:mx-8 rounded-2xl border border-zinc-200 bg-white shadow-lg shadow-[hsl(var(--accent))]/10 overflow-hidden">
+          <ul className="flex flex-col py-2 px-2 gap-0.5">
             {LINKS.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-zinc-50"
+                  className="block py-3 px-4 rounded-xl text-sm font-medium text-foreground hover:bg-[hsl(var(--accent))]/10 hover:text-[hsl(var(--accent))] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}

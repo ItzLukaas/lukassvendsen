@@ -7,7 +7,7 @@ export function SpecialtiesSection() {
   return (
     <section
       id="specialer"
-      className="scroll-mt-20 bg-zinc-50/70 py-20 lg:py-28"
+      className="scroll-mt-28 bg-zinc-50/70 py-20 lg:py-28 animate-fade-in-up animate-fade-in-up-delay-1"
       aria-labelledby="specialer-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ export function SpecialtiesSection() {
             </span>
             <h2
               id="specialer-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
             >
               Mine specialområder
             </h2>
@@ -34,9 +34,9 @@ export function SpecialtiesSection() {
             return (
               <article
                 key={item.title}
-                className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-sm border border-zinc-200/80 hover:border-[hsl(var(--accent))]/30 hover:shadow-md transition-all duration-300"
+                className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-accent border border-zinc-200/80 hover:border-[hsl(var(--accent))]/40 hover:shadow-accent-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))] group-hover:bg-[hsl(var(--accent))]/15 transition-colors">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))] group-hover:bg-accent-dark group-hover:text-white transition-colors">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">

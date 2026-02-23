@@ -15,6 +15,7 @@
     --muted: 240 5% 94%;
     --muted-foreground: 240 4% 42%;
     --accent: 221 83% 53%;
+    --accent-dark: 221 70% 42%;
     --accent-foreground: 0 0% 100%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
@@ -61,5 +62,32 @@
   }
   .animate-logo-marquee {
     animation: logo-marquee 22s linear infinite;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+  .animate-fade-in-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .animate-fade-in-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .animate-fade-in-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+  .shadow-accent {
+    box-shadow: 0 4px 14px 0 hsl(var(--accent) / 0.12),
+                0 1px 3px 0 hsl(var(--accent) / 0.06);
+  }
+  .shadow-accent-lg {
+    box-shadow: 0 10px 40px -10px hsl(var(--accent) / 0.2),
+                0 4px 14px -4px hsl(var(--accent) / 0.1);
   }
 }
