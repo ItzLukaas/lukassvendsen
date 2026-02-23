@@ -1,7 +1,9 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useRef, useCallback, ReactNode } from 'react';
 import { siteConfig } from '@/content/data';
+
+const MIN_SHOW_MS = 900;
 
 type ContextType = {
   caseStudyLoading: boolean;
@@ -16,7 +18,22 @@ export function useCaseStudyLoading() {
 }
 
 export function CaseStudyLoadingProvider({ children }: { children: ReactNode }) {
-  const [caseStudyLoading, setCaseStudyLoading] = useState(false);
+  const [caseStudyLoading, setCaseStudyLoadingState] = useState(false);
+  const shownAtRef = useRef<number | null>(null);
+
+  const setCaseStudyLoading = useCallback((value: boolean) => {
+    if (value) {
+      shownAtRef.current = Date.now();
+      setCaseStudyLoadingState(true);
+      return;
+    }
+    const elapsed = Date.now() - (shownAtRef.current ?? 0);
+    const delay = Math.max(0, MIN_SHOW_MS - elapsed);
+    setTimeout(() => {
+      shownAtRef.current = null;
+      setCaseStudyLoadingState(false);
+    }, delay);
+  }, []);
 
   return (
     <Context.Provider value={{ caseStudyLoading, setCaseStudyLoading }}>
