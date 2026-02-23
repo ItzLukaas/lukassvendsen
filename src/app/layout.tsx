@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { CookieBanner } from '@/components/CookieBanner';
+import { CaseStudyLoadingProvider } from '@/context/CaseStudyLoadingContext';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -75,11 +76,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased bg-background text-foreground">
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <ScrollToTop />
-        <CookieBanner />
+        <CaseStudyLoadingProvider>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <ScrollToTop />
+          <CookieBanner />
+        </CaseStudyLoadingProvider>
       </body>
     </html>
   );

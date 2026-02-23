@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getCaseStudies } from '@/lib/case-studies';
 import { siteConfig } from '@/content/data';
+import { CaseStudyLink } from '@/components/CaseStudyLink';
 
 export const metadata = {
   title: 'Case studies',
@@ -32,7 +33,7 @@ export default async function CaseStudiesPage() {
           <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {studies.map((study) => (
               <li key={study.slug}>
-                <Link
+                <CaseStudyLink
                   href={`/case-studies/${study.slug}`}
                   className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all hover:border-zinc-300 hover:shadow-md"
                 >
@@ -67,7 +68,7 @@ export default async function CaseStudiesPage() {
                       Læs mere →
                     </span>
                   </div>
-                </Link>
+                </CaseStudyLink>
               </li>
             ))}
           </ul>

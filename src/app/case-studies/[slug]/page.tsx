@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { getCaseStudies, getCaseStudyBySlug } from '@/lib/case-studies';
-import { siteConfig } from '@/content/data';
+import { ClearCaseStudyLoading } from '@/components/ClearCaseStudyLoading';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,6 +34,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
+      <ClearCaseStudyLoading />
       <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 pb-24">
         <Link
           href="/case-studies"

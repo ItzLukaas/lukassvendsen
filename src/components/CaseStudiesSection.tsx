@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getCaseStudies } from '@/lib/case-studies';
+import { CaseStudyLink } from '@/components/CaseStudyLink';
 
 const FRONT_PAGE_COUNT = 3;
 
@@ -40,7 +41,7 @@ export async function CaseStudiesSection() {
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {studies.map((study) => (
             <li key={study.slug}>
-              <Link
+              <CaseStudyLink
                 href={`/case-studies/${study.slug}`}
                 className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all hover:border-zinc-300 hover:shadow-md"
               >
@@ -72,7 +73,7 @@ export async function CaseStudiesSection() {
                     {study.excerpt}
                   </p>
                 </div>
-              </Link>
+              </CaseStudyLink>
             </li>
           ))}
         </ul>
