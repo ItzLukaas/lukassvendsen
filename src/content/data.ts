@@ -13,11 +13,12 @@ export const siteConfig = {
     'professionel fotografering',
   ],
   ogImage: '/og.jpg',
-  /** Fullscreen hero baggrund – brug eget billede: læg i public/hero.jpg og sæt til '/hero.jpg' */
+  /** Fullscreen hero – rediger tekster og baggrund her */
   heroImage:
     'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80',
+  heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
-    'Fanger øjeblikke og fortæller historier gennem billeder.',
+    'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.',
 };
 
 export const about = {

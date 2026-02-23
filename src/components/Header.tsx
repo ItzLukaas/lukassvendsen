@@ -22,23 +22,33 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const overHero = !scrolled;
+
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-background/70 backdrop-blur-md border-b border-border/40'
-          : 'bg-white/5 backdrop-blur-sm'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out',
+        overHero
+          ? 'bg-transparent'
+          : 'bg-white/90 backdrop-blur-md border-b border-border/50 shadow-sm'
       )}
       role="banner"
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+        className={cn(
+          'mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-out',
+          overHero ? 'py-5' : 'py-3'
+        )}
         aria-label="Hovednavigation"
       >
         <Link
           href="#"
-          className="font-heading text-xl font-bold tracking-tight text-foreground hover:text-foreground/90 transition-colors"
+          className={cn(
+            'font-heading font-bold tracking-tight transition-all duration-300 ease-out',
+            overHero
+              ? 'text-xl text-white hover:text-white/90'
+              : 'text-lg text-foreground hover:text-foreground/90'
+          )}
         >
           {siteConfig.name}
         </Link>
@@ -48,7 +58,12 @@ export function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-semibold text-foreground/90 hover:text-foreground transition-colors relative after:absolute after:left-0 after:right-0 after:bottom-[-2px] after:h-px after:scale-x-0 after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100"
+                className={cn(
+                  'text-sm font-semibold transition-all duration-300 ease-out relative after:absolute after:left-0 after:right-0 after:bottom-[-2px] after:h-px after:scale-x-0 after:transition-transform after:duration-200 hover:after:scale-x-100',
+                  overHero
+                    ? 'text-white/95 hover:text-white after:bg-white'
+                    : 'text-foreground/90 hover:text-foreground after:bg-accent'
+                )}
               >
                 {label}
               </Link>
@@ -58,7 +73,12 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden p-2 -mr-2 rounded-lg text-foreground/90 hover:text-foreground hover:bg-white/10 transition-colors touch-manipulation"
+          className={cn(
+            'md:hidden p-2 -mr-2 rounded-lg transition-all duration-300 ease-out touch-manipulation',
+            overHero
+              ? 'text-white/95 hover:text-white hover:bg-white/10'
+              : 'text-foreground/90 hover:text-foreground hover:bg-muted/80'
+          )}
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Luk menu' : 'Åbn menu'}
@@ -68,13 +88,25 @@ export function Header() {
       </nav>
 
       {isOpen && (
-        <div className="md:hidden bg-background/80 backdrop-blur-md border-t border-border/40">
+        <div
+          className={cn(
+            'md:hidden border-t backdrop-blur-md transition-colors duration-300',
+            overHero
+              ? 'bg-black/20 border-white/20'
+              : 'bg-white/95 border-border/50'
+          )}
+        >
           <ul className="flex flex-col px-4 py-4 gap-0">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3.5 px-3 text-base font-semibold text-foreground hover:bg-white/5 rounded-lg transition-colors -mx-3"
+                  className={cn(
+                    'block py-3.5 px-3 text-base font-semibold rounded-lg transition-colors -mx-3',
+                    overHero
+                      ? 'text-white hover:bg-white/10'
+                      : 'text-foreground hover:bg-muted/80'
+                  )}
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
