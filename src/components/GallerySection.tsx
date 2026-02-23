@@ -65,7 +65,7 @@ export function GallerySection() {
       </div>
 
       {/* Bølge-overgang ned til næste sektion – blød, organisk grænse */}
-      <div className="relative w-full h-14 sm:h-16 lg:h-20 -mb-px" aria-hidden>
+      <div className="relative w-full h-10 sm:h-12 lg:h-14 -mb-px" aria-hidden>
         <svg
           className="absolute bottom-0 left-0 w-full h-full text-white"
           viewBox="0 0 1440 80"

@@ -7,7 +7,7 @@ export function CompetenciesSection() {
   return (
     <section
       id="spidskompetencer"
-      className="scroll-mt-28 bg-white pt-12 pb-14 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-20"
+      className="scroll-mt-28 bg-white pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20"
       aria-labelledby="spidskompetencer-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
