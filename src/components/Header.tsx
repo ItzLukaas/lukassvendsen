@@ -7,10 +7,9 @@ import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#om-mig', label: 'Om mig' },
-  { href: '#galleri', label: 'Galleri' },
-  { href: '#kunder', label: 'Kunder' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { href: '#', label: 'Home' },
+  { href: '#galleri', label: 'Portfolio' },
+  { href: '#om-mig', label: 'About' },
 ];
 
 export function Header() {
@@ -18,7 +17,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -28,28 +27,28 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border/60 shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-background/70 backdrop-blur-md border-b border-border/40'
+          : 'bg-white/5 backdrop-blur-sm'
       )}
       role="banner"
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
         aria-label="Hovednavigation"
       >
         <Link
           href="#"
-          className="font-heading text-2xl font-semibold tracking-tight text-foreground hover:text-accent transition-colors"
+          className="font-heading text-xl font-bold tracking-tight text-foreground hover:text-foreground/90 transition-colors"
         >
           {siteConfig.name}
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1 rounded-full border border-border/70 bg-background/80 px-1.5 py-1 shadow-sm">
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
-                className="relative px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-4 after:right-4 after:bottom-1 after:h-[2px] after:scale-x-0 after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100 rounded-full"
+                className="text-sm font-semibold text-foreground/90 hover:text-foreground transition-colors relative after:absolute after:left-0 after:right-0 after:bottom-[-2px] after:h-px after:scale-x-0 after:bg-accent after:transition-transform after:duration-200 hover:after:scale-x-100"
               >
                 {label}
               </Link>
@@ -59,7 +58,7 @@ export function Header() {
 
         <button
           type="button"
-          className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+          className="md:hidden p-2 -mr-2 rounded-lg text-foreground/90 hover:text-foreground hover:bg-white/10 transition-colors touch-manipulation"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Luk menu' : 'Åbn menu'}
@@ -69,13 +68,13 @@ export function Header() {
       </nav>
 
       {isOpen && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl">
-          <ul className="flex flex-col px-4 py-4 gap-1">
+        <div className="md:hidden bg-background/80 backdrop-blur-md border-t border-border/40">
+          <ul className="flex flex-col px-4 py-4 gap-0">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3 px-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors font-medium"
+                  className="block py-3.5 px-3 text-base font-semibold text-foreground hover:bg-white/5 rounded-lg transition-colors -mx-3"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
