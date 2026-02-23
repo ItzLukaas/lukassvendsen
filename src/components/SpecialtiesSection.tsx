@@ -34,9 +34,9 @@ export function SpecialtiesSection() {
             return (
               <article
                 key={item.title}
-                className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-accent border border-zinc-200/80 hover:border-[hsl(var(--accent))]/40 hover:shadow-accent-lg hover:-translate-y-1 transition-all duration-300"
+                className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-accent border border-zinc-200/80 hover:border-themeB/40 hover:shadow-accent-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-themeB/10 text-themeB group-hover:bg-themeB group-hover:text-white group-hover:text-white transition-colors">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-themeB/10 text-themeB group-hover:bg-themeB group-hover:text-white transition-colors">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">

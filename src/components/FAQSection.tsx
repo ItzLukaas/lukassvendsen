@@ -13,7 +13,7 @@ export function FAQSection() {
         </span>
         <h2
           id="faq-heading"
-          className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
+          className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-themeB pl-4"
         >
           Ofte stillede spørgsmål
         </h2>

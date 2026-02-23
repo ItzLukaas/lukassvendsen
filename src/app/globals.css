@@ -14,14 +14,15 @@
     --secondary-foreground: 240 6% 12%;
     --muted: 240 5% 94%;
     --muted-foreground: 240 4% 42%;
-    --accent: 221 83% 53%;
-    --accent-dark: 221 70% 42%;
+    /* Eneste ekstra farve: #0A2E36 (mørk teal) – resten er hvid/sort/grå */
+    --extra: 191 69% 13%;
+    --accent: var(--extra);
+    --accent-dark: var(--extra);
     --accent-foreground: 0 0% 100%;
-    /* B-tema: #003844 – mørk teal */
-    --theme-b: 191 100% 13%;
+    --theme-b: var(--extra);
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 221 83% 53%;
+    --ring: var(--extra);
     --radius: 0.5rem;
   }
 }
@@ -85,11 +86,11 @@
   .animate-fade-in-up-delay-3 { animation-delay: 0.3s; opacity: 0; }
 
   .shadow-accent {
-    box-shadow: 0 4px 14px 0 hsl(var(--accent) / 0.12),
-                0 1px 3px 0 hsl(var(--accent) / 0.06);
+    box-shadow: 0 4px 14px 0 hsl(var(--extra) / 0.12),
+                0 1px 3px 0 hsl(var(--extra) / 0.06);
   }
   .shadow-accent-lg {
-    box-shadow: 0 10px 40px -10px hsl(var(--accent) / 0.2),
-                0 4px 14px -4px hsl(var(--accent) / 0.1);
+    box-shadow: 0 10px 40px -10px hsl(var(--extra) / 0.2),
+                0 4px 14px -4px hsl(var(--extra) / 0.1);
   }
 }
