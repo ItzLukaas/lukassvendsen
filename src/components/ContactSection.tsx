@@ -10,15 +10,16 @@ export function ContactSection() {
       className="scroll-mt-28 relative pt-0 py-24 lg:py-32 overflow-hidden bg-themeB animate-fade-in-up animate-fade-in-up-delay-5"
       aria-labelledby="kontakt-heading"
     >
-      {/* Bølget topgrænse – blå sektion starter med bølger, skærer ikke lige ind */}
-      <div className="absolute top-0 left-0 right-0 w-full h-16 sm:h-20 pointer-events-none" aria-hidden>
+      {/* Bølget topgrænse – fra Section Divider Generator (TWColors), så bølgen er tydelig */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none" style={{ height: '100px' }} aria-hidden>
         <svg
-          className="absolute bottom-0 left-0 w-full h-full text-themeB"
-          viewBox="0 0 1440 80"
-          fill="currentColor"
+          className="relative block w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 100"
           preserveAspectRatio="none"
+          fill="#0A2E36"
         >
-          <path d="M0 80 L0 0 Q360 35 720 0 Q1080 35 1440 0 L1440 80 Z" />
+          <path d="M0,100 C200,20 400,100 600,50 C800,0 1000,80 1200,30 L1200,100 L0,100 Z" />
         </svg>
       </div>
 
@@ -55,7 +56,7 @@ export function ContactSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center pt-6">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center pt-12">
         <h2
           id="kontakt-heading"
           className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
