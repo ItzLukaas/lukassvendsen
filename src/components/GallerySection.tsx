@@ -35,10 +35,11 @@ export function GallerySection() {
   return (
     <section
       id="galleri"
-      className="scroll-mt-24 bg-gradient-to-b from-background to-muted/20 py-16 sm:py-24 lg:py-28"
+      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-zinc-50/80"
       aria-labelledby="galleri-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-pattern-grid-subtle opacity-50" aria-hidden />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <h2
             id="galleri-heading"

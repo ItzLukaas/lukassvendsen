@@ -7,10 +7,11 @@ export function ClientsSection() {
   return (
     <section
       id="kunder"
-      className="scroll-mt-24 py-16 sm:py-24 lg:py-28 bg-muted/10"
+      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-white"
       aria-labelledby="kunder-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-pattern-dots opacity-40" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <h2
             id="kunder-heading"

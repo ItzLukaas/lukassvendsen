@@ -8,10 +8,11 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-24 py-16 sm:py-24 lg:py-28"
+      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-slate-50 to-blue-50/30"
       aria-labelledby="kontakt-heading"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-pattern-dots opacity-30" aria-hidden />
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10 sm:mb-12">
           <h2
             id="kontakt-heading"

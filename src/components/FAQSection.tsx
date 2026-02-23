@@ -4,10 +4,11 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 py-16 sm:py-24 lg:py-28 bg-muted/10"
+      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-slate-50/90"
       aria-labelledby="faq-heading"
     >
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/[0.03] to-transparent" aria-hidden />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <header className="text-center mb-10 sm:mb-12">
           <h2
             id="faq-heading"

@@ -104,4 +104,40 @@
   .animate-logo-marquee {
     animation: logo-marquee 18s linear infinite;
   }
+
+  /* Sektions-baggrunde – genbrugelige for rød tråd */
+  .bg-pattern-dots {
+    background-image: radial-gradient(hsl(220 60% 50% / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-pattern-grid-subtle {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 0% / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 0% / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-pattern-grid-dark {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 100% / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-gradient-section-soft {
+    background: linear-gradient(160deg, hsl(220 40% 97%) 0%, hsl(0 0% 100%) 50%, hsl(220 30% 98%) 100%);
+  }
+
+  .bg-gradient-dark-blue {
+    background: linear-gradient(180deg, hsl(222 47% 18%) 0%, hsl(222 45% 14%) 100%);
+  }
+
+  .section-divider-wave {
+    height: 48px;
+    background: linear-gradient(90deg, transparent, hsl(220 40% 96%) 20%, hsl(220 40% 96%) 80%, transparent);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48h1200V24c-100-16-200-24-300-24s-200 8-300 24-200 24-300 24-200-8-300-24-200-24-300-24-200 8-300 24v24H0z' fill='%23fff'/%3E%3C/svg%3E");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+  }
 }

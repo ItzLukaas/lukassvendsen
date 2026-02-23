@@ -24,6 +24,8 @@ export const siteConfig = {
 export const about = {
   heading: 'Om mig',
   title: 'Passion for det perfekte øjeblik',
+  /** Portrætbillede – læg fx i public/about/portrait.jpg og sæt til '/about/portrait.jpg'. Lad stå tom for placeholder. */
+  image: '',
   content: `Jeg er Lukas, og fotografi er mere end et erhverv for mig – det er en måde at fange livet på. Med kameraet i hånden stræber jeg efter at skabe billeder, der fortæller historier og bevarer følelser og stemninger.
 
 Min stil er gennemtænkt og æstetisk: jeg elsker naturligt lys, rene kompositioner og øjeblikke der taler for sig selv. Uanset om det er portrætter, events eller kreative projekter, er målet altid det samme – at levere billeder, du vil huske.
