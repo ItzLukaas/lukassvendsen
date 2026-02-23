@@ -8,10 +8,10 @@ import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
 const LINKS = [
-  { href: '#', label: 'Forside' },
-  { href: '#galleri', label: 'Portfolio' },
+  { href: '/', label: 'Forside' },
+  { href: '/#galleri', label: 'Portfolio' },
   { href: '/case-studies', label: 'Case studies' },
-  { href: '#om-mig', label: 'Om mig' },
+  { href: '/#om-mig', label: 'Om mig' },
 ];
 
 export function Header() {
@@ -38,7 +38,7 @@ export function Header() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link
-          href="#"
+          href="/"
           className="text-[15px] font-medium tracking-tight text-zinc-800 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
         >
           {brandName}
@@ -61,7 +61,7 @@ export function Header() {
         {/* CTA – desktop */}
         <div className="hidden md:block">
           <Link
-            href="#kontakt"
+            href="/#kontakt"
             className="inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
             <Mail className="h-4 w-4" aria-hidden />
@@ -110,7 +110,7 @@ export function Header() {
               ))}
               <li className="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800">
                 <Link
-                  href="#kontakt"
+                  href="/#kontakt"
                   className="flex items-center justify-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
                   onClick={() => setMenuOpen(false)}
                 >
