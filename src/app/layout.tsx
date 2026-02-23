@@ -70,10 +70,10 @@ export default function RootLayout({
   return (
     <html
       lang="da"
-      className={`${outfit.variable} ${dmSans.variable}`}
+      className={`${outfit.variable} ${dmSans.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-screen font-sans antialiased bg-background text-foreground">
         <Header />
         <main id="main-content">{children}</main>
         <Footer />

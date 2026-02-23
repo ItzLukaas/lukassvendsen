@@ -10,9 +10,8 @@ import type { GalleryImageMeta } from '@/content/data';
 import type { Photo } from 'react-photo-album';
 
 const BLUR =
-  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+';
+  'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTgxODFiIi8+PC9zdmc+';
 
-/** Konverter til react-photo-album format (layout tilpasser automatisk forskellige formater). */
 function toPhotoAlbumPhotos(images: GalleryImageMeta[]): Photo[] {
   return images.map((img) => ({
     src: img.src,
@@ -28,38 +27,36 @@ const photos = toPhotoAlbumPhotos(galleryImages);
 
 export function GallerySection() {
   const [index, setIndex] = useState(-1);
-
   const open = useCallback((i: number) => setIndex(i), []);
   const close = useCallback(() => setIndex(-1), []);
 
   return (
     <section
       id="galleri"
-      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-zinc-50/80"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 border-t border-border"
       aria-labelledby="galleri-heading"
     >
-      <div className="absolute inset-0 bg-pattern-grid-subtle opacity-50" aria-hidden />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2
-            id="galleri-heading"
-            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-foreground"
-          >
-            Galleri
-          </h2>
-          <p className="mt-3 text-muted-foreground text-base sm:text-lg">
-            Et udvalg af mine bedste arbejder – portrætter, events og kreative projekter.
-          </p>
-        </header>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2
+          id="galleri-heading"
+          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+        >
+          Galleri
+        </h2>
+        <p className="mt-2 text-muted-foreground text-sm sm:text-base">
+          Et udvalg af mine arbejder.
+        </p>
 
-        <PhotoAlbum
-          photos={photos}
-          layout="rows"
-          targetRowHeight={320}
-          spacing={12}
-          padding={0}
-          onClick={({ index: i }) => open(i)}
-        />
+        <div className="mt-10">
+          <PhotoAlbum
+            photos={photos}
+            layout="rows"
+            targetRowHeight={280}
+            spacing={8}
+            padding={0}
+            onClick={({ index: i }) => open(i)}
+          />
+        </div>
 
         <Lightbox
           open={index >= 0}

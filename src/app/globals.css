@@ -4,40 +4,22 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 6%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 6%;
-    --primary: 240 6% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 92%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 240 5% 92%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 222 84% 56%;
-    --accent-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 240 6% 10%;
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 8%;
-    --card-foreground: 0 0% 98%;
+    --background: 240 6% 8%;
+    --foreground: 0 0% 96%;
+    --card: 240 5% 11%;
+    --card-foreground: 0 0% 96%;
     --primary: 0 0% 98%;
-    --primary-foreground: 240 6% 10%;
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 240 4% 16%;
-    --accent-foreground: 0 0% 98%;
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 240 5% 84%;
+    --primary-foreground: 240 6% 8%;
+    --secondary: 240 4% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 5% 58%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
   }
 }
 
@@ -51,93 +33,33 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
-
-  /* Custom scrollbar – moderne og diskret */
   :root {
     scrollbar-width: thin;
-    scrollbar-color: hsl(240 4% 46% / 0.6) transparent;
+    scrollbar-color: hsl(240 4% 28%) transparent;
   }
   @media (hover: hover) {
     :root::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
     :root::-webkit-scrollbar-track {
       background: transparent;
     }
     :root::-webkit-scrollbar-thumb {
-      background: hsl(240 4% 46% / 0.4);
-      border-radius: 10px;
+      background: hsl(240 4% 28%);
+      border-radius: 8px;
     }
     :root::-webkit-scrollbar-thumb:hover {
-      background: hsl(240 4% 46% / 0.6);
+      background: hsl(240 4% 35%);
     }
   }
 }
 
 @layer utilities {
-  .animate-in {
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
-  }
-
-  /* Subtil grid-baggrund til sektioner */
-  .bg-grid-soft {
-    background-image: linear-gradient(
-        to right,
-        hsl(240 5% 84% / 0.4) 1px,
-        transparent 1px
-      ),
-      linear-gradient(to bottom, hsl(240 5% 84% / 0.4) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
-  /* Logo-slider animation */
   @keyframes logo-marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
-
   .animate-logo-marquee {
-    animation: logo-marquee 18s linear infinite;
-  }
-
-  /* Sektions-baggrunde – genbrugelige for rød tråd */
-  .bg-pattern-dots {
-    background-image: radial-gradient(hsl(220 60% 50% / 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .bg-pattern-grid-subtle {
-    background-image:
-      linear-gradient(to right, hsl(0 0% 0% / 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(0 0% 0% / 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .bg-pattern-grid-dark {
-    background-image:
-      linear-gradient(to right, hsl(0 0% 100% / 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(0 0% 100% / 0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-
-  .bg-gradient-section-soft {
-    background: linear-gradient(160deg, hsl(220 40% 97%) 0%, hsl(0 0% 100%) 50%, hsl(220 30% 98%) 100%);
-  }
-
-  .bg-gradient-dark-blue {
-    background: linear-gradient(180deg, hsl(222 47% 18%) 0%, hsl(222 45% 14%) 100%);
-  }
-
-  .section-divider-wave {
-    height: 48px;
-    background: linear-gradient(90deg, transparent, hsl(220 40% 96%) 20%, hsl(220 40% 96%) 80%, transparent);
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48h1200V24c-100-16-200-24-300-24s-200 8-300 24-200 24-300 24-200-8-300-24-200-24-300-24-200 8-300 24v24H0z' fill='%23fff'/%3E%3C/svg%3E");
-    mask-size: cover;
-    mask-repeat: no-repeat;
+    animation: logo-marquee 20s linear infinite;
   }
 }

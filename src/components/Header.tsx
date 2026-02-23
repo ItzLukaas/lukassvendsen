@@ -16,76 +16,64 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const name = siteConfig?.name ?? 'Lukas Svendsen';
-  const isLight = scrolled;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isLight ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled ? 'bg-background/90 backdrop-blur-md border-b border-border' : 'bg-transparent'
       }`}
       role="banner"
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="#"
-          className={`text-lg font-bold tracking-tight transition-colors hover:opacity-90 ${
-            isLight ? 'text-zinc-900' : 'text-white'
+          className={`text-base font-semibold tracking-tight transition-colors ${
+            scrolled ? 'text-foreground' : 'text-white'
           }`}
         >
           {name}
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-6">
           {LINKS.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className={`text-sm font-semibold transition-colors hover:opacity-90 ${
-                  isLight ? 'text-zinc-700' : 'text-white/95'
-                }`}
-              >
-                {label}
-              </Link>
-            </li>
+            <Link
+              key={href}
+              href={href}
+              className={`text-sm font-medium transition-colors hover:opacity-80 ${
+                scrolled ? 'text-muted-foreground hover:text-foreground' : 'text-white/90 hover:text-white'
+              }`}
+            >
+              {label}
+            </Link>
           ))}
         </ul>
 
         <button
           type="button"
-          className="md:hidden p-2 rounded-lg transition-colors touch-manipulation"
-          style={{ color: isLight ? '#27272a' : 'rgba(255,255,255,0.95)' }}
+          className="md:hidden p-2 rounded-md transition-colors touch-manipulation"
+          style={{ color: scrolled ? 'hsl(var(--foreground))' : 'rgba(255,255,255,0.9)' }}
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
         >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
       {menuOpen && (
-        <div
-          className={`md:hidden border-t px-4 py-4 ${
-            isLight
-              ? 'bg-white border-zinc-200'
-              : 'bg-black/30 border-white/20 backdrop-blur-md'
-          }`}
-        >
-          <ul className="flex flex-col gap-1">
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <ul className="flex flex-col py-3 px-4">
             {LINKS.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className={`block py-3 px-3 rounded-lg text-base font-semibold transition-colors ${
-                    isLight
-                      ? 'text-zinc-800 hover:bg-zinc-100'
-                      : 'text-white hover:bg-white/10'
-                  }`}
+                  className="block py-2.5 text-sm font-medium text-foreground hover:text-muted-foreground"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}

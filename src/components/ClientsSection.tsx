@@ -7,45 +7,40 @@ export function ClientsSection() {
   return (
     <section
       id="kunder"
-      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-white"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 border-t border-border"
       aria-labelledby="kunder-heading"
     >
-      <div className="absolute inset-0 bg-pattern-dots opacity-40" aria-hidden />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <h2
-            id="kunder-heading"
-            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-foreground"
-          >
-            Kunder & samarbejdspartnere
-          </h2>
-          <p className="mt-3 text-muted-foreground text-base sm:text-lg">
-            Udvalgte virksomheder og samarbejdspartnere jeg har arbejdet med.
-          </p>
-        </header>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2
+          id="kunder-heading"
+          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+        >
+          Kunder & samarbejdspartnere
+        </h2>
+        <p className="mt-2 text-muted-foreground text-sm sm:text-base">
+          Udvalgte virksomheder jeg har arbejdet med.
+        </p>
 
-        <div className="relative overflow-hidden">
+        <div className="mt-10 overflow-hidden">
           <div
-            className="flex items-center gap-10 sm:gap-14 py-4 animate-logo-marquee"
-            aria-label="Logo-slider med tidligere kunder"
+            className="flex items-center gap-12 sm:gap-16 py-4 animate-logo-marquee"
+            aria-label="Logo-slider"
           >
             {doubled.map((client) => (
               <a
-                key={`${client.name}-${client.logoSrc}-${client.url}`}
+                key={`${client.name}-${client.logoSrc}`}
                 href={client.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center min-w-[120px] sm:min-w-[150px] h-16 sm:h-20 opacity-80 hover:opacity-100 transition-all"
+                className="flex items-center justify-center min-w-[100px] sm:min-w-[120px] h-12 opacity-70 hover:opacity-100 transition-opacity"
               >
-                <div className="relative h-10 sm:h-12 w-auto">
-                  <Image
-                    src={client.logoSrc}
-                    alt={client.name}
-                    width={160}
-                    height={48}
-                    className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-200"
-                  />
-                </div>
+                <Image
+                  src={client.logoSrc}
+                  alt={client.name}
+                  width={120}
+                  height={36}
+                  className="h-8 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+                />
               </a>
             ))}
           </div>

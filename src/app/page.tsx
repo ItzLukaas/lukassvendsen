@@ -41,7 +41,7 @@ export default function HomePage() {
       <JsonLd data={galleryJsonLd} />
       <Hero />
       <AboutSection />
-      <SectionDivider variant="dark" />
+      <SectionDivider />
       <SpecialtiesSection />
       <SectionDivider />
       <GallerySection />

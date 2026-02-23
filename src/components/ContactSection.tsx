@@ -1,154 +1,108 @@
 'use client';
 
 import { Mail, Phone, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { contact } from '@/content/data';
 
 export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-slate-50 to-blue-50/30"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 border-t border-border"
       aria-labelledby="kontakt-heading"
     >
-      <div className="absolute inset-0 bg-pattern-dots opacity-30" aria-hidden />
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10 sm:mb-12">
-          <h2
-            id="kontakt-heading"
-            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-foreground"
+      <div className="mx-auto max-w-2xl px-4 sm:px-6">
+        <h2
+          id="kontakt-heading"
+          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+        >
+          Kontakt
+        </h2>
+        <p className="mt-2 text-muted-foreground text-sm sm:text-base">
+          Skriv eller ring – jeg vender tilbage hurtigst muligt.
+        </p>
+
+        <form
+          className="mt-10 space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const form = e.currentTarget as HTMLFormElement;
+            const fd = new FormData(form);
+            const body = encodeURIComponent(
+              `Navn: ${fd.get('name')}\nE-mail: ${fd.get('email')}\n\nBesked:\n${fd.get('message')}`
+            );
+            window.location.href = `mailto:${contact.email}?subject=Henvendelse&body=${body}`;
+          }}
+        >
+          <div>
+            <label htmlFor="name" className="block text-xs font-medium text-muted-foreground mb-1">
+              Navn
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              className="w-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-ring"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-xs font-medium text-muted-foreground mb-1">
+              E-mail
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              className="w-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-ring"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-xs font-medium text-muted-foreground mb-1">
+              Besked
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              required
+              className="w-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-foreground py-2.5 text-sm font-medium text-background hover:opacity-90 transition-opacity"
           >
-            Kontakt
-          </h2>
-          <p className="mt-3 text-muted-foreground text-base sm:text-lg">
-            Fortæl mig kort om dit projekt – så vender jeg tilbage med forslag til
-            næste skridt.
-          </p>
-        </header>
+            Send besked
+          </button>
+        </form>
 
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)] gap-10 items-start">
-          <form
-            className="space-y-4 rounded-2xl border border-border/80 bg-card/80 p-5 sm:p-6 lg:p-7 shadow-sm"
-            onSubmit={(event) => {
-              event.preventDefault();
-              if (typeof window === 'undefined') return;
-              const form = event.currentTarget as HTMLFormElement;
-              const formData = new FormData(form);
-              const name = formData.get('name') ?? '';
-              const email = formData.get('email') ?? '';
-              const message = formData.get('message') ?? '';
-              const subject = encodeURIComponent('Henvendelse via lukassvendsen.dk');
-              const body = encodeURIComponent(
-                `Navn: ${name}\nE-mail: ${email}\n\nBesked:\n${message}`
-              );
-              window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
-            }}
+        <div className="mt-10 pt-8 border-t border-border space-y-3">
+          <a
+            href={`mailto:${contact.email}`}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <div className="space-y-1.5">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-foreground text-left"
-              >
-                Navn
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                autoComplete="name"
-                className="block w-full rounded-xl border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-foreground text-left"
-              >
-                E-mail
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                className="block w-full rounded-xl border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-foreground text-left"
-              >
-                Besked
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                className="block w-full rounded-xl border border-input bg-background px-3 py-2 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1 resize-none"
-              />
-            </div>
-            <Button type="submit" size="lg" className="min-h-12 rounded-xl w-full">
-              Send besked
-            </Button>
-          </form>
-
-          <aside className="space-y-6 text-sm text-muted-foreground">
-            <div>
-              <h3 className="text-base font-semibold text-foreground mb-2">
-                Direkte kontakt
-              </h3>
-              <div className="flex flex-col gap-2">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="justify-start rounded-xl w-full"
-                >
-                  <a href={`mailto:${contact.email}`}>
-                    <Mail className="mr-2 h-5 w-5 shrink-0" aria-hidden />
-                    <span>{contact.email}</span>
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="lg"
-                  className="justify-start rounded-xl w-full"
-                >
-                  <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>
-                    <Phone className="mr-2 h-5 w-5 shrink-0" aria-hidden />
-                    <span>{contact.phone}</span>
-                  </a>
-                </Button>
-              </div>
-            </div>
-
-            {contact.instagram && (
-              <div>
-                <h3 className="text-base font-semibold text-foreground mb-2">
-                  Sociale medier
-                </h3>
-                <a
-                  href={contact.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/80 min-h-[44px] min-w-[44px]"
-                >
-                  <Instagram className="h-5 w-5" aria-hidden />
-                  <span>Instagram</span>
-                </a>
-              </div>
-            )}
-
-            <p className="text-xs sm:text-sm text-muted-foreground/80">
-              Jeg vender typisk tilbage inden for 1–2 hverdage. Ved hasteopgaver
-              er du velkommen til både at ringe og sende en kort besked.
-            </p>
-          </aside>
+            <Mail className="h-4 w-4" />
+            {contact.email}
+          </a>
+          <a
+            href={`tel:${contact.phone.replace(/\s/g, '')}`}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Phone className="h-4 w-4" />
+            {contact.phone}
+          </a>
+          {contact.instagram && (
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Instagram className="h-4 w-4" />
+              Instagram
+            </a>
+          )}
         </div>
       </div>
     </section>

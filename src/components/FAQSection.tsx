@@ -4,39 +4,30 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 relative py-20 sm:py-28 lg:py-32 bg-slate-50/90"
+      className="scroll-mt-20 py-16 sm:py-20 lg:py-24 border-t border-border"
       aria-labelledby="faq-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/[0.03] to-transparent" aria-hidden />
-      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10 sm:mb-12">
-          <h2
-            id="faq-heading"
-            className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl text-foreground"
-          >
-            Ofte stillede spørgsmål
-          </h2>
-          <p className="mt-3 text-muted-foreground text-base sm:text-lg">
-            Et par korte svar på det, jeg oftest bliver spurgt om. Du er altid
-            velkommen til at skrive, hvis du mangler noget.
-          </p>
-        </header>
+      <div className="mx-auto max-w-2xl px-4 sm:px-6">
+        <h2
+          id="faq-heading"
+          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+        >
+          Ofte stillede spørgsmål
+        </h2>
+        <p className="mt-2 text-muted-foreground text-sm sm:text-base">
+          Korte svar på det, jeg oftest bliver spurgt om.
+        </p>
 
-        <div className="space-y-3">
+        <div className="mt-8 space-y-px">
           {faqs.map((item) => (
             <details
               key={item.question}
-              className="group rounded-2xl border border-border/80 bg-card/80 px-4 py-3 sm:px-5 sm:py-4 open:border-accent/70 open:shadow-md transition-all duration-200"
+              className="group border-b border-border py-4 first:pt-0"
             >
-              <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
-                <span className="text-sm sm:text-base font-medium text-foreground">
-                  {item.question}
-                </span>
-                <span className="text-xl leading-none text-muted-foreground group-open:rotate-45 transition-transform duration-200">
-                  +
-                </span>
+              <summary className="cursor-pointer list-none text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">
+                {item.question}
               </summary>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed pl-0">
                 {item.answer}
               </p>
             </details>
@@ -46,4 +37,3 @@ export function FAQSection() {
     </section>
   );
 }
-
