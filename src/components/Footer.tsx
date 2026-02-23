@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Instagram } from 'lucide-react';
 import { siteConfig, contact } from '@/content/data';
 
 const NAV_LINKS = [
@@ -11,7 +11,7 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-zinc-200 bg-white py-10 sm:py-12"
+      className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-12"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -71,10 +71,22 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-zinc-100">
+        <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-xs text-zinc-500">
             © {new Date().getFullYear()} {siteConfig.name}
           </p>
+          {contact.instagram && (
+            <a
+              href={contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-700 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-3.5 w-3.5" />
+              Instagram
+            </a>
+          )}
         </div>
       </div>
     </footer>
