@@ -7,10 +7,10 @@ export function CompetenciesSection() {
   return (
     <section
       id="spidskompetencer"
-      className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-20"
+      className="scroll-mt-28 bg-white min-h-[50vh] flex flex-col justify-center py-14 sm:py-16 lg:py-20 animate-fade-in-up animate-fade-in-up-delay-1"
       aria-labelledby="spidskompetencer-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full">
         <header className="mb-8 lg:mb-10">
           <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
             Kompetencer
