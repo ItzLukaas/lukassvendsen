@@ -29,10 +29,10 @@ export function GallerySection() {
   return (
     <section
       id="galleri"
-      className="scroll-mt-28 bg-white py-24 sm:py-32 lg:py-40 animate-fade-in-up animate-fade-in-up-delay-2"
+      className="scroll-mt-28 bg-white py-28 sm:py-36 lg:py-44 animate-fade-in-up animate-fade-in-up-delay-2"
       aria-labelledby="galleri-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-16 lg:mb-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-20 lg:mb-24">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
             <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
@@ -52,12 +52,12 @@ export function GallerySection() {
       </div>
 
       <div className="w-full px-3 sm:px-4 lg:px-6">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-[1800px]">
           <PhotoAlbum
             photos={photos}
             layout="rows"
-            targetRowHeight={420}
-            spacing={14}
+            targetRowHeight={480}
+            spacing={16}
             padding={0}
             onClick={({ index: i }) => open(i)}
           />
