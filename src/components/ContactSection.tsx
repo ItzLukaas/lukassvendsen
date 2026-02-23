@@ -8,7 +8,7 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-28 relative py-24 lg:py-32 overflow-hidden bg-themeB"
+      className="scroll-mt-28 relative py-24 lg:py-32 overflow-hidden bg-themeB bg-pattern-grid-on-dark"
       aria-labelledby="kontakt-heading"
     >
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
