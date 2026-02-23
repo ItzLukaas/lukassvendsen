@@ -13,12 +13,12 @@ export function SpecialtiesSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <div>
-            <span className="text-xs font-semibold tracking-widest text-[hsl(var(--accent))] uppercase">
+            <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
               Services
             </span>
             <h2
               id="specialer-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-themeB pl-4"
             >
               Mine specialområder
             </h2>
@@ -36,7 +36,7 @@ export function SpecialtiesSection() {
                 key={item.title}
                 className="group relative rounded-2xl bg-white p-6 sm:p-7 shadow-accent border border-zinc-200/80 hover:border-[hsl(var(--accent))]/40 hover:shadow-accent-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent))]/10 text-[hsl(var(--accent))] group-hover:bg-accent-dark group-hover:text-white transition-colors">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-themeB/10 text-themeB group-hover:bg-themeB group-hover:text-white group-hover:text-white transition-colors">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">

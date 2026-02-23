@@ -62,7 +62,7 @@ export function Header() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3.5 text-sm font-medium text-foreground hover:text-[hsl(var(--accent))] transition-colors"
+                  className="block py-3.5 text-sm font-medium text-foreground hover:text-themeB transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
                   {label}

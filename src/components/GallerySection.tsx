@@ -35,12 +35,12 @@ export function GallerySection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-16 lg:mb-20">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <span className="text-xs font-semibold tracking-widest text-[hsl(var(--accent))] uppercase">
+            <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
               Portfolio
             </span>
             <h2
               id="galleri-heading"
-              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
+              className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-themeB pl-4"
             >
               Galleri
             </h2>

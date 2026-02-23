@@ -14,7 +14,7 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 lg:order-2">
             {hasImage ? (
-              <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-accent-lg ring-1 ring-[hsl(var(--accent))]/10 transition-transform duration-300 hover:-translate-y-1">
+              <div className="relative aspect-[4/5] max-w-md overflow-hidden rounded-2xl shadow-accent-lg ring-1 ring-themeB/20 transition-transform duration-300 hover:-translate-y-1">
                 <Image
                   src={about.image}
                   alt="Portræt af Lukas Svendsen"
@@ -33,12 +33,12 @@ export function AboutSection() {
             )}
           </div>
           <div className="lg:col-span-7 lg:order-1">
-            <span className="text-xs font-semibold tracking-widest text-[hsl(var(--accent))] uppercase">
+            <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
               Om mig
             </span>
             <h2
               id="om-mig-heading"
-              className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-[hsl(var(--accent))] pl-4"
+              className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl border-l-4 border-themeB pl-4"
             >
               {about.heading}
             </h2>

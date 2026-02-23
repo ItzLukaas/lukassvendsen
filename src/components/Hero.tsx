@@ -37,13 +37,13 @@ export function Hero() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-full bg-[hsl(var(--accent))] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 hover:bg-accent-dark hover:shadow-xl hover:shadow-black/25 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+            className="inline-flex items-center justify-center rounded-xl bg-themeB px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-themeB/30 hover:bg-themeB/90 hover:shadow-xl hover:shadow-themeB/25 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
           >
             Se portfolio
           </Link>
           <Link
             href="#kontakt"
-            className="inline-flex items-center justify-center rounded-full border-2 border-white/70 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/20 hover:border-white transition-colors duration-200"
+            className="inline-flex items-center justify-center rounded-xl border-2 border-white/80 bg-white/10 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white hover:bg-white/25 hover:border-white transition-colors duration-200"
           >
             Kontakt
           </Link>

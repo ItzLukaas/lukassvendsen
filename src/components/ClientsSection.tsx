@@ -7,7 +7,7 @@ export function ClientsSection() {
   return (
     <section
       id="kunder"
-      className="scroll-mt-28 bg-accent-dark py-16 lg:py-20"
+      className="scroll-mt-28 bg-themeB py-16 lg:py-20"
       aria-labelledby="kunder-heading"
     >
       <p

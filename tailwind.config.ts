@@ -32,6 +32,7 @@ const config: Config = {
           dark: 'hsl(var(--accent-dark))',
           foreground: 'hsl(var(--accent-foreground))',
         },
+        themeB: 'hsl(var(--theme-b))',
       },
       fontFamily: {
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],

@@ -17,6 +17,8 @@
     --accent: 221 83% 53%;
     --accent-dark: 221 70% 42%;
     --accent-foreground: 0 0% 100%;
+    /* B-tema: #003844 – mørk teal */
+    --theme-b: 191 100% 13%;
     --border: 240 6% 90%;
     --input: 240 6% 90%;
     --ring: 221 83% 53%;
