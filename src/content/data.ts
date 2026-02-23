@@ -123,8 +123,8 @@ export const clients: ClientLogo[] = [
   {
     name: 'Virksomhed A',
     role: 'Branding & portrætter',
-    url: '/logos/logo1.png',
-    logoSrc: 'logos/logo1.png',
+    url: 'https://postimg.cc/3ywZQ8q9',
+    logoSrc: 'https://postimg.cc/3ywZQ8q9',
   },
   {
     name: 'Event Bureau',
