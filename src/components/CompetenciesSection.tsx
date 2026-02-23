@@ -7,10 +7,20 @@ export function CompetenciesSection() {
   return (
     <section
       id="spidskompetencer"
-      className="scroll-mt-28 bg-pattern-grid-subtle pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20"
+      className="scroll-mt-28 relative bg-pattern-grid-subtle pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 overflow-hidden"
       aria-labelledby="spidskompetencer-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      {/* Blød overgang fra galleri: fade fra hvid ned i mønster */}
+      <div
+        className="absolute top-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-b from-white to-transparent pointer-events-none z-0"
+        aria-hidden
+      />
+      {/* Subtil adskillelse fra galleriet */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent z-0"
+        aria-hidden
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="mb-8 lg:mb-10">
           <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
             Kompetencer
