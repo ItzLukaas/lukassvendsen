@@ -191,6 +191,7 @@ export const faqs = [
 
 export const contact = {
   email: 'kontakt@lukassvendsen.dk',
-  phone: '+45 12 34 56 78',
+  phone: '+45 24 46 35 50',
+  address: 'Ribersvej 90, Grindsted',
   instagram: 'https://instagram.com/lukassvendsen',
 };
