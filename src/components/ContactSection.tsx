@@ -7,68 +7,55 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="scroll-mt-28 relative py-24 lg:py-32 overflow-hidden bg-themeB animate-fade-in-up animate-fade-in-up-delay-5"
+      className="scroll-mt-28 relative pt-0 py-24 lg:py-32 overflow-hidden bg-themeB animate-fade-in-up animate-fade-in-up-delay-5"
       aria-labelledby="kontakt-heading"
     >
-      {/* Abstrakte bølger i tema-farve omkring CTA – fader blødt ind */}
+      {/* Bølget topgrænse – blå sektion starter med bølger, skærer ikke lige ind */}
+      <div className="absolute top-0 left-0 right-0 w-full h-16 sm:h-20 pointer-events-none" aria-hidden>
+        <svg
+          className="absolute bottom-0 left-0 w-full h-full text-themeB"
+          viewBox="0 0 1440 80"
+          fill="currentColor"
+          preserveAspectRatio="none"
+        >
+          <path d="M0 80 L0 0 Q360 35 720 0 Q1080 35 1440 0 L1440 80 Z" />
+        </svg>
+      </div>
+
+      {/* Solide bølgeformer omkring CTA (som referencebilledet) – fader ind */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
-        <div className="relative w-full max-w-2xl h-[340px] sm:h-[400px]">
-          {/* Blød teal-blob (tema #0A2E36 lysere) */}
+        <div className="relative w-full max-w-2xl h-[320px] sm:h-[380px]">
+          {/* Bølge 1 – solid form med bølget overkant */}
           <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] animate-wave-fade-in animate-wave-fade-in-delay-2"
-            viewBox="0 0 400 400"
-            fill="none"
-            style={{ stroke: 'hsl(191 50% 28% / 0.4)', strokeWidth: 1.5 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[100%] animate-wave-fade-in"
+            viewBox="0 0 600 200"
+            fill="currentColor"
+            style={{ color: 'hsl(var(--extra) / 0.25)' }}
           >
-            <path d="M200 200c0-60-40-100-100-100S0 140 0 200s40 100 100 100 100-40 100-100c0-30 15-60 50-60s50 30 50 60-20 60-50 60-50-30-50-60z" />
+            <path d="M0 200 L0 120 Q100 80 200 120 Q300 160 400 100 Q500 50 600 100 L600 200 Z" />
           </svg>
-          {/* Bølge 1 – stor blød ring */}
+          {/* Bølge 2 – blød rullebølge */}
           <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] animate-wave-fade-in"
-            viewBox="0 0 400 400"
-            fill="none"
-            stroke="rgba(255,255,255,0.14)"
-            strokeWidth="1"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[90%] animate-wave-fade-in animate-wave-fade-in-delay-1"
+            viewBox="0 0 500 180"
+            fill="currentColor"
+            style={{ color: 'hsl(var(--extra) / 0.2)' }}
           >
-            <circle cx="200" cy="200" r="180" />
+            <path d="M0 180 L0 100 Q125 60 250 100 Q375 140 500 100 L500 180 Z" />
           </svg>
-          {/* Bølge 2 – bløde bølgelinjer */}
+          {/* Bølge 3 – mindre ripple-lignende bølge */}
           <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] animate-wave-fade-in animate-wave-fade-in-delay-1"
-            viewBox="0 0 500 300"
-            fill="none"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="1.5"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[70%] animate-wave-fade-in animate-wave-fade-in-delay-2"
+            viewBox="0 0 400 140"
+            fill="currentColor"
+            style={{ color: 'hsl(var(--extra) / 0.15)' }}
           >
-            <path d="M0 150 Q125 80 250 150 T500 150" strokeLinecap="round" />
-            <path d="M0 180 Q125 110 250 180 T500 180" strokeLinecap="round" />
-          </svg>
-          {/* Bølge 3 – organisk kurve (tema-farve lysere) */}
-          <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] animate-wave-fade-in animate-wave-fade-in-delay-2"
-            viewBox="0 0 400 400"
-            fill="none"
-            stroke="rgba(255,255,255,0.08)"
-            strokeWidth="1"
-          >
-            <path d="M50 200 Q200 120 350 200 Q200 280 50 200" />
-            <path d="M80 220 Q200 160 320 220" />
-          </svg>
-          {/* Bølge 4 – indre ringe omkring CTA */}
-          <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] animate-wave-fade-in animate-wave-fade-in-delay-3"
-            viewBox="0 0 200 200"
-            fill="none"
-            stroke="rgba(255,255,255,0.12)"
-            strokeWidth="1"
-          >
-            <ellipse cx="100" cy="100" rx="90" ry="90" />
-            <ellipse cx="100" cy="100" rx="75" ry="75" />
+            <path d="M0 140 L0 90 Q50 70 100 90 Q150 110 200 90 Q250 70 300 90 Q350 110 400 90 L400 140 Z" />
           </svg>
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center pt-6">
         <h2
           id="kontakt-heading"
           className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
