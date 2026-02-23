@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { siteConfig } from '@/content/data';
 
 const MIN_SHOW_MS = 600;
 const FADE_DURATION_MS = 500;
@@ -45,6 +46,9 @@ export function PagePreloader() {
       aria-hidden
       style={{ transitionDuration: `${FADE_DURATION_MS}ms` }}
     >
+      <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl mb-8">
+        {siteConfig?.brandName ?? 'Lukas Photography'}
+      </p>
       <div className="h-14 w-14 rounded-full border-4 border-white/25 border-t-white animate-case-study-spin" />
     </div>
   );
