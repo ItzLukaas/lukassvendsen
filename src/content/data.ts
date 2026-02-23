@@ -124,7 +124,7 @@ export const clients: ClientLogo[] = [
     name: 'Virksomhed A',
     role: 'Branding & portrætter',
     url: '/logos/logo1.png',
-    logoSrc: '/logos/virksomhed-a.svg',
+    logoSrc: 'logos/logo1.png',
   },
   {
     name: 'Event Bureau',
