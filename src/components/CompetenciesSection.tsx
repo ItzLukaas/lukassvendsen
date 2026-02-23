@@ -47,29 +47,6 @@ export function CompetenciesSection() {
             );
           })}
         </div>
-
-        {competencies.areas?.length > 0 && (
-          <div className="mt-10 lg:mt-12">
-            <p className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-4">
-              {competencies.areasTitle}
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {competencies.areas.map((area) => (
-                <div
-                  key={area.title}
-                  className="rounded-xl border border-zinc-200/80 bg-white/80 p-4 text-center transition-colors hover:border-themeB/20 hover:bg-white"
-                >
-                  <p className="text-sm font-semibold text-foreground">
-                    {area.title}
-                  </p>
-                  <p className="mt-1 text-xs text-muted-foreground leading-snug">
-                    {area.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
