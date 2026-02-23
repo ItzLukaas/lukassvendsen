@@ -51,17 +51,32 @@ export function GallerySection() {
         </div>
       </div>
 
-      <div className="w-full px-3 sm:px-4 lg:px-6">
-        <div className="mx-auto max-w-[1800px]">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1280px]">
           <PhotoAlbum
             photos={photos}
             layout="rows"
-            targetRowHeight={480}
-            spacing={16}
+            targetRowHeight={420}
+            spacing={12}
             padding={0}
             onClick={({ index: i }) => open(i)}
           />
         </div>
+      </div>
+
+      {/* Bølge-overgang ned til næste sektion – blød, organisk grænse */}
+      <div className="relative w-full h-14 sm:h-16 lg:h-20 -mb-px" aria-hidden>
+        <svg
+          className="absolute bottom-0 left-0 w-full h-full text-white"
+          viewBox="0 0 1440 80"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 50 C360 10 600 70 900 35 C1080 15 1260 55 1440 40 L1440 80 L0 80 Z"
+            fill="currentColor"
+          />
+        </svg>
       </div>
 
       <Lightbox

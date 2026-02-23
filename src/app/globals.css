@@ -120,4 +120,11 @@
       radial-gradient(at 0% 0%, hsl(var(--extra) / 0.06) 0px, transparent 50%),
       radial-gradient(at 100% 100%, hsl(var(--extra) / 0.04) 0px, transparent 50%);
   }
+  /* Grid på mørk baggrund (fx Kunder-sektion) */
+  .bg-pattern-grid-on-dark {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
 }
