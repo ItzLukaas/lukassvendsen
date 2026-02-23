@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { contact } from '@/content/data';
+import { AbstractShape } from '@/components/AbstractShape';
 
 export function ContactSection() {
   return (
@@ -11,6 +12,7 @@ export function ContactSection() {
       className="scroll-mt-28 relative py-24 lg:py-32 overflow-hidden bg-themeB"
       aria-labelledby="kontakt-heading"
     >
+      <AbstractShape variant="cta" />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
         <h2
           id="kontakt-heading"

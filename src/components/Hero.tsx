@@ -1,20 +1,34 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/content/data';
+import { AbstractShape } from '@/components/AbstractShape';
+import { HeroParticles } from '@/components/HeroParticles';
 
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
   const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
   const heroImage = siteConfig.heroImage ?? '';
 
   return (
     <section
+      ref={ref}
       className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-24"
       aria-label="Velkommen"
     >
-      <div className="absolute inset-0 z-0 bg-zinc-800">
+      <motion.div
+        className="absolute inset-0 z-0 bg-zinc-800"
+        style={{ y: backgroundY }}
+      >
         {heroImage ? (
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -22,7 +36,10 @@ export function Hero() {
           />
         ) : null}
         <div className="absolute inset-0 bg-black/25" aria-hidden />
-      </div>
+      </motion.div>
+
+      <AbstractShape variant="hero" />
+      <HeroParticles />
 
       <div className="relative z-10 max-w-2xl mx-auto">
         <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/60">
