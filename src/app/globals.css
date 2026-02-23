@@ -130,6 +130,12 @@
       linear-gradient(90deg, hsl(var(--extra) / 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+  /* Cirkler på hvid baggrund */
+  .bg-pattern-circles {
+    background-color: #fff;
+    background-image: radial-gradient(circle, hsl(var(--extra) / 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
   .bg-gradient-mesh {
     background-color: #fff;
     background-image:

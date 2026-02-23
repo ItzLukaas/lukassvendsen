@@ -29,7 +29,7 @@ export function GallerySection() {
   return (
     <section
       id="galleri"
-      className="scroll-mt-28 bg-white bg-pattern-dots pt-28 pb-14 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-20"
+      className="scroll-mt-28 bg-white bg-pattern-grid-subtle pt-28 pb-14 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-20"
       aria-labelledby="galleri-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-20 lg:mb-24">
