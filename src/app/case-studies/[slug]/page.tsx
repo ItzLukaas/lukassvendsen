@@ -34,7 +34,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
-      <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 pb-24">
         <Link
           href="/case-studies"
           className="inline-block text-sm font-medium text-[hsl(var(--extra))] hover:underline mb-8"
@@ -63,7 +63,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </header>
 
         {study.image && (
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-zinc-100 mb-10">
+          <figure className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-zinc-100 mb-12">
             <Image
               src={study.image}
               alt=""
@@ -72,10 +72,10 @@ export default async function CaseStudyPage({ params }: Props) {
               priority
               sizes="(max-width: 1024px) 100vw, 896px"
             />
-          </div>
+          </figure>
         )}
 
-        <div className="case-study-body text-zinc-600 leading-relaxed space-y-6 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-zinc-900 [&_h2]:mt-8 [&_h2]:mb-3 [&_a]:text-[hsl(var(--extra))] [&_a]:underline [&_img]:rounded-xl [&_img]:my-4">
+        <div className="case-study-body text-zinc-600 leading-relaxed space-y-6 text-base [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-zinc-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3 [&_a]:text-[hsl(var(--extra))] [&_a]:underline [&_img]:rounded-xl [&_img]:my-8 [&_p]:leading-relaxed">
           <ReactMarkdown
             components={{
               img({ src, alt }) {
