@@ -5,6 +5,7 @@ import { CompetenciesSection } from '@/components/CompetenciesSection';
 import { ClientsSection } from '@/components/ClientsSection';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
+import { SectionFade } from '@/components/SectionFade';
 import { JsonLd } from '@/components/JsonLd';
 import { siteConfig, galleryImages } from '@/content/data';
 
@@ -39,12 +40,24 @@ export default function HomePage() {
       <JsonLd data={personJsonLd} />
       <JsonLd data={galleryJsonLd} />
       <Hero />
-      <AboutSection />
-      <GallerySection />
-      <CompetenciesSection />
-      <ClientsSection />
-      <FAQSection />
-      <ContactSection />
+      <SectionFade>
+        <AboutSection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <GallerySection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <CompetenciesSection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <ClientsSection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <FAQSection />
+      </SectionFade>
+      <SectionFade delay={0.05}>
+        <ContactSection />
+      </SectionFade>
     </>
   );
 }
