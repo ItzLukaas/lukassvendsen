@@ -1,9 +1,11 @@
 'use client';
 
 import { createContext, useContext, useState, useRef, useCallback, ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 import { siteConfig } from '@/content/data';
 
-const MIN_SHOW_MS = 900;
+const MIN_SHOW_MS = 1000;
+const FADE_DURATION_MS = 700;
 
 type ContextType = {
   caseStudyLoading: boolean;
@@ -18,20 +20,27 @@ export function useCaseStudyLoading() {
 }
 
 export function CaseStudyLoadingProvider({ children }: { children: ReactNode }) {
-  const [caseStudyLoading, setCaseStudyLoadingState] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [fadingOut, setFadingOut] = useState(false);
   const shownAtRef = useRef<number | null>(null);
+  const caseStudyLoading = visible || fadingOut;
 
   const setCaseStudyLoading = useCallback((value: boolean) => {
     if (value) {
       shownAtRef.current = Date.now();
-      setCaseStudyLoadingState(true);
+      setFadingOut(false);
+      setVisible(true);
       return;
     }
     const elapsed = Date.now() - (shownAtRef.current ?? 0);
     const delay = Math.max(0, MIN_SHOW_MS - elapsed);
     setTimeout(() => {
-      shownAtRef.current = null;
-      setCaseStudyLoadingState(false);
+      setFadingOut(true);
+      setTimeout(() => {
+        shownAtRef.current = null;
+        setVisible(false);
+        setFadingOut(false);
+      }, FADE_DURATION_MS);
     }, delay);
   }, []);
 
@@ -40,9 +49,16 @@ export function CaseStudyLoadingProvider({ children }: { children: ReactNode }) 
       {children}
       {caseStudyLoading && (
         <div
-          className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[hsl(var(--extra))]"
+          className={cn(
+            'fixed inset-0 z-[350] flex flex-col items-center justify-center bg-[hsl(var(--extra))] transition-opacity',
+            fadingOut && 'opacity-0 pointer-events-none'
+          )}
           aria-live="polite"
           aria-label="Indlæser case study"
+          style={{
+            transitionDuration: `${FADE_DURATION_MS}ms`,
+            transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)',
+          }}
         >
           <p className="text-2xl font-semibold tracking-tight text-white sm:text-3xl mb-8">
             {siteConfig?.brandName ?? 'Lukas Photography'}
