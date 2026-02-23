@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { CookieBanner } from '@/components/CookieBanner';
 import { CaseStudyLoadingProvider } from '@/context/CaseStudyLoadingContext';
+import { PagePreloader } from '@/components/PagePreloader';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -76,6 +77,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased bg-background text-foreground">
+        <PagePreloader />
         <CaseStudyLoadingProvider>
           <Header />
           <main id="main-content">{children}</main>
