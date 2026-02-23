@@ -67,13 +67,6 @@
     animation: logo-marquee 22s linear infinite;
   }
 
-  @keyframes float-up {
-    0% { opacity: 0; transform: translateY(0) scale(0.8); }
-    15% { opacity: 0.4; }
-    85% { opacity: 0.15; }
-    100% { opacity: 0; transform: translateY(-80vh) scale(1); }
-  }
-
   @keyframes fade-in-up {
     from {
       opacity: 0;
