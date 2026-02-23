@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/content/data';
 
-const MIN_SHOW_MS = 1400;
-const FADE_DURATION_MS = 800;
+const MIN_SHOW_MS = 1000;
+const FADE_DURATION_MS = 700;
 
 export function PagePreloader() {
   const [isHidden, setIsHidden] = useState(false);
