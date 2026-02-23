@@ -18,7 +18,7 @@ export const siteConfig = {
   ogImage: '/og.jpg',
   /** Fullscreen hero – rediger tekster og baggrund her */
   heroImage:
-    'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80',
+    '/images/hero.png',
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
     'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
