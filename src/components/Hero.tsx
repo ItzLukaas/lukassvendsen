@@ -46,28 +46,28 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/60">
+        <p className="text-xs font-medium tracking-[0.25em] uppercase text-white/50">
           Freelance fotograf
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
           {headline}
         </h1>
-        <p className="mt-6 text-lg text-white/80 leading-relaxed">
+        <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-xl mx-auto">
           {subline}
         </p>
-        <p className="mt-4 text-base font-medium text-white/90">
+        <p className="mt-3 text-sm text-white/60">
           {heroTagline}
         </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
           <Link
             href="#galleri"
-            className="text-white/90 hover:text-white border-b border-white/40 hover:border-white transition-colors pb-0.5"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-900 shadow-lg shadow-black/20 transition hover:bg-white/95"
           >
             Se galleri
           </Link>
           <Link
             href="#kontakt"
-            className="text-white/90 hover:text-white border-b border-white/40 hover:border-white transition-colors pb-0.5"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:border-white"
           >
             Kontakt
           </Link>
@@ -76,7 +76,7 @@ export function Hero() {
 
       <Link
         href="#om-mig"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 p-2 text-white/60 hover:text-white transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 p-2 text-white/40 hover:text-white/70 transition-colors"
         aria-label="Scroll ned"
       >
         <ArrowDown className="w-5 h-5 animate-bounce" />
