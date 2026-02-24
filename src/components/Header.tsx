@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail, Camera } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
@@ -59,8 +60,9 @@ export function Header() {
           ))}
         </ul>
 
-        {/* CTA – desktop */}
-        <div className="hidden md:block">
+        {/* Desktop: theme toggle + CTA */}
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Link
             href="/#kontakt"
             className="inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
@@ -70,16 +72,19 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-white"
-          onClick={() => setMenuOpen((o) => !o)}
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
-        >
-          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile: theme toggle + menu button */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-white"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}

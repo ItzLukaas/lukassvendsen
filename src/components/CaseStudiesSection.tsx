@@ -14,7 +14,7 @@ export async function CaseStudiesSection() {
   return (
     <section
       id="case-studies"
-      className="scroll-mt-28 bg-zinc-50/80 py-14 sm:py-16 lg:py-20"
+      className="scroll-mt-28 bg-zinc-50/80 dark:bg-zinc-800/80 py-14 sm:py-16 lg:py-20"
       aria-labelledby="case-studies-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ export async function CaseStudiesSection() {
             <li key={study.slug}>
               <CaseStudyLink
                 href={`/case-studies/${study.slug}`}
-                className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all hover:border-zinc-300 hover:shadow-md"
+                className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-800 shadow-sm transition-all hover:border-zinc-300 hover:shadow-md dark:hover:border-zinc-600"
               >
                 <div className="relative aspect-[4/3] bg-zinc-100">
                   {study.image ? (

@@ -12,30 +12,30 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-12"
+      className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-12 dark:border-zinc-800 dark:bg-zinc-900/95"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-10 sm:gap-16">
           {/* Kontaktoplysninger */}
           <div>
-            <h3 className="text-xs font-medium tracking-wide text-zinc-500 mb-3">
+            <h3 className="text-xs font-medium tracking-wide text-zinc-500 mb-3 dark:text-zinc-400">
               Kontaktoplysninger
             </h3>
-            <ul className="space-y-2.5 text-sm text-zinc-700">
+            <ul className="space-y-2.5 text-sm text-zinc-700 dark:text-zinc-300">
               <li>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="hover:text-zinc-900 transition-colors inline-flex items-center gap-2"
+                  className="hover:text-zinc-900 dark:hover:text-white transition-colors inline-flex items-center gap-2"
                   aria-label={`E-mail: ${contact.email}`}
                 >
-                  <Mail className="h-3.5 w-3.5 shrink-0 text-zinc-400" />
+                  <Mail className="h-3.5 w-3.5 shrink-0 text-zinc-400 dark:text-zinc-500" />
                   {contact.email}
                 </a>
               </li>
               {contact.address && (
                 <li className="inline-flex items-start gap-2">
-                  <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5 text-zinc-400" />
+                  <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5 text-zinc-400 dark:text-zinc-500" />
                   <span>{contact.address}</span>
                 </li>
               )}
@@ -44,7 +44,7 @@ export function Footer() {
                   href={`tel:${contact.phone.replace(/\s/g, '')}`}
                   className="hover:text-zinc-900 transition-colors inline-flex items-center gap-2"
                 >
-                  <Phone className="h-3.5 w-3.5 shrink-0 text-zinc-400" />
+                  <Phone className="h-3.5 w-3.5 shrink-0 text-zinc-400 dark:text-zinc-500" />
                   {contact.phone}
                 </a>
               </li>
@@ -53,7 +53,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-xs font-medium tracking-wide text-zinc-500 mb-3">
+            <h3 className="text-xs font-medium tracking-wide text-zinc-500 mb-3 dark:text-zinc-400">
               Navigation
             </h3>
             <nav aria-label="Footer">
@@ -73,9 +73,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">
               © {new Date().getFullYear()} {siteConfig.brandName ?? siteConfig.name}
             </p>
             <Link
@@ -90,7 +90,7 @@ export function Footer() {
               href={contact.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-700 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300 transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="h-3.5 w-3.5" />

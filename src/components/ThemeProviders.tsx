@@ -1,0 +1,17 @@
+'use client';
+
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+
+export function ThemeProviders({ children }: { children: React.ReactNode }) {
+  return (
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      storageKey="lukas-photography-theme"
+      disableTransitionOnChange={false}
+    >
+      {children}
+    </NextThemesProvider>
+  );
+}

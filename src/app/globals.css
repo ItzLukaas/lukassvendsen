@@ -25,6 +25,21 @@
     --ring: var(--extra);
     --radius: 0.5rem;
   }
+  .dark {
+    --background: 240 6% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 6% 10%;
+    --card-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 12%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 4% 55%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 191 69% 13%;
+  }
 }
 
 @layer base {
@@ -33,13 +48,18 @@
   }
   html {
     scroll-behavior: smooth;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
   body {
     @apply bg-background text-foreground antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
   :root {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--extra)) transparent;
+  }
+  .dark {
+    scrollbar-color: hsl(var(--extra) / 0.8) transparent;
   }
   @media (hover: hover) {
     :root::-webkit-scrollbar {
