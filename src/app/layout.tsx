@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Outfit, DM_Sans } from 'next/font/google';
 import './globals.css';
+import 'lenis/dist/lenis.css';
 import { siteConfig } from '@/content/data';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -8,6 +9,7 @@ import { ScrollToTop } from '@/components/ScrollToTop';
 import { CookieBanner } from '@/components/CookieBanner';
 import { CaseStudyLoadingProvider } from '@/context/CaseStudyLoadingContext';
 import { PagePreloader } from '@/components/PagePreloader';
+import { SmoothScroll } from '@/components/SmoothScroll';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -81,6 +83,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased bg-background text-foreground">
+        <SmoothScroll />
         <PagePreloader />
         <CaseStudyLoadingProvider>
           <Header />
