@@ -51,7 +51,7 @@ export function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                className="text-sm font-semibold text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               >
                 {label}
               </Link>
@@ -102,7 +102,7 @@ export function Header() {
                 >
                   <Link
                     href={href}
-                    className="block py-2.5 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                    className="block py-2.5 text-sm font-semibold text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
