@@ -18,7 +18,7 @@ export function Hero() {
         {heroImage ? (
           <div
             className="absolute inset-0 hero-bg-image"
-            style={{ backgroundImage: `url("https://i.postimg.cc/TPFtv0H9/Design-uden-navn-(42).jpg")` }}
+            style={{ backgroundImage: `url("https://i.postimg.cc/rpxrz9wQ/Crowd-Blue.jpg")` }}
             aria-hidden
           />
         ) : null}
