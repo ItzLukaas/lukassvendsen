@@ -18,9 +18,17 @@ export const siteConfig = {
     'Grindsted',
   ],
   ogImage: '/og.jpg',
-  /** Fullscreen hero – rediger tekster og baggrund her. Første billede bruges også som fallback. */
+  /**
+   * Hero-billeder – to måder at bruge billeder:
+   *
+   * 1) LOKALT: Læg filer i mappen "public" i projektet (fx public/images/hero.png).
+   *    I stien herunder skriv KUN "/images/hero.png" – aldrig "public/" foran.
+   *    Så: læg fil i public/images/hero.png → brug '/images/hero.png'.
+   *
+   * 2) SKY/URL: Brug fuld URL (https://...) fra fx Cloudinary, Google Photos, egen server.
+   *    Indsæt bare URL'en i heroImages. For galleri + Next/Image: tilføj hostname i next.config.mjs under images.remotePatterns.
+   */
   heroImage: '/images/hero.png',
-  /** Billeder til hero-slider (fader mellem dem). Brug én eller flere. */
   heroImages: ['/images/hero.png', 'https://picsum.photos/seed/hero2/1920/1080', 'https://picsum.photos/seed/hero3/1920/1080'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
