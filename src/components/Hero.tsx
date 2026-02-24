@@ -1,13 +1,26 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 
+const HERO_INTERVAL_MS = 5000;
+const FADE_DURATION_MS = 1000;
+
 export function Hero() {
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
   const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
-  const heroImage = siteConfig.heroImage ?? '';
+  const images = (siteConfig as { heroImages?: string[] }).heroImages ?? (siteConfig.heroImage ? [siteConfig.heroImage] : []);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const t = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % images.length);
+    }, HERO_INTERVAL_MS);
+    return () => clearInterval(t);
+  }, [images.length]);
 
   return (
     <section
@@ -15,13 +28,19 @@ export function Hero() {
       aria-label="Velkommen"
     >
       <div className="absolute inset-0 z-0 bg-zinc-800">
-        {heroImage ? (
+        {images.map((src, i) => (
           <div
-            className="absolute inset-0 hero-bg-image"
-            style={{ backgroundImage: `url("${heroImage}")` }}
+            key={src}
+            className="absolute inset-0 hero-bg-image transition-opacity duration-[1000ms] ease-in-out"
+            style={{
+              backgroundImage: `url("${src}")`,
+              opacity: i === activeIndex ? 1 : 0,
+              zIndex: i === activeIndex ? 1 : 0,
+            }}
+            aria-hidden={i !== activeIndex}
           />
-        ) : null}
-        <div className="absolute inset-0 bg-black/25" aria-hidden />
+        ))}
+        <div className="absolute inset-0 bg-black/25 z-[2]" aria-hidden />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">

@@ -18,9 +18,10 @@ export const siteConfig = {
     'Grindsted',
   ],
   ogImage: '/og.jpg',
-  /** Fullscreen hero – rediger tekster og baggrund her */
-  heroImage:
-    '/images/hero.png',
+  /** Fullscreen hero – rediger tekster og baggrund her. Første billede bruges også som fallback. */
+  heroImage: '/images/hero.png',
+  /** Billeder til hero-slider (fader mellem dem). Brug én eller flere. */
+  heroImages: ['/images/hero.png', 'https://picsum.photos/seed/hero2/1920/1080', 'https://picsum.photos/seed/hero3/1920/1080'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
     'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
