@@ -46,7 +46,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-2xl mx-auto">
         <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/60">
-          Fotograf
+          Freelance fotograf
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
           {headline}
@@ -54,6 +54,11 @@ export function Hero() {
         <p className="mt-6 text-lg text-white/80 leading-relaxed">
           {subline}
         </p>
+        {(siteConfig as { heroTagline?: string }).heroTagline && (
+          <p className="mt-4 text-base font-medium text-white/90">
+            {(siteConfig as { heroTagline?: string }).heroTagline}
+          </p>
+        )}
         <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
           <Link
             href="#galleri"

@@ -25,6 +25,8 @@ export const siteConfig = {
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
     'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
+  /** Kort linje under subline – freelance + klar til arrangement */
+  heroTagline: 'Freelance fotograf – klar til dit næste arrangement, event eller bryllup.',
 };
 
 export const about = {

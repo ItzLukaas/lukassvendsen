@@ -45,9 +45,8 @@ export function ContactSection() {
           <a
             href={`mailto:${contact.email}`}
             className="font-medium text-white underline decoration-white/50 underline-offset-2 hover:decoration-white"
-            aria-label={`E-mail: ${contact.email}`}
           >
-            {contact.email.replace('@', ' [at] ')}
+            {contact.email}
           </a>
         </p>
       </div>
