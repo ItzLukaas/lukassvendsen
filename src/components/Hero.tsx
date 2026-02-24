@@ -11,7 +11,6 @@ const FADE_DURATION_MS = 1400;
 export function Hero() {
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
   const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
-  const heroTagline = (siteConfig as { heroTagline?: string }).heroTagline ?? 'Freelance fotograf – klar til dit næste arrangement, event eller bryllup.';
   const images = (siteConfig as { heroImages?: string[] }).heroImages ?? (siteConfig.heroImage ? [siteConfig.heroImage] : []);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -46,19 +45,16 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/45">
-          Freelance fotograf
+        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/40">
+          Fotograf
         </p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
           {headline}
         </h1>
-        <p className="mt-7 text-lg text-white/80 leading-relaxed max-w-lg mx-auto">
+        <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-lg mx-auto">
           {subline}
         </p>
-        <p className="mt-2 text-sm text-white/55">
-          {heroTagline}
-        </p>
-        <div className="mt-14 flex flex-wrap justify-center gap-4">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
             className="inline-flex items-center justify-center rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-zinc-900 shadow-md transition hover:bg-white/95 hover:shadow-lg"
