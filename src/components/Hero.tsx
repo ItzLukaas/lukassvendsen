@@ -46,7 +46,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/45">
+        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-[hsl(191,45%,72%)]">
           Freelance fotograf
         </p>
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -61,7 +61,7 @@ export function Hero() {
         <div className="mt-14 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-zinc-900 shadow-md transition hover:bg-white/95 hover:shadow-lg"
+            className="inline-flex items-center justify-center rounded-xl bg-[hsl(var(--extra))] px-7 py-3.5 text-sm font-medium text-white shadow-md transition hover:opacity-95 hover:shadow-lg"
           >
             Se galleri
           </Link>

@@ -12,7 +12,7 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-zinc-200 bg-zinc-50 py-10 sm:py-12"
+      className="border-t-2 border-t-[hsl(var(--extra))]/30 border-b-0 border-x-0 border-zinc-200 bg-zinc-50 py-10 sm:py-12"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -62,7 +62,7 @@ export function Footer() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="text-sm text-zinc-700 hover:text-zinc-900 transition-colors"
+                      className="text-sm text-zinc-700 hover:text-[hsl(var(--extra))] transition-colors"
                     >
                       {label}
                     </Link>
@@ -73,7 +73,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-zinc-200 dark:border-zinc-700 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <p className="text-xs text-zinc-500">
               © {new Date().getFullYear()} {siteConfig.brandName ?? siteConfig.name}

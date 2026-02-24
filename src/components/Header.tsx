@@ -50,7 +50,7 @@ export function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-semibold text-zinc-600 transition-colors hover:text-zinc-900"
+                className="text-sm font-semibold text-zinc-600 transition-colors hover:text-[hsl(var(--extra))]"
               >
                 {label}
               </Link>
