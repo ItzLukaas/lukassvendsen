@@ -14,7 +14,7 @@ export function Hero() {
       className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-24"
       aria-label="Velkommen"
     >
-      <div className="absolute inset-0 z-0 bg-zinc-800">
+      <div className="absolute inset-0 z-0 bg-zinc-900">
         {heroImage ? (
           <div
             className="absolute inset-0 hero-bg-image"
@@ -26,7 +26,8 @@ export function Hero() {
         <div
           className="absolute inset-0 z-[2]"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.6) 100%)',
+            background:
+              'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.85) 100%)',
           }}
           aria-hidden
         />
