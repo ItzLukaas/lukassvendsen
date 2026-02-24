@@ -29,7 +29,7 @@ export const siteConfig = {
    *    Indsæt bare URL'en i heroImages. For galleri + Next/Image: tilføj hostname i next.config.mjs under images.remotePatterns.
    */
   heroImage: '/images/hero.png',
-  heroImages: ['/images/hero.png', 'https://picsum.photos/seed/hero2/1920/1080', 'https://picsum.photos/seed/hero3/1920/1080'],
+  heroImages: ['https://i.postimg.cc/mb4Svcpk/585544018-122097576195133740-8603435135905782102-n.png', 'https://picsum.photos/seed/hero2/1920/1080', 'https://picsum.photos/seed/hero3/1920/1080'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
     'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
