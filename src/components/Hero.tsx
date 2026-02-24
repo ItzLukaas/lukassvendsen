@@ -42,32 +42,32 @@ export function Hero() {
             aria-hidden={i !== activeIndex}
           />
         ))}
-        <div className="absolute inset-0 bg-black/25 z-[2]" aria-hidden />
+        <div className="absolute inset-0 bg-black/20 z-[2]" aria-hidden />
       </div>
 
-      <div className="relative z-10 max-w-2xl mx-auto">
-        <p className="text-xs font-medium tracking-[0.25em] uppercase text-white/50">
+      <div className="relative z-10 max-w-2xl mx-auto px-4">
+        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/45">
           Freelance fotograf
         </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
           {headline}
         </h1>
-        <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-xl mx-auto">
+        <p className="mt-7 text-lg text-white/80 leading-relaxed max-w-lg mx-auto">
           {subline}
         </p>
-        <p className="mt-3 text-sm text-white/60">
+        <p className="mt-2 text-sm text-white/55">
           {heroTagline}
         </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-900 shadow-lg shadow-black/20 transition hover:bg-white/95"
+            className="inline-flex items-center justify-center rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-zinc-900 shadow-md transition hover:bg-white/95 hover:shadow-lg"
           >
             Se galleri
           </Link>
           <Link
             href="#kontakt"
-            className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:border-white"
+            className="inline-flex items-center justify-center rounded-xl border border-white/80 bg-white/5 backdrop-blur-sm px-7 py-3.5 text-sm font-medium text-white transition hover:bg-white/15 hover:border-white"
           >
             Kontakt
           </Link>
@@ -76,10 +76,10 @@ export function Hero() {
 
       <Link
         href="#om-mig"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 p-2 text-white/40 hover:text-white/70 transition-colors"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 p-2 text-white/35 hover:text-white/60 transition-colors"
         aria-label="Scroll ned"
       >
-        <ArrowDown className="w-5 h-5 animate-bounce" />
+        <ArrowDown className="w-4 h-4 animate-bounce" />
       </Link>
     </section>
   );

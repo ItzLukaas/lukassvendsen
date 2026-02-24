@@ -10,7 +10,6 @@ import { CookieBanner } from '@/components/CookieBanner';
 import { CaseStudyLoadingProvider } from '@/context/CaseStudyLoadingContext';
 import { PagePreloader } from '@/components/PagePreloader';
 import { SmoothScroll } from '@/components/SmoothScroll';
-import { ThemeProviders } from '@/components/ThemeProviders';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -84,17 +83,15 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased bg-background text-foreground">
-        <ThemeProviders>
-          <SmoothScroll />
-          <PagePreloader />
-          <CaseStudyLoadingProvider>
-            <Header />
-            <main id="main-content">{children}</main>
-            <Footer />
-            <ScrollToTop />
-            <CookieBanner />
-          </CaseStudyLoadingProvider>
-        </ThemeProviders>
+        <SmoothScroll />
+        <PagePreloader />
+        <CaseStudyLoadingProvider>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <ScrollToTop />
+          <CookieBanner />
+        </CaseStudyLoadingProvider>
       </body>
     </html>
   );
