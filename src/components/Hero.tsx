@@ -11,6 +11,7 @@ const FADE_DURATION_MS = 1400;
 export function Hero() {
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
   const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
+  const heroTagline = (siteConfig as { heroTagline?: string }).heroTagline ?? 'Freelance fotograf – klar til dit næste arrangement, event eller bryllup.';
   const images = (siteConfig as { heroImages?: string[] }).heroImages ?? (siteConfig.heroImage ? [siteConfig.heroImage] : []);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -54,11 +55,9 @@ export function Hero() {
         <p className="mt-6 text-lg text-white/80 leading-relaxed">
           {subline}
         </p>
-        {(siteConfig as { heroTagline?: string }).heroTagline && (
-          <p className="mt-4 text-base font-medium text-white/90">
-            {(siteConfig as { heroTagline?: string }).heroTagline}
-          </p>
-        )}
+        <p className="mt-4 text-base font-medium text-white/90">
+          {heroTagline}
+        </p>
         <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
           <Link
             href="#galleri"
