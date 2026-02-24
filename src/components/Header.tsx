@@ -11,7 +11,7 @@ const LINKS = [
   { href: '/', label: 'Forside' },
   { href: '/galleri', label: 'Galleri' },
   { href: '/case-studies', label: 'Case studies' },
-  { href: '/#om-mig', label: 'Om mig' },
+  { href: '/#om-mig', label: 'Om Lukas' },
 ];
 
 export function Header() {

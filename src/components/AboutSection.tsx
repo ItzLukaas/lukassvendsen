@@ -34,7 +34,7 @@ export function AboutSection() {
           </div>
           <div className="lg:col-span-7 lg:order-1">
             <span className="text-xs font-semibold tracking-widest text-themeB uppercase">
-              Om mig
+              Om Lukas
             </span>
             <h2
               id="om-mig-heading"

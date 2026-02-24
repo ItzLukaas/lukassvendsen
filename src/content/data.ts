@@ -27,7 +27,7 @@ export const siteConfig = {
 };
 
 export const about = {
-  heading: 'Om mig',
+  heading: 'Om Lukas',
   title: 'Passion for det perfekte øjeblik',
   /** Portrætbillede – læg fx i public/about/portrait.jpg og sæt til '/about/portrait.jpg'. Lad stå tom for placeholder. */
   image: '',

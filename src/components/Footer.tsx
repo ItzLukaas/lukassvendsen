@@ -5,7 +5,7 @@ import { siteConfig, contact } from '@/content/data';
 const NAV_LINKS = [
   { href: '/galleri', label: 'Galleri' },
   { href: '/case-studies', label: 'Case studies' },
-  { href: '/#om-mig', label: 'Om mig' },
+  { href: '/#om-mig', label: 'Om Lukas' },
   { href: '/#kontakt', label: 'Kontakt' },
 ];
 
