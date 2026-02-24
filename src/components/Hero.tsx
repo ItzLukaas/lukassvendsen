@@ -1,26 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 
-const HERO_INTERVAL_MS = 5000;
-const FADE_DURATION_MS = 1400;
-
 export function Hero() {
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
   const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
-  const images = (siteConfig as { heroImages?: string[] }).heroImages ?? (siteConfig.heroImage ? [siteConfig.heroImage] : []);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (images.length <= 1) return;
-    const t = setInterval(() => {
-      setActiveIndex((i) => (i + 1) % images.length);
-    }, HERO_INTERVAL_MS);
-    return () => clearInterval(t);
-  }, [images.length]);
+  const heroImage = siteConfig.heroImage ?? '';
 
   return (
     <section
@@ -28,20 +15,21 @@ export function Hero() {
       aria-label="Velkommen"
     >
       <div className="absolute inset-0 z-0 bg-zinc-800">
-        {images.map((src, i) => (
+        {heroImage ? (
           <div
-            key={src}
-            className="absolute inset-0 hero-bg-image pointer-events-none"
-            style={{
-              backgroundImage: `url("${src}")`,
-              opacity: i === activeIndex ? 1 : 0,
-              transition: `opacity ${FADE_DURATION_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`,
-              zIndex: 0,
-            }}
-            aria-hidden={i !== activeIndex}
+            className="absolute inset-0 hero-bg-image"
+            style={{ backgroundImage: `url("${heroImage}")` }}
+            aria-hidden
           />
-        ))}
-        <div className="absolute inset-0 bg-black/20 z-[2]" aria-hidden />
+        ) : null}
+        {/* Grå gradient over billedet så teksten står tydeligt frem */}
+        <div
+          className="absolute inset-0 z-[2]"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.6) 100%)',
+          }}
+          aria-hidden
+        />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
