@@ -6,7 +6,7 @@ import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 
 const HERO_INTERVAL_MS = 5000;
-const FADE_DURATION_MS = 1000;
+const FADE_DURATION_MS = 1400;
 
 export function Hero() {
   const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
@@ -31,11 +31,12 @@ export function Hero() {
         {images.map((src, i) => (
           <div
             key={src}
-            className="absolute inset-0 hero-bg-image transition-opacity duration-[1000ms] ease-in-out"
+            className="absolute inset-0 hero-bg-image pointer-events-none"
             style={{
               backgroundImage: `url("${src}")`,
               opacity: i === activeIndex ? 1 : 0,
-              zIndex: i === activeIndex ? 1 : 0,
+              transition: `opacity ${FADE_DURATION_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`,
+              zIndex: 0,
             }}
             aria-hidden={i !== activeIndex}
           />
