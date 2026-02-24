@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail, Camera } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
@@ -39,8 +39,9 @@ export function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-heading text-[15px] font-semibold tracking-tight text-zinc-800 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
+          className="flex items-center gap-2 font-heading text-[15px] font-semibold tracking-tight text-zinc-800 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300"
         >
+          <Camera className="h-4 w-4 text-[hsl(var(--extra))]" aria-hidden />
           {brandName}
         </Link>
 
