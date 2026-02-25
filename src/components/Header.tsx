@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail, Camera } from 'lucide-react';
-import { siteConfig, contact } from '@/content/data';
+import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
 const LINKS = [
@@ -17,7 +17,6 @@ const LINKS = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [topbarIndex, setTopbarIndex] = useState(0);
   const brandName = siteConfig?.brandName ?? siteConfig?.name ?? 'Lukas Photography';
 
   useEffect(() => {
@@ -28,19 +27,11 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const messagesCount = 3;
-    const interval = setInterval(() => {
-      setTopbarIndex((i) => (i + 1) % messagesCount);
-    }, 5000);
-    return () => clearInterval(interval);
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  const topbarMessage =
-    topbarIndex === 0
-      ? '5-stjernet fotograf i Billund Kommune'
-      : topbarIndex === 2
-        ? `${contact.email} | ${contact.phone}`
-        : '';
 
   return (
     <header
@@ -54,27 +45,9 @@ export function Header() {
       {/* Topbar med stærkt budskab */}
       <div className="bg-[hsl(var(--extra))] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2 sm:px-6 lg:px-8">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.p
-              key={topbarIndex}
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 4 }}
-              transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-              className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center"
-            >
-              {topbarIndex === 1 ? (
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="underline underline-offset-[6px] decoration-white/80 hover:decoration-white transition-colors"
-                >
-                  Book din favorit fotograf lige her
-                </a>
-              ) : (
-                topbarMessage
-              )}
-            </motion.p>
-          </AnimatePresence>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center">
+            Unikke billeder, konkurrencedygtige priser
+          </p>
         </div>
       </div>
 

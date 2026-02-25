@@ -157,10 +157,11 @@ export type ClientLogo = {
 
 export const clients: ClientLogo[] = [
   {
-    name: 'Virksomhed A',
-    role: 'Branding & portrætter',
-    url: '/logos/logo1.png',
-    logoSrc: 'logos/logo1.png',
+    name: 'GGIF Håndbold',
+    role: 'Samarbejde',
+    url: 'https://www.ggif-handbold.dk',
+    logoSrc:
+      'https://usercontent.one/wp/www.ggif-handbold.dk/wp-content/uploads/2021/07/logo-med-tekst.png?media=1755934210',
   },
   {
     name: 'Event Bureau',
