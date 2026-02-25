@@ -22,27 +22,31 @@ export function Hero() {
             aria-hidden
           />
         ) : null}
-        {/* Overlay for bedre laesbarhed */}
+        {/* Overlay: mørkere nedefra + blød mørkning i midten så teksten ikke frynser */}
         <div
           className="absolute inset-0 z-[2]"
           style={{
             background:
-              'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.85) 100%)',
+              'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.82) 100%)',
+          }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 z-[2]"
+          style={{
+            background: 'radial-gradient(ellipse 80% 50% at 50% 45%, rgba(0,0,0,0.5) 0%, transparent 70%)',
           }}
           aria-hidden
         />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/80 mb-5 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
-          Fotograf
-        </span>
         <h1
-          className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15] [text-shadow:0_2px_10px_rgba(0,0,0,0.7),0_0_2px_rgba(0,0,0,0.5)]"
+          className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.5rem] leading-[1.12] [text-shadow:0_2px_20px_rgba(0,0,0,0.8),0_0_1px_rgba(0,0,0,0.9)]"
         >
           {headline}
         </h1>
-        <p className="mt-6 text-base sm:text-lg text-white/95 leading-relaxed max-w-lg mx-auto font-medium [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
+        <p className="mt-6 text-base sm:text-lg text-white leading-relaxed max-w-lg mx-auto font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.75),0_0_1px_rgba(0,0,0,0.8)]">
           {subline}
         </p>
         <div className="mt-14 flex flex-wrap justify-center gap-4">
