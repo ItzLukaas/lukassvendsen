@@ -76,7 +76,7 @@ export function Header() {
       {/* Topbar med ikoner, roterende tekst og luk-kryds */}
       {!topbarClosed && (
         <div className="bg-[hsl(var(--extra))] text-white">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
+          <div className="flex w-full items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href={`mailto:${contact.email}`}
