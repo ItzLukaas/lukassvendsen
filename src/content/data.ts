@@ -28,8 +28,8 @@ export const siteConfig = {
    * 2) SKY/URL: Brug fuld URL (https://...) fra fx Cloudinary, Google Photos, egen server.
    *    Indsæt bare URL'en i heroImages. For galleri + Next/Image: tilføj hostname i next.config.mjs under images.remotePatterns.
    */
-  heroImage: '/images/hero.png',
-  heroImages: ['https://i.postimg.cc/mb4Svcpk/585544018-122097576195133740-8603435135905782102-n.png', 'https://i.postimg.cc/mb4Svcpk/585544018-122097576195133740-8603435135905782102-n.png', 'https://picsum.photos/seed/hero3/1920/1080'],
+  heroImage: 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856',
+  heroImages: ['https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
     'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
@@ -41,7 +41,7 @@ export const about = {
   heading: 'Om Lukas',
   title: 'Passion for det perfekte øjeblik',
   /** Portrætbillede – læg fx i public/about/portrait.jpg og sæt til '/about/portrait.jpg'. Lad stå tom for placeholder. */
-  image: 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856',
+  image: 'https://i.postimg.cc/9Q8hZ3rG/Thor-Farlov.jpg',
   content: `Jeg er Lukas, og fotografi er mere end et job for mig – det er den måde jeg ser verden på. Jeg vil rigtig gerne lære dig at kende og fange det, der er vigtigt for dig.
 
 Jeg arbejder med naturligt lys, rene billeder og øjeblikke der taler for sig selv. Portrætter, events eller kreative projekter – jeg tager det personligt og giver dig billeder, du kan lide at kigge tilbage på.
