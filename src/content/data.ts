@@ -274,7 +274,7 @@ export const contact = {
   address: 'Ribersvej 90, Grindsted',
   instagram: 'https://instagram.com/lukassvendsen',
   /** LinkedIn-profil – udfyld URL eller lad stå tom for at skjule ikonet */
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/lukas-guldager-svendsen-a4a777290/',
   /** CTA-tekster til kontaktsektionen */
   ctaHeading: 'Lad os skabe noget sammen',
   ctaText:

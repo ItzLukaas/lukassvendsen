@@ -85,17 +85,15 @@ export function Header() {
               >
                 <Mail className="h-3.5 w-3.5" />
               </a>
-              {contact.linkedin ? (
-                <a
-                  href={contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-3.5 w-3.5" />
-                </a>
-              ) : null}
+              <a
+                href={contact.linkedin || 'https://linkedin.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+              </a>
             </div>
             <div className="min-w-0 flex-1 flex justify-center">
               <AnimatePresence mode="wait" initial={false}>
