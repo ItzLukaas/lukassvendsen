@@ -66,7 +66,7 @@ export function Header() {
               {topbarIndex === 1 ? (
                 <a
                   href={`mailto:${contact.email}`}
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-4 py-1.5 hover:bg-white/15 hover:border-white transition-colors"
+                  className="underline underline-offset-[6px] decoration-white/80 hover:decoration-white transition-colors"
                 >
                   Book din favorit fotograf lige her
                 </a>
