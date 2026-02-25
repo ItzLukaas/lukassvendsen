@@ -22,7 +22,7 @@ export function Hero() {
             aria-hidden
           />
         ) : null}
-        {/* Overlay: bedre læsbarhed uden at skjule billedet */
+        {/* Overlay for bedre laesbarhed */}
         <div
           className="absolute inset-0 z-[2]"
           style={{
