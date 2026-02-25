@@ -41,7 +41,7 @@ export const about = {
   heading: 'Om Lukas',
   title: 'Passion for det perfekte øjeblik',
   /** Portrætbillede – læg fx i public/about/portrait.jpg og sæt til '/about/portrait.jpg'. Lad stå tom for placeholder. */
-  image: 'https://i.postimg.cc/9Q8hZ3rG/Thor-Farlov.jpg',
+  image: 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856',
   content: `Jeg er Lukas, og fotografi er mere end et job for mig – det er den måde jeg ser verden på. Jeg vil rigtig gerne lære dig at kende og fange det, der er vigtigt for dig.
 
 Jeg arbejder med naturligt lys, rene billeder og øjeblikke der taler for sig selv. Portrætter, events eller kreative projekter – jeg tager det personligt og giver dig billeder, du kan lide at kigge tilbage på.
