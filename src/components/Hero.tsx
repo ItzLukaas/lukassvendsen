@@ -11,48 +11,48 @@ export function Hero() {
 
   return (
     <section
-      className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-24"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-6 py-28"
       aria-label="Velkommen"
     >
       <div className="absolute inset-0 z-0 bg-zinc-900">
         {heroImage ? (
           <div
             className="absolute inset-0 hero-bg-image"
-            style={{ backgroundImage: `url("https://i.postimg.cc/rpxrz9wQ/Crowd-Blue.jpg")` }}
+            style={{ backgroundImage: `url("${heroImage}")` }}
             aria-hidden
           />
         ) : null}
-        {/* Grå gradient over billedet så teksten står tydeligt frem */}
+        {/* Overlay: bedre læsbarhed uden at skjule billedet */
         <div
           className="absolute inset-0 z-[2]"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.85) 100%)',
+              'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.75) 100%)',
           }}
           aria-hidden
         />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/40">
+        <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/50 mb-5">
           Fotograf
-        </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+        </span>
+        <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15]">
           {headline}
         </h1>
-        <p className="mt-6 text-lg text-white/75 leading-relaxed max-w-lg mx-auto">
+        <p className="mt-6 text-base sm:text-lg text-white/90 leading-relaxed max-w-lg mx-auto font-medium">
           {subline}
         </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
+        <div className="mt-14 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
-            className="inline-flex items-center justify-center rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-zinc-900 shadow-md transition hover:bg-white/95 hover:shadow-lg"
+            className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg transition hover:bg-white/95 hover:shadow-xl hover:scale-[1.02]"
           >
             Se galleri
           </Link>
           <Link
             href="#kontakt"
-            className="inline-flex items-center justify-center rounded-xl border border-white/80 bg-white/5 backdrop-blur-sm px-7 py-3.5 text-sm font-medium text-white transition hover:bg-white/15 hover:border-white"
+            className="inline-flex items-center justify-center rounded-full border-2 border-white/90 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 hover:border-white"
           >
             Kontakt
           </Link>
@@ -61,10 +61,10 @@ export function Hero() {
 
       <Link
         href="#om-mig"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 p-2 text-white/35 hover:text-white/60 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 p-2 rounded-full text-white/40 hover:text-white/70 hover:bg-white/10 transition-colors"
         aria-label="Scroll ned"
       >
-        <ArrowDown className="w-4 h-4 animate-bounce" />
+        <ArrowDown className="w-5 h-5 animate-bounce" />
       </Link>
     </section>
   );
