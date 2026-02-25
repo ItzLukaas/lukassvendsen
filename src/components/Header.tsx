@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Mail, Camera, BadgeCheck } from 'lucide-react';
+import { Menu, X, Mail, Camera } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 import { cn } from '@/lib/utils';
 
@@ -37,10 +37,9 @@ export function Header() {
     >
       {/* Topbar med stærkt budskab */}
       <div className="bg-[hsl(var(--extra))] text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 sm:px-6 lg:px-8">
-          <BadgeCheck className="h-4 w-4 flex-shrink-0 hidden sm:block" aria-hidden />
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs">
-            Konkurrencedygtig &amp; prisvenlig fotograf i Billund Kommune
+        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center">
+            Prisvenlig fotograf i Billund Kommune
           </p>
         </div>
       </div>
