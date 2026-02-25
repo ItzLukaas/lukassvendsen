@@ -27,23 +27,30 @@ export function Hero() {
           className="absolute inset-0 z-[2]"
           style={{
             background:
-              'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%)',
+              'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.85) 100%)',
           }}
           aria-hidden
         />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/50 mb-5">
-          Fotograf
-        </span>
-        <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15]">
-          {headline}
-        </h1>
-        <p className="mt-6 text-base sm:text-lg text-white/90 leading-relaxed max-w-lg mx-auto font-medium">
-          {subline}
-        </p>
-        <div className="mt-14 flex flex-wrap justify-center gap-4">
+        <div className="rounded-2xl bg-black/30 backdrop-blur-sm px-6 py-8 sm:px-6 sm:py-8">
+          <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/70 mb-5">
+            Fotograf
+          </span>
+          <h1
+            className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.8)' }}
+          >
+            {headline}
+          </h1>
+          <p
+            className="mt-6 text-base sm:text-lg text-white leading-relaxed max-w-lg mx-auto font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
+            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}
+          >
+            {subline}
+          </p>
+          <div className="mt-14 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg transition hover:bg-white/95 hover:shadow-xl hover:scale-[1.02]"
@@ -56,6 +63,7 @@ export function Hero() {
           >
             Kontakt
           </Link>
+          </div>
         </div>
       </div>
 
