@@ -57,11 +57,14 @@ export function GallerySection() {
         <div className="mx-auto max-w-[1280px]">
           <PhotoAlbum
             photos={photos}
-            layout="rows"
-            targetRowHeight={420}
+            layout="columns"
+            columns={(containerWidth) => (containerWidth && containerWidth >= 900 ? 3 : containerWidth && containerWidth >= 600 ? 2 : 1)}
             spacing={12}
             padding={0}
             onClick={({ index: i }) => open(i)}
+            componentsProps={(containerWidth) => ({
+              image: { style: { objectFit: 'contain' as const } },
+            })}
           />
         </div>
         <div className="mx-auto max-w-[1280px] mt-10 px-4 sm:px-6 lg:px-8 flex justify-center">

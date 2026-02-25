@@ -51,7 +51,7 @@ Jeg er baseret i Danmark og siger sjældent nej til en god historie. Skriv eller
 
 /**
  * Galleri: Rediger alt tekst og metadata her for SEO.
- * width/height bruges til layout – tilpas efter billedets proportioner (fx 800x600 = landskab, 600x800 = portræt).
+ * width/height styrer layout – sæt dem efter billedets FAKTISKE proportioner, så galleriet tilpasser sig formatet (portræt, landskab, kvadrat).
  * Du kan bruge lokale filer: '/gallery/1.jpg' eller eksterne URLs (tilføj hostname i next.config.mjs).
  */
 export interface GalleryImageMeta {

@@ -61,11 +61,14 @@ export default function GalleriPage() {
           <div className="mx-auto max-w-[1280px]">
             <PhotoAlbum
               photos={photos}
-              layout="rows"
-              targetRowHeight={380}
+              layout="columns"
+              columns={(containerWidth) => (containerWidth && containerWidth >= 900 ? 3 : containerWidth && containerWidth >= 600 ? 2 : 1)}
               spacing={12}
               padding={0}
               onClick={({ index: i }) => open(i)}
+              componentsProps={(containerWidth) => ({
+                image: { style: { objectFit: 'contain' as const } },
+              })}
             />
           </div>
         </div>
