@@ -28,7 +28,7 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const messagesCount = 2;
+    const messagesCount = 3;
     const interval = setInterval(() => {
       setTopbarIndex((i) => (i + 1) % messagesCount);
     }, 5000);
@@ -38,7 +38,9 @@ export function Header() {
   const topbarMessage =
     topbarIndex === 0
       ? '5-stjernet fotograf i Billund Kommune'
-      : `${contact.email} | ${contact.phone}`;
+      : topbarIndex === 2
+        ? `${contact.email} | ${contact.phone}`
+        : '';
 
   return (
     <header
@@ -61,7 +63,16 @@ export function Header() {
               transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
               className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center"
             >
-              {topbarMessage}
+              {topbarIndex === 1 ? (
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="underline-offset-4 hover:underline"
+                >
+                  Book din favorit fotograf lige her
+                </a>
+              ) : (
+                topbarMessage
+              )}
             </motion.p>
           </AnimatePresence>
         </div>
