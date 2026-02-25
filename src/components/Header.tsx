@@ -38,7 +38,7 @@ export function Header() {
   const topbarMessage =
     topbarIndex === 0
       ? '5-stjernet fotograf i Billund Kommune'
-      : `${contact.email} · ${contact.phone}`;
+      : `${contact.email} | ${contact.phone}`;
 
   return (
     <header
