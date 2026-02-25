@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Mail, Camera, Linkedin } from 'lucide-react';
+import { Menu, X, Send, Camera, Linkedin, Mail } from 'lucide-react';
 import { siteConfig, contact } from '@/content/data';
 import { cn } from '@/lib/utils';
 
@@ -83,7 +83,7 @@ export function Header() {
                 className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="Send e-mail"
               >
-                <Mail className="h-3.5 w-3.5" />
+                <Send className="h-4 w-4 stroke-[1.5]" />
               </a>
               <a
                 href={contact.linkedin || 'https://linkedin.com'}
@@ -92,7 +92,7 @@ export function Header() {
                 className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-3.5 w-3.5" />
+                <Linkedin className="h-4 w-4 stroke-[1.5]" />
               </a>
             </div>
             <div className="min-w-0 flex-1 flex justify-center">
