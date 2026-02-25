@@ -27,14 +27,14 @@ export function ClientsSection() {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center min-w-[110px] sm:min-w-[130px] h-10 opacity-80 hover:opacity-100 transition-opacity grayscale brightness-0 invert"
+              className="flex items-center justify-center min-w-[150px] sm:min-w-[190px] h-16 opacity-90 hover:opacity-100 transition-opacity"
             >
               <Image
                 src={client.logoSrc}
                 alt={client.name}
-                width={130}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={190}
+                height={60}
+                className="h-12 w-auto object-contain"
               />
             </a>
           ))}
