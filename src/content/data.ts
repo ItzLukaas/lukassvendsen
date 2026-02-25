@@ -273,6 +273,8 @@ export const contact = {
   phone: '+45 24 46 35 50',
   address: 'Ribersvej 90, Grindsted',
   instagram: 'https://instagram.com/lukassvendsen',
+  /** LinkedIn-profil – udfyld URL eller lad stå tom for at skjule ikonet */
+  linkedin: '',
   /** CTA-tekster til kontaktsektionen */
   ctaHeading: 'Lad os skabe noget sammen',
   ctaText:

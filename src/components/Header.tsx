@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Mail, Camera } from 'lucide-react';
+import { Menu, X, Mail, Camera, Linkedin } from 'lucide-react';
 import { siteConfig, contact } from '@/content/data';
 import { cn } from '@/lib/utils';
 
@@ -20,11 +20,31 @@ const TOPBAR_MESSAGES = [
   () => `${contact.email} | ${contact.phone}`,
 ];
 
+const TOPBAR_STORAGE_KEY = 'topbar-dismissed';
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [topbarIndex, setTopbarIndex] = useState(0);
+  const [topbarClosed, setTopbarClosed] = useState(false);
   const brandName = siteConfig?.brandName ?? siteConfig?.name ?? 'Lukas Photography';
+
+  useEffect(() => {
+    try {
+      setTopbarClosed(localStorage.getItem(TOPBAR_STORAGE_KEY) === '1');
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const closeTopbar = () => {
+    setTopbarClosed(true);
+    try {
+      localStorage.setItem(TOPBAR_STORAGE_KEY, '1');
+    } catch {
+      /* ignore */
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -53,23 +73,55 @@ export function Header() {
       )}
       role="banner"
     >
-      {/* Topbar med roterende budskaber */}
-      <div className="bg-[hsl(var(--extra))] text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2 sm:px-6 lg:px-8">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.p
-              key={topbarIndex}
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 4 }}
-              transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-              className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center"
+      {/* Topbar med ikoner, roterende tekst og luk-kryds */}
+      {!topbarClosed && (
+        <div className="bg-[hsl(var(--extra))] text-white">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href={`mailto:${contact.email}`}
+                className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+                aria-label="Send e-mail"
+              >
+                <Mail className="h-3.5 w-3.5" />
+              </a>
+              {contact.linkedin ? (
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-3.5 w-3.5" />
+                </a>
+              ) : null}
+            </div>
+            <div className="min-w-0 flex-1 flex justify-center">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.p
+                  key={topbarIndex}
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
+                  className="text-[11px] font-semibold uppercase tracking-[0.18em] sm:text-xs text-center truncate"
+                >
+                  {topbarText}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+            <button
+              type="button"
+              onClick={closeTopbar}
+              className="shrink-0 p-1.5 rounded-md text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Luk topbar"
             >
-              {topbarText}
-            </motion.p>
-          </AnimatePresence>
+              <X className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
