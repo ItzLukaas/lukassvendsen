@@ -28,7 +28,7 @@ export const siteConfig = {
    * 2) SKY/URL: Brug fuld URL (https://...) fra fx Cloudinary, Google Photos, egen server.
    *    Indsæt bare URL'en i heroImages. For galleri + Next/Image: tilføj hostname i next.config.mjs under images.remotePatterns.
    */
-  heroImage: '/hero.jpg',
+  heroImage: '/images/hero.jpg',
   heroImages: ['https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
   heroSubline:
