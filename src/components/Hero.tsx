@@ -27,7 +27,7 @@ export function Hero() {
           className="absolute inset-0 z-[2]"
           style={{
             background:
-              'linear-gradient(180deg, hsla(var(--extra) / 0.45) 0%, hsla(var(--extra) / 0.65) 35%, rgba(0,0,0,0.9) 100%)',
+              'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%)',
           }}
           aria-hidden
         />
