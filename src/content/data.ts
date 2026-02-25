@@ -31,8 +31,8 @@ export const siteConfig = {
   heroImage: 'https://i.ibb.co/jtLqMMT/DSC02512-2.jpg',
   heroImages: ['https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856'],
   heroHeadline: 'Jeg fortæller historier gennem mit kamera',
-  heroSubline:
-    'Hej, jeg er Lukas. Jeg elsker at møde mennesker og fange det, der betyder noget – uanset om det er et portræt, en fest eller et kreativt projekt. Lad os snakke.',
+  /** Kort, clean linje under overskriften – hold den kort for bedre flow */
+  heroSubline: 'Fotograf i Billund · portrætter, events og kreative projekter',
   /** Kort linje under subline – freelance + klar til arrangement */
   heroTagline: 'Freelance fotograf – klar til dit næste arrangement, event eller bryllup.',
 };

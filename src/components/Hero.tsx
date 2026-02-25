@@ -46,10 +46,12 @@ export function Hero() {
         >
           {headline}
         </h1>
-        <p className="mt-6 text-base sm:text-lg text-white leading-relaxed max-w-lg mx-auto font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.75),0_0_1px_rgba(0,0,0,0.8)]">
-          {subline}
-        </p>
-        <div className="mt-14 flex flex-wrap justify-center gap-4">
+        {subline ? (
+          <p className="mt-5 text-sm sm:text-base text-white/90 tracking-wide max-w-md mx-auto font-normal [text-shadow:0_2px_12px_rgba(0,0,0,0.75),0_0_1px_rgba(0,0,0,0.8)]">
+            {subline}
+          </p>
+        ) : null}
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg transition hover:bg-white/95 hover:shadow-xl hover:scale-[1.02]"
