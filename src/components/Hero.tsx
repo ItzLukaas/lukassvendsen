@@ -34,23 +34,18 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <div className="rounded-2xl bg-black/30 backdrop-blur-sm px-6 py-8 sm:px-6 sm:py-8">
-          <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/70 mb-5">
-            Fotograf
-          </span>
-          <h1
-            className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
-            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.8)' }}
-          >
-            {headline}
-          </h1>
-          <p
-            className="mt-6 text-base sm:text-lg text-white leading-relaxed max-w-lg mx-auto font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
-            style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}
-          >
-            {subline}
-          </p>
-          <div className="mt-14 flex flex-wrap justify-center gap-4">
+        <span className="inline-block text-[10px] font-semibold tracking-[0.35em] uppercase text-white/80 mb-5 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]">
+          Fotograf
+        </span>
+        <h1
+          className="text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.25rem] leading-[1.15] [text-shadow:0_2px_10px_rgba(0,0,0,0.7),0_0_2px_rgba(0,0,0,0.5)]"
+        >
+          {headline}
+        </h1>
+        <p className="mt-6 text-base sm:text-lg text-white/95 leading-relaxed max-w-lg mx-auto font-medium [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
+          {subline}
+        </p>
+        <div className="mt-14 flex flex-wrap justify-center gap-4">
           <Link
             href="#galleri"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg transition hover:bg-white/95 hover:shadow-xl hover:scale-[1.02]"
@@ -63,7 +58,6 @@ export function Hero() {
           >
             Kontakt
           </Link>
-          </div>
         </div>
       </div>
 
