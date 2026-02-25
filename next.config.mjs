@@ -6,6 +6,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'picsum.photos', pathname: '/**' },
       { protocol: 'https', hostname: 'usercontent.one', pathname: '/**' },
+      { protocol: 'https', hostname: 'i.ibb.co', pathname: '/**' },
     ],
   },
 };

@@ -122,6 +122,15 @@ export const galleryImages: GalleryImageMeta[] = [
     title: 'Gruppe',
     description: 'Gruppebilleder og sammenhold.',
   },
+  {
+    id: 'sander-heieren',
+    src: 'https://i.ibb.co/My92Mk6C/Sander-Heieren.jpg',
+    width: 800,
+    height: 1000,
+    alt: 'Portræt af Sander Heieren',
+    title: 'Sander Heieren',
+    description: 'Portrætfoto – Sander Heieren.',
+  },
 ];
 
 /** Fuld galleri-side: alle billeder (forside-udvalg + flere). Udvid med egne billeder efter behov. */
