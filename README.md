@@ -1,6 +1,6 @@
-# Lukas Svendsen – Fotografi
+# Musik ved Vandtårnet
 
-Personlig one-pager hjemmeside til fotografi med Next.js, Tailwind CSS og shadcn/ui.
+Hjemmeside for gratis koncerter ved Grindsted Vandtårn. Bygget med Next.js, Tailwind CSS og design baseret på den officielle poster.
 
 ## Kør lokalt
 
@@ -39,8 +39,9 @@ Følg promptene (link til projekt, build-kommando osv.). Herefter: `vercel --pro
 
 ## Tilpasning
 
-- **Tekst og branding:** Rediger `src/content/data.ts` (om mig, kunder, kontakt, SEO-tekst).
-- **Galleri:** Rediger `galleryImages` i `src/content/data.ts`. For hvert billede kan du sætte `src`, `width`, `height` (proportioner), `alt`, `title` og `description` (SEO). Layoutet tilpasser automatisk forskellige formater (masonry). Brug lokale filer (`/gallery/1.jpg`) eller eksterne URLs (tilføj hostname i `next.config.mjs`).
+- **Arrangementer:** Rediger `src/content/events.ts` for at tilføje eller opdatere arrangementer.
+- **Tekst og branding:** Rediger `src/content/data.ts` for at opdatere site config, SEO-tekst osv.
+- **Design:** Farver og typografi er defineret i `src/app/globals.css` og `tailwind.config.ts` baseret på den officielle poster.
 - **SEO:** Opdater `siteConfig` i `src/content/data.ts` med din rigtige URL og evt. Google Search Console-verifikation i `src/app/layout.tsx`.
 
 ## Teknisk
