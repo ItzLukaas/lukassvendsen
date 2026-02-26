@@ -31,12 +31,20 @@ const config: Config = {
           DEFAULT: 'hsl(var(--accent))',
           dark: 'hsl(var(--accent-dark))',
           foreground: 'hsl(var(--accent-foreground))',
+          yellow: 'hsl(var(--accent-yellow))',
+          red: 'hsl(var(--accent-red))',
         },
+        illustration: {
+          light: 'hsl(var(--illustration-light))',
+          medium: 'hsl(var(--illustration-medium))',
+        },
+        grey: 'hsl(var(--grey))',
         themeB: 'hsl(var(--theme-b))',
       },
       fontFamily: {
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-outfit)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-rajdhani)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
+        condensed: ['var(--font-rajdhani)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

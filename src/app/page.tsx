@@ -1,86 +1,51 @@
-import { Hero } from '@/components/Hero';
-import { AboutSection } from '@/components/AboutSection';
-import { GallerySection } from '@/components/GallerySection';
-import { ClientsSection } from '@/components/ClientsSection';
-import { FAQSection } from '@/components/FAQSection';
-import { ContactSection } from '@/components/ContactSection';
-import { CaseStudiesSection } from '@/components/CaseStudiesSection';
-import { SectionFade } from '@/components/SectionFade';
+import { MusicHero } from '@/components/MusicHero';
+import { EventsSection } from '@/components/EventsSection';
 import { JsonLd } from '@/components/JsonLd';
-import { siteConfig, galleryImages, contact } from '@/content/data';
+import { siteConfig } from '@/content/data';
+import { events } from '@/content/events';
 
 export default function HomePage() {
-  const personJsonLd = {
+  const eventJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: siteConfig.name,
-    jobTitle: 'Fotograf',
+    '@type': 'EventSeries',
+    name: 'Musik ved Vandtårnet',
     description: siteConfig.description,
     url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
-    knowsAbout: ['Fotografi', 'Portrætfotografering', 'Eventfotografering'],
-  };
-
-  const localBusinessJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${siteConfig.url}#business`,
-    name: siteConfig.brandName ?? siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
-    telephone: contact.phone,
-    email: contact.email,
-    address: contact.address
-      ? {
-          '@type': 'PostalAddress',
-          streetAddress: contact.address,
-          addressLocality: 'Grindsted',
-          addressCountry: 'DK',
-        }
-      : undefined,
-    priceRange: '$$',
-    areaServed: { '@type': 'Country', name: 'Danmark' },
-  };
-
-  const galleryJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ImageGallery',
-    name: 'Fotogalleri – ' + siteConfig.name,
-    description: siteConfig.description,
-    author: { '@type': 'Person', name: siteConfig.name },
-    image: galleryImages.map((img) => ({
-      '@type': 'ImageObject',
-      contentUrl: img.src.startsWith('http') ? img.src : `${siteConfig.url}${img.src}`,
-      name: img.title,
-      description: img.description ?? img.alt,
+    location: {
+      '@type': 'Place',
+      name: 'Grindsted Vandtårn',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Grindsted',
+        addressCountry: 'DK',
+      },
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'Vandtårnets Venner',
+    },
+    event: events.map((event) => ({
+      '@type': 'Event',
+      name: `${event.artist} - ${event.dateFull}`,
+      startDate: event.dateFull,
+      location: {
+        '@type': 'Place',
+        name: 'Grindsted Vandtårn',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'DKK',
+        availability: 'https://schema.org/InStock',
+      },
     })),
   };
 
   return (
     <>
-      <JsonLd data={personJsonLd} />
-      <JsonLd data={localBusinessJsonLd} />
-      <JsonLd data={galleryJsonLd} />
-      <Hero />
-      <SectionFade>
-        <AboutSection />
-      </SectionFade>
-      <SectionFade delay={0.05}>
-        <GallerySection />
-      </SectionFade>
-      <SectionFade delay={0.05}>
-        <CaseStudiesSection />
-      </SectionFade>
-      <SectionFade delay={0.05}>
-        <ClientsSection />
-      </SectionFade>
-      <SectionFade delay={0.05}>
-        <FAQSection />
-      </SectionFade>
-      <SectionFade delay={0.05}>
-        <ContactSection />
-      </SectionFade>
+      <JsonLd data={eventJsonLd} />
+      <MusicHero />
+      <EventsSection />
     </>
   );
 }
