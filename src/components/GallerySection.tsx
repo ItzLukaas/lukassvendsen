@@ -39,19 +39,19 @@ export function GallerySection() {
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1280px] gallery-masonry">
+        <div className="mx-auto max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {galleryImages.map((img: GalleryImageMeta, i) => (
             <button
               key={img.id}
               type="button"
               onClick={() => open(i)}
-              className="gallery-masonry-item group block w-full overflow-hidden rounded-2xl bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--extra))] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="group relative aspect-square w-full overflow-hidden rounded-2xl bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--extra))] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="block w-full h-auto transition-transform duration-300 group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </button>
           ))}
