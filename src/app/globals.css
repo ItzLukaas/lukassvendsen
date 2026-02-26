@@ -4,25 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 240 6% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 6% 12%;
-    --primary: 240 6% 12%;
-    --primary-foreground: 0 0% 99%;
-    --secondary: 240 5% 94%;
-    --secondary-foreground: 240 6% 12%;
-    --muted: 240 5% 94%;
-    --muted-foreground: 240 4% 42%;
-    /* Eneste ekstra farve: #0A2E36 (mørk teal) – resten er hvid/sort/grå */
-    --extra: 191 69% 13%;
-    --accent: var(--extra);
-    --accent-dark: var(--extra);
+    /* Primary Background: Deep teal-green #306D5E */
+    --background: 168 40% 30%;
+    --foreground: 0 0% 100%;
+    --card: 168 40% 30%;
+    --card-foreground: 0 0% 100%;
+    --primary: 168 40% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 168 40% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 168 40% 35%;
+    --muted-foreground: 0 0% 85%;
+    /* Accent 1: Mustard yellow #E7C048 */
+    --accent-yellow: 45 75% 59%;
+    /* Accent 2: Dark maroon/brick red #8D1A25 */
+    --accent-red: 353 70% 32%;
+    /* Illustration colors: Light aqua/cyan */
+    --illustration-light: 168 50% 75%;
+    --illustration-medium: 168 45% 65%;
+    --grey: 0 0% 52%;
+    --extra: 168 40% 30%;
+    --accent: var(--accent-yellow);
+    --accent-dark: var(--accent-red);
     --accent-foreground: 0 0% 100%;
-    --theme-b: var(--extra);
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: var(--extra);
+    --theme-b: var(--accent-red);
+    --border: 168 40% 40%;
+    --input: 168 40% 40%;
+    --ring: var(--accent-yellow);
     --radius: 0.5rem;
   }
 }

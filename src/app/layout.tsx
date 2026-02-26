@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Outfit, DM_Sans } from 'next/font/google';
+import { Outfit, DM_Sans, Rajdhani } from 'next/font/google';
 import './globals.css';
 import 'lenis/dist/lenis.css';
 import { siteConfig } from '@/content/data';
@@ -10,6 +10,14 @@ import { CookieBanner } from '@/components/CookieBanner';
 import { CaseStudyLoadingProvider } from '@/context/CaseStudyLoadingContext';
 import { PagePreloader } from '@/components/PagePreloader';
 import { SmoothScroll } from '@/components/SmoothScroll';
+
+// Bold, condensed sans-serif for headings (matching poster style)
+const rajdhani = Rajdhani({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-rajdhani',
+  display: 'swap',
+});
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -26,7 +34,7 @@ const dmSans = DM_Sans({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#0a0a0a',
+  themeColor: '#306D5E',
 };
 
 export const metadata: Metadata = {
@@ -79,10 +87,10 @@ export default function RootLayout({
   return (
     <html
       lang="da"
-      className={`${outfit.variable} ${dmSans.variable} scroll-smooth`}
+      className={`${rajdhani.variable} ${outfit.variable} ${dmSans.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen font-sans antialiased bg-background text-foreground">
+      <body className="min-h-screen font-sans antialiased bg-background text-foreground overflow-x-hidden">
         <SmoothScroll />
         <PagePreloader />
         <CaseStudyLoadingProvider>

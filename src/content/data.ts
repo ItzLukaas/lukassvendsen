@@ -1,21 +1,20 @@
 export const siteConfig = {
   /** Branding – vises i header, footer og titler */
-  brandName: 'Lukas Photography',
-  name: 'Lukas Svendsen',
-  title: 'Lukas Photography – Personlig fotograf i Danmark | Portræt, event & bryllup',
+  brandName: 'Musik ved Vandtårnet',
+  name: 'Musik ved Vandtårnet',
+  title: 'Musik ved Vandtårnet – Gratis koncerter ved Grindsted Vandtårn',
   description:
-    'Lukas Photography – personlig fotograf i Danmark. Portrætfotografering, eventfotografering, bryllup og kreative projekter. Lukas Svendsen fanger øjeblikke og historier med kameraet. Kontakt for booking.',
-  url: 'https://lukassvendsen.dk',
+    'Musik ved Vandtårnet – gratis koncerter og arrangementer ved Grindsted Vandtårn. Oplev live musik med forskellige artister gennem sommeren 2026.',
+  url: 'https://musikvedvandtarnet.dk',
   keywords: [
-    'fotograf',
-    'Lukas Photography',
-    'Lukas Svendsen',
-    'portrætfotograf',
-    'eventfotograf',
-    'bryllupsfotograf',
-    'Danmark',
-    'personlig fotografering',
+    'Musik ved Vandtårnet',
+    'Grindsted Vandtårn',
+    'gratis koncerter',
+    'live musik',
+    'sommerarrangementer',
     'Grindsted',
+    'musikfestival',
+    'koncerter Danmark',
   ],
   ogImage: '/og.jpg',
   /**
