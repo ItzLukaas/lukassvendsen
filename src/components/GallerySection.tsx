@@ -8,6 +8,26 @@ import 'yet-another-react-lightbox/styles.css';
 import { galleryImages } from '@/content/data';
 import type { GalleryImageMeta } from '@/content/data';
 
+function getGridSpanClasses(img: GalleryImageMeta, index: number, total: number): string {
+  const ratio = img.width / img.height;
+  const isLandscape = ratio > 1.2;
+  const isVeryWide = ratio > 2.0;
+
+  if (total === 1 && isLandscape) {
+    return 'col-span-full';
+  }
+
+  if (index === 0 && isVeryWide && total > 2) {
+    return 'md:col-span-2 lg:col-span-3';
+  }
+
+  if (isLandscape) {
+    return 'md:col-span-2';
+  }
+
+  return '';
+}
+
 export function GallerySection() {
   const [index, setIndex] = useState(-1);
   const open = useCallback((i: number) => setIndex(i), []);
@@ -39,19 +59,19 @@ export function GallerySection() {
       </div>
 
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1280px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="mx-auto max-w-[1280px] grid gap-4 sm:gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] [grid-auto-flow:dense]">
           {galleryImages.map((img: GalleryImageMeta, i) => (
             <button
               key={img.id}
               type="button"
               onClick={() => open(i)}
-              className="group relative aspect-square w-full overflow-hidden rounded-2xl bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--extra))] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className={`group relative w-full overflow-hidden rounded-2xl bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--extra))] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${getGridSpanClasses(img, i, galleryImages.length)}`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="block w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </button>
           ))}
