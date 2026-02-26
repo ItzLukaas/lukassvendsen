@@ -3,25 +3,10 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import PhotoAlbum from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { galleryImages } from '@/content/data';
 import type { GalleryImageMeta } from '@/content/data';
-import type { Photo } from 'react-photo-album';
-
-function toPhotoAlbumPhotos(images: GalleryImageMeta[]): Photo[] {
-  return images.map((img) => ({
-    src: img.src,
-    width: img.width,
-    height: img.height,
-    alt: img.alt,
-    title: img.title,
-    key: img.id,
-  }));
-}
-
-const photos = toPhotoAlbumPhotos(galleryImages);
 
 export function GallerySection() {
   const [index, setIndex] = useState(-1);
@@ -55,17 +40,23 @@ export function GallerySection() {
 
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1280px]">
-          <PhotoAlbum
-            photos={photos}
-            layout="columns"
-            columns={(containerWidth) => (containerWidth && containerWidth >= 900 ? 3 : containerWidth && containerWidth >= 600 ? 2 : 1)}
-            spacing={12}
-            padding={0}
-            onClick={({ index: i }) => open(i)}
-            componentsProps={(containerWidth) => ({
-              image: { style: { objectFit: 'contain' as const } },
-            })}
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {galleryImages.map((img: GalleryImageMeta, i) => (
+              <button
+                key={img.id}
+                type="button"
+                onClick={() => open(i)}
+                className="group relative w-full overflow-hidden rounded-2xl bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--extra))] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="block w-full h-auto transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </button>
+            ))}
+          </div>
         </div>
         <div className="mx-auto max-w-[1280px] mt-10 px-4 sm:px-6 lg:px-8 flex justify-center">
           <Link
@@ -97,12 +88,12 @@ export function GallerySection() {
         open={index >= 0}
         close={close}
         index={index}
-        slides={photos.map((p, i) => ({
-          src: p.src,
-          width: p.width,
-          height: p.height,
-          alt: p.alt ?? undefined,
-          title: galleryImages[i]?.description ?? p.title ?? undefined,
+        slides={galleryImages.map((img) => ({
+          src: img.src,
+          width: img.width,
+          height: img.height,
+          alt: img.alt,
+          title: img.description ?? img.title,
         }))}
       />
     </section>
