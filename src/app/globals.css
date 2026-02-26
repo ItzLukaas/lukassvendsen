@@ -167,4 +167,30 @@
       linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 36px 36px;
   }
+
+  /* Gallery masonry: CSS columns – ingen faste højder, hvert billede beholder sit format */
+  .gallery-masonry {
+    column-count: 1;
+    column-gap: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .gallery-masonry {
+      column-count: 2;
+    }
+  }
+  @media (min-width: 1024px) {
+    .gallery-masonry {
+      column-count: 3;
+      column-gap: 1.5rem;
+    }
+  }
+  .gallery-masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .gallery-masonry-item {
+      margin-bottom: 1.5rem;
+    }
+  }
 }
