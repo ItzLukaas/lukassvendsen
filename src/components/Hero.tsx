@@ -41,9 +41,6 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-4">
-        <p className="text-sm font-medium tracking-[0.2em] uppercase text-white/70 mb-4 [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]">
-          Fotograf · Billund
-        </p>
         <h1
           className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.5rem] leading-[1.12] [text-shadow:0_2px_20px_rgba(0,0,0,0.8),0_0_1px_rgba(0,0,0,0.9)]"
         >
