@@ -59,13 +59,13 @@ export function Hero() {
             href="#galleri"
             className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-zinc-900 shadow-lg transition hover:bg-white/95 hover:shadow-xl hover:scale-[1.02]"
           >
-            Se galleri
+            Se mine billeder
           </Link>
           <Link
             href="#kontakt"
             className="inline-flex items-center justify-center rounded-full border-2 border-white/90 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 hover:border-white"
           >
-            Kontakt
+            Skriv til mig
           </Link>
         </div>
       </div>
