@@ -5,8 +5,11 @@ import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/content/data';
 
 export function Hero() {
-  const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera';
-  const subline = siteConfig.heroSubline ?? 'Personlig fotograf med fokus på ægte øjeblikke og visuel storytelling.';
+  const headline = siteConfig.heroHeadline ?? 'Jeg fortæller historier gennem mit kamera.';
+  const subline =
+    siteConfig.heroSubline ??
+    'Jeg hedder Lukas – personlig fotograf med fokus på ægte øjeblikke og mennesker, ikke bare billeder.';
+  const tagline = siteConfig.heroTagline;
   const heroImage = siteConfig.heroImage ?? '';
 
   return (
@@ -65,6 +68,11 @@ export function Hero() {
             Skriv til mig
           </Link>
         </div>
+        {tagline ? (
+          <p className="mt-6 text-xs sm:text-sm text-white/80 max-w-md mx-auto [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]">
+            {tagline}
+          </p>
+        ) : null}
       </div>
 
       <Link

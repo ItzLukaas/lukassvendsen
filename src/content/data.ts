@@ -29,12 +29,12 @@ export const siteConfig = {
    */
   heroImage: 'https://i.ibb.co/jtLqMMT/DSC02512-2.jpg',
   heroImages: ['https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856', 'https://media.discordapp.net/attachments/980020447313797160/1476205978864193597/image.jpg?ex=69a04773&is=699ef5f3&hm=d268956e8c0e40d432d570cdac0e2b0d3bb58e312b44858dee5d028fac0a76cf&=&format=webp&width=1522&height=856'],
-  heroHeadline: 'Jeg fanger det øjeblik, du vil huske.',
+  heroHeadline: 'Jeg fortæller historier gennem mit kamera.',
   /** Personlig, indbydende linje – tal direkte til besøgenden */
   heroSubline:
     'Jeg hedder Lukas – ham den rolige bag kameraet, der får selv kamerasky mennesker til at slappe af og se naturlige ud.',
-  /** Kort linje under subline – mere personlig call-to-action */
-  heroTagline: 'Portrætter, events og kreative projekter i Billund og omegn – skal vi lave noget fedt sammen?',
+  /** Kort linje under knapperne – inviterer til kontakt på en uformel måde */
+  heroTagline: 'Basen er Billund, men jeg kører gerne efter den gode historie. Skal vi lave noget sammen?',
 };
 
 export const about = {
