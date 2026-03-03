@@ -69,20 +69,19 @@ export function Header() {
   return (
     <header
       className={cn(
-        'w-full border-b transition-colors duration-200',
-        'border-white/20 bg-background/90 backdrop-blur-sm',
-        scrolled && 'bg-background border-white/20'
+        'w-full border-b transition-colors duration-200 bg-background/90 backdrop-blur-sm',
+        scrolled && 'bg-background border-zinc-200 shadow-sm'
       )}
       role="banner"
     >
       {/* Topbar – Lukas Photography budskaber */}
       {!topbarClosed && (
-        <div className="bg-themeB text-white">
+        <div className="bg-secondary text-[hsl(var(--extra))]">
           <div className="flex w-full items-center justify-center gap-4 px-4 py-2 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative">
             <div className="hidden sm:flex items-center gap-3 absolute left-4 sm:left-6 lg:left-8 xl:left-12 2xl:left-16">
               <a
                 href={`mailto:${contact.email}`}
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40 text-white/90 hover:bg-white hover:text-themeB transition"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(var(--extra))] text-[hsl(var(--extra))] hover:bg-[hsl(var(--extra))] hover:text-white transition"
                 aria-label="Skriv til mig på mail"
               >
                 <Send className="h-3.5 w-3.5" />
@@ -92,7 +91,7 @@ export function Header() {
                   href={contact.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40 text-white/90 hover:bg-white hover:text-themeB transition"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(var(--extra))] text-[hsl(var(--extra))] hover:bg-[hsl(var(--extra))] hover:text-white transition"
                   aria-label="LinkedIn profil"
                 >
                   {/* Officielt LinkedIn ikon som lille SVG */}
@@ -139,9 +138,9 @@ export function Header() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 text-[15px] font-condensed font-bold tracking-tight text-white uppercase transition-opacity hover:opacity-80"
+          className="flex items-center gap-2 text-[15px] font-condensed font-bold tracking-tight text-foreground uppercase transition-opacity hover:opacity-80"
         >
-          <Camera className="h-4 w-4 text-accent-yellow" aria-hidden />
+          <Camera className="h-4 w-4 text-[hsl(var(--extra))]" aria-hidden />
           {brandName}
         </Link>
 
@@ -151,7 +150,7 @@ export function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+                className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
               >
                 {label}
               </Link>
@@ -163,7 +162,7 @@ export function Header() {
         <div className="hidden md:block">
           <Link
             href="/#kontakt"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent-yellow px-4 py-2 text-sm font-condensed font-semibold text-background uppercase transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-2 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-90"
           >
             Kontakt
           </Link>
@@ -172,12 +171,12 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-expanded={menuOpen}
-            aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
-          >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg text-foreground/80 transition-colors hover:bg-zinc-100 hover:text-foreground"
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
+        >
+          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
@@ -211,7 +210,7 @@ export function Header() {
               <li className="mt-4 pt-4 border-t border-white/20">
                 <Link
                   href="/#kontakt"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-accent-yellow px-4 py-3 text-sm font-condensed font-semibold text-background uppercase transition-opacity hover:opacity-90"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-3 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-90"
                   onClick={() => setMenuOpen(false)}
                 >
                   Kontakt

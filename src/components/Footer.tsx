@@ -13,7 +13,7 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-white/20 bg-background/50 backdrop-blur-sm py-10 sm:py-12"
+      className="border-t border-zinc-200 bg-background py-10 sm:py-12"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -21,12 +21,12 @@ export function Footer() {
           {/* Branding */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Camera className="h-5 w-5 text-accent-yellow" />
-              <h3 className="font-condensed font-bold text-xl text-white uppercase tracking-tight">
+              <Camera className="h-5 w-5 text-[hsl(var(--extra))]" />
+              <h3 className="font-condensed font-bold text-xl text-foreground uppercase tracking-tight">
                 {siteConfig.brandName ?? siteConfig.name}
               </h3>
             </div>
-            <p className="text-sm text-white/70 max-w-xs">
+            <p className="text-sm text-muted-foreground max-w-xs">
               Fotograf i Billund og omegn – portrætter, events og kreative projekter.
             </p>
           </div>
@@ -42,7 +42,7 @@ export function Footer() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="text-sm text-white/80 hover:text-white transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {label}
                     </Link>
@@ -58,8 +58,8 @@ export function Footer() {
               Lokation
             </h3>
             <div className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-accent-yellow" />
-              <p className="text-sm text-white/80">
+              <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-[hsl(var(--extra))]" />
+              <p className="text-sm text-muted-foreground">
                 {contact.address}
                 <br />
                 Danmark
@@ -70,10 +70,10 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <p className="text-xs text-white/60">
+          <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} {siteConfig.brandName ?? siteConfig.name}
             </p>
-            <p className="text-xs text-white/60">
+          <p className="text-xs text-muted-foreground">
               Kontakt: {contact.email} · {contact.phone}
             </p>
           </div>
