@@ -13,7 +13,6 @@ export default function HomePage() {
       <AboutSection />
       <CompetenciesSection />
       {/* Case studies er valgfrit – men matcher stadig foto-branding */}
-      {/* @ts-expect-error Async Server Component */}
       <CaseStudiesSection />
       <ContactSection />
     </>
