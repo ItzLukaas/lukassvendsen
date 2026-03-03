@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    /* Primary Background: Deep teal-green #306D5E */
-    --background: 168 40% 30%;
-    --foreground: 0 0% 100%;
-    --card: 168 40% 30%;
-    --card-foreground: 0 0% 100%;
-    --primary: 168 40% 30%;
+    /* Lys, ren foto-palette: hvid / grå / temablå */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 217 91% 60%; /* temablå */
     --primary-foreground: 0 0% 100%;
-    --secondary: 168 40% 30%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 168 40% 35%;
-    --muted-foreground: 0 0% 85%;
-    /* Accent 1: Mustard yellow #E7C048 */
-    --accent-yellow: 45 75% 59%;
-    /* Accent 2: Dark maroon/brick red #8D1A25 */
-    --accent-red: 353 70% 32%;
-    /* Illustration colors: Light aqua/cyan */
-    --illustration-light: 168 50% 75%;
-    --illustration-medium: 168 45% 65%;
-    --grey: 0 0% 52%;
-    --extra: 168 40% 30%;
-    --accent: var(--accent-yellow);
-    --accent-dark: var(--accent-red);
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 16% 95%;
+    --muted-foreground: 215 16% 35%;
+    /* Accentfarver – kan bruges til små detaljer */
+    --accent-yellow: 45 84% 57%;
+    --accent-red: 0 72% 55%;
+    /* Illustration / baggrundsdetaljer */
+    --illustration-light: 210 40% 96%;
+    --illustration-medium: 210 35% 90%;
+    --grey: 215 15% 50%;
+    /* Ekstra brand-farve = samme temablå */
+    --extra: 217 91% 60%;
+    --accent: var(--extra);
+    --accent-dark: 217 80% 40%;
     --accent-foreground: 0 0% 100%;
-    --theme-b: var(--accent-red);
-    --border: 168 40% 40%;
-    --input: 168 40% 40%;
-    --ring: var(--accent-yellow);
+    --theme-b: var(--extra);
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: var(--extra);
     --radius: 0.5rem;
   }
 }
