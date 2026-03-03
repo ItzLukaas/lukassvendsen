@@ -6,6 +6,7 @@ import { siteConfig } from '@/content/data';
 
 const MIN_SHOW_MS = 1000;
 const FADE_DURATION_MS = 700;
+const MAX_VISIBLE_MS = 5000;
 
 export function PagePreloader() {
   const [isHidden, setIsHidden] = useState(false);
@@ -13,6 +14,7 @@ export function PagePreloader() {
 
   useEffect(() => {
     const start = Date.now();
+    let safetyTimeout: ReturnType<typeof setTimeout> | null = null;
 
     const hide = () => {
       const elapsed = Date.now() - start;
@@ -32,7 +34,17 @@ export function PagePreloader() {
 
     const onLoad = () => hide();
     window.addEventListener('load', onLoad);
-    return () => window.removeEventListener('load', onLoad);
+
+    // Safety: if load-event af en eller anden grund ikke fyrer,
+    // så forsvinder preloaderen senest efter MAX_VISIBLE_MS.
+    safetyTimeout = setTimeout(() => {
+      hide();
+    }, MAX_VISIBLE_MS);
+
+    return () => {
+      window.removeEventListener('load', onLoad);
+      if (safetyTimeout) clearTimeout(safetyTimeout);
+    };
   }, []);
 
   if (isRemoved) return null;
