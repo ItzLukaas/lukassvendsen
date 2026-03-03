@@ -13,7 +13,7 @@ const NAV_LINKS = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-zinc-200 bg-background py-10 sm:py-12"
+      className="border-t border-zinc-200 bg-secondary py-10 sm:py-12"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-xs font-condensed font-semibold tracking-wide text-white/60 mb-3 uppercase">
+            <h3 className="text-xs font-condensed font-semibold tracking-wide text-muted-foreground mb-3 uppercase">
               Navigation
             </h3>
             <nav aria-label="Footer">

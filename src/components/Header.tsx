@@ -69,19 +69,19 @@ export function Header() {
   return (
     <header
       className={cn(
-        'w-full border-b transition-colors duration-200 bg-background/90 backdrop-blur-sm',
+        'w-full border-b border-zinc-100 transition-colors duration-200 bg-background/90',
         scrolled && 'bg-background border-zinc-200 shadow-sm'
       )}
       role="banner"
     >
       {/* Topbar – Lukas Photography budskaber */}
       {!topbarClosed && (
-        <div className="bg-secondary text-[hsl(var(--extra))]">
+        <div className="bg-[hsl(var(--extra))] text-white">
           <div className="flex w-full items-center justify-center gap-4 px-4 py-2 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative">
             <div className="hidden sm:flex items-center gap-3 absolute left-4 sm:left-6 lg:left-8 xl:left-12 2xl:left-16">
               <a
                 href={`mailto:${contact.email}`}
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(var(--extra))] text-[hsl(var(--extra))] hover:bg-[hsl(var(--extra))] hover:text-white transition"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/60 text-white hover:bg-white hover:text-[hsl(var(--extra))] transition"
                 aria-label="Skriv til mig på mail"
               >
                 <Send className="h-3.5 w-3.5" />
@@ -91,7 +91,7 @@ export function Header() {
                   href={contact.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[hsl(var(--extra))] text-[hsl(var(--extra))] hover:bg-[hsl(var(--extra))] hover:text-white transition"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/60 text-white hover:bg-white hover:text-[hsl(var(--extra))] transition"
                   aria-label="LinkedIn profil"
                 >
                   {/* Officielt LinkedIn ikon som lille SVG */}
@@ -150,7 +150,7 @@ export function Header() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {label}
               </Link>
@@ -162,7 +162,7 @@ export function Header() {
         <div className="hidden md:block">
           <Link
             href="/#kontakt"
-            className="inline-flex items-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-2 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--extra))] px-5 py-2.5 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-95"
           >
             Kontakt
           </Link>
@@ -171,7 +171,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg text-foreground/80 transition-colors hover:bg-zinc-100 hover:text-foreground"
+          className="md:hidden flex h-9 w-9 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-zinc-100 hover:text-foreground"
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Luk menu' : 'Åbn menu'}
@@ -184,7 +184,7 @@ export function Header() {
       <AnimatePresence initial={false}>
         {menuOpen && (
           <motion.div
-            className="absolute left-0 right-0 top-full z-40 border-t border-white/20 bg-background md:hidden"
+            className="absolute left-0 right-0 top-full z-40 border-t border-zinc-200 bg-background md:hidden"
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
@@ -200,7 +200,7 @@ export function Header() {
                 >
                   <Link
                     href={href}
-                    className="block py-2.5 text-sm font-medium text-white/80 transition-colors hover:text-white"
+                    className="block py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
@@ -210,7 +210,7 @@ export function Header() {
               <li className="mt-4 pt-4 border-t border-white/20">
                 <Link
                   href="/#kontakt"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-[hsl(var(--extra))] px-4 py-3 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-90"
+                  className="flex items-center justify-center gap-2 rounded-full bg-[hsl(var(--extra))] px-4 py-3 text-sm font-condensed font-semibold text-white uppercase transition-opacity hover:opacity-95"
                   onClick={() => setMenuOpen(false)}
                 >
                   Kontakt

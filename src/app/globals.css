@@ -4,28 +4,29 @@
 
 @layer base {
   :root {
-    /* Lys, ren foto-palette: hvid / grå / temablå */
+    /* Lys, ren foto-palette: hvid / grå / mørk temablå */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-    --primary: 217 91% 60%; /* temablå */
+    /* Mørk temablå som primær accent */
+    --primary: 222 60% 28%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 20% 98%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 16% 95%;
     --muted-foreground: 215 16% 35%;
-    /* Accentfarver – kan bruges til små detaljer */
+    /* Accentfarver – kan bruges til små detaljer (valgfrit) */
     --accent-yellow: 45 84% 57%;
     --accent-red: 0 72% 55%;
     /* Illustration / baggrundsdetaljer */
     --illustration-light: 210 40% 96%;
     --illustration-medium: 210 35% 90%;
     --grey: 215 15% 50%;
-    /* Ekstra brand-farve = samme temablå */
-    --extra: 217 91% 60%;
+    /* Ekstra brand-farve = samme mørkeblå */
+    --extra: 222 60% 28%;
     --accent: var(--extra);
-    --accent-dark: 217 80% 40%;
+    --accent-dark: 222 60% 22%;
     --accent-foreground: 0 0% 100%;
     --theme-b: var(--extra);
     --border: 210 16% 90%;
