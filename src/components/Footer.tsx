@@ -1,10 +1,13 @@
 import Link from 'next/link';
-import { Mail, MapPin, Music } from 'lucide-react';
-import { siteConfig } from '@/content/data';
+import { Mail, MapPin, Camera } from 'lucide-react';
+import { siteConfig, contact } from '@/content/data';
 
 const NAV_LINKS = [
-  { href: '/', label: 'Forside' },
-  { href: '/#arrangementer', label: 'Arrangementer' },
+  { href: '/#galleri', label: 'Galleri' },
+  { href: '/#om-mig', label: 'Om mig' },
+  { href: '/#spidskompetencer', label: 'Spidskompetencer' },
+  { href: '/#case-studies', label: 'Cases' },
+  { href: '/#kontakt', label: 'Kontakt' },
 ];
 
 export function Footer() {
@@ -18,13 +21,13 @@ export function Footer() {
           {/* Branding */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Music className="h-5 w-5 text-accent-yellow" />
+              <Camera className="h-5 w-5 text-accent-yellow" />
               <h3 className="font-condensed font-bold text-xl text-white uppercase tracking-tight">
                 {siteConfig.brandName ?? siteConfig.name}
               </h3>
             </div>
             <p className="text-sm text-white/70 max-w-xs">
-              Gratis koncerter ved Grindsted Vandtårn gennem sommeren 2026
+              Fotograf i Billund og omegn – portrætter, events og kreative projekter.
             </p>
           </div>
 
@@ -57,9 +60,9 @@ export function Footer() {
             <div className="flex items-start gap-2">
               <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-accent-yellow" />
               <p className="text-sm text-white/80">
-                Grindsted Vandtårn
+                {contact.address}
                 <br />
-                Grindsted, Danmark
+                Danmark
               </p>
             </div>
           </div>
@@ -71,7 +74,7 @@ export function Footer() {
               © {new Date().getFullYear()} {siteConfig.brandName ?? siteConfig.name}
             </p>
             <p className="text-xs text-white/60">
-              Kærlig hilsen Vandtårnets Venner!
+              Kontakt: {contact.email} · {contact.phone}
             </p>
           </div>
         </div>

@@ -3,20 +3,23 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Music } from 'lucide-react';
+import { Menu, X, Camera, Send } from 'lucide-react';
 
-import { siteConfig } from '@/content/data';
+import { siteConfig, contact } from '@/content/data';
 import { cn } from '@/lib/utils';
 
 const LINKS = [
-  { href: '/', label: 'Forside' },
-  { href: '/#arrangementer', label: 'Arrangementer' },
+  { href: '/#galleri', label: 'Galleri' },
+  { href: '/#om-mig', label: 'Om mig' },
+  { href: '/#spidskompetencer', label: 'Spidskompetencer' },
+  { href: '/#case-studies', label: 'Cases' },
+  { href: '/#kontakt', label: 'Kontakt' },
 ];
 
 const TOPBAR_MESSAGES = [
-  'Gratis koncerter ved Grindsted Vandtårn',
-  'Alle arrangementer er gratis',
-  'Sommer 2026',
+  '5-stjernet fotograf i Billund Kommune',
+  'Unikke billeder, konkurrencedygtige priser',
+  () => `${contact.email} · ${contact.phone}`,
 ];
 
 const TOPBAR_STORAGE_KEY = 'topbar-dismissed';
@@ -26,7 +29,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [topbarIndex, setTopbarIndex] = useState(0);
   const [topbarClosed, setTopbarClosed] = useState(false);
-  const brandName = siteConfig?.brandName ?? siteConfig?.name ?? 'Musik ved Vandtårnet';
+  const brandName = siteConfig?.brandName ?? siteConfig?.name ?? 'Lukas Photography';
 
   useEffect(() => {
     try {
@@ -72,10 +75,41 @@ export function Header() {
       )}
       role="banner"
     >
-      {/* Topbar med roterende tekst og luk-kryds */}
+      {/* Topbar – Lukas Photography budskaber */}
       {!topbarClosed && (
-        <div className="bg-accent-red text-white">
+        <div className="bg-themeB text-white">
           <div className="flex w-full items-center justify-center gap-4 px-4 py-2 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative">
+            <div className="hidden sm:flex items-center gap-3 absolute left-4 sm:left-6 lg:left-8 xl:left-12 2xl:left-16">
+              <a
+                href={`mailto:${contact.email}`}
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40 text-white/90 hover:bg-white hover:text-themeB transition"
+                aria-label="Skriv til mig på mail"
+              >
+                <Send className="h-3.5 w-3.5" />
+              </a>
+              {contact.linkedin && (
+                <a
+                  href={contact.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40 text-white/90 hover:bg-white hover:text-themeB transition"
+                  aria-label="LinkedIn profil"
+                >
+                  {/* Officielt LinkedIn ikon som lille SVG */}
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-3.5 w-3.5"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" />
+                    <path
+                      d="M8.16 17H6.1V9.9h2.06V17ZM7.13 8.9a1.19 1.19 0 1 1 0-2.38 1.19 1.19 0 0 1 0 2.38Zm10.87 8.1h-2.05v-3.7c0-.88-.32-1.48-1.12-1.48-.61 0-.97.41-1.13.8-.06.15-.08.36-.08.57V17h-2.05s.03-6.01 0-7.1h2.05v1.01c.27-.42.76-1.02 1.85-1.02 1.35 0 2.38.88 2.38 2.78V17Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+              )}
+            </div>
             <div className="min-w-0 flex-1 flex justify-center">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.p
@@ -107,7 +141,7 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 text-[15px] font-condensed font-bold tracking-tight text-white uppercase transition-opacity hover:opacity-80"
         >
-          <Music className="h-4 w-4 text-accent-yellow" aria-hidden />
+          <Camera className="h-4 w-4 text-accent-yellow" aria-hidden />
           {brandName}
         </Link>
 
@@ -128,10 +162,10 @@ export function Header() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Link
-            href="/#arrangementer"
+            href="/#kontakt"
             className="inline-flex items-center gap-2 rounded-lg bg-accent-yellow px-4 py-2 text-sm font-condensed font-semibold text-background uppercase transition-opacity hover:opacity-90"
           >
-            Arrangementer
+            Kontakt
           </Link>
         </div>
 
@@ -176,11 +210,11 @@ export function Header() {
               ))}
               <li className="mt-4 pt-4 border-t border-white/20">
                 <Link
-                  href="/#arrangementer"
+                  href="/#kontakt"
                   className="flex items-center justify-center gap-2 rounded-lg bg-accent-yellow px-4 py-3 text-sm font-condensed font-semibold text-background uppercase transition-opacity hover:opacity-90"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Arrangementer
+                  Kontakt
                 </Link>
               </li>
             </ul>

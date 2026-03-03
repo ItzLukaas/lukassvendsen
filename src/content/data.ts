@@ -1,20 +1,20 @@
 export const siteConfig = {
   /** Branding – vises i header, footer og titler */
-  brandName: 'Musik ved Vandtårnet',
-  name: 'Musik ved Vandtårnet',
-  title: 'Musik ved Vandtårnet – Gratis koncerter ved Grindsted Vandtårn',
+  brandName: 'Lukas Photography',
+  name: 'Lukas Svendsen',
+  title: 'Lukas Photography – fotograf i Billund og omegn',
   description:
-    'Musik ved Vandtårnet – gratis koncerter og arrangementer ved Grindsted Vandtårn. Oplev live musik med forskellige artister gennem sommeren 2026.',
-  url: 'https://musikvedvandtarnet.dk',
+    'Lukas Photography – portrætter, events og kreative fotoopgaver i Billund og omegn. Personlige billeder af mennesker, øjeblikke og stemninger.',
+  url: 'https://lukasphotography.dk',
   keywords: [
-    'Musik ved Vandtårnet',
-    'Grindsted Vandtårn',
-    'gratis koncerter',
-    'live musik',
-    'sommerarrangementer',
-    'Grindsted',
-    'musikfestival',
-    'koncerter Danmark',
+    'Lukas Photography',
+    'fotograf',
+    'fotograf Billund',
+    'portrætfotograf',
+    'eventfotograf',
+    'bryllupsfotograf',
+    'erhvervsfoto',
+    'portrætter og events',
   ],
   ogImage: '/og.jpg',
   /**
